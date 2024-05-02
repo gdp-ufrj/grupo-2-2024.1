@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwubmegoj0ww0"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_86vcq"]
+[ext_resource type="Texture2D" uid="uid://dn1bfka2piwsw" path="res://assets/sprites/icon.svg" id="2_ypsdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13gu2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fff8o"]
+
+[node name="World" type="Node2D"]
+position = Vector2(446, 182)
+script = ExtResource("1_86vcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ypsdt")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(9.15957, 8.49609)
+shape = SubResource("RectangleShape2D_13gu2")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(9.73862, 9.73862)
+shape = SubResource("CircleShape2D_fff8o")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.6
+one_shot = true
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -105.0
+offset_top = 86.0
+offset_right = 111.0
+offset_bottom = 113.0
+step = 1.0
+rounded = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 4)
+emitting = false
+amount = 400
+lifetime = 0.35
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 65.06
+gravity = Vector2(0, -980)
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(29, 84)
+zoom = Vector2(2, 2)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="changed" from="ProgressBar" to="." method="_on_progress_bar_changed"]

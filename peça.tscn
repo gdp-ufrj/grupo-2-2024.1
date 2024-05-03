@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dupxgblmp522f"]
+
+[ext_resource type="Script" path="res://Scripts/Peça.gd" id="1_j603w"]
+[ext_resource type="Texture2D" uid="uid://helnbs1r1osm" path="res://assets/tile_0096.png" id="2_ruxph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
+atlas = ExtResource("2_ruxph")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
+size = Vector2(16, 16)
+
+[node name="Peça" type="Node2D" groups=["peças"]]
+script = ExtResource("1_j603w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_0sk80")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Colisor" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dl35f")

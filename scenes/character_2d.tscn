@@ -11,38 +11,46 @@
 position = Vector2(446, 182)
 script = ExtResource("1_86vcq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(29, 84)
+zoom = Vector2(2, 2)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_ypsdt")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
 scale = Vector2(9.15957, 8.49609)
 shape = SubResource("RectangleShape2D_13gu2")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="Mana" type="ProgressBar" parent="Player"]
+modulate = Color(0.211765, 0.4, 1, 1)
+offset_left = -105.0
+offset_top = 86.0
+offset_right = 111.0
+offset_bottom = 113.0
+theme_override_constants/outline_size = 2
+step = 1.0
+rounded = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 scale = Vector2(9.73862, 9.73862)
 shape = SubResource("CircleShape2D_fff8o")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Player"]
 process_callback = 0
 wait_time = 0.6
 one_shot = true
 autostart = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -105.0
-offset_top = 86.0
-offset_right = 111.0
-offset_bottom = 113.0
-step = 1.0
-rounded = true
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="SkillTimeParticles" type="CPUParticles2D" parent="Player"]
 position = Vector2(0, 4)
 emitting = false
 amount = 400
@@ -54,11 +62,7 @@ gravity = Vector2(0, -980)
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(29, 84)
-zoom = Vector2(2, 2)
-
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="changed" from="ProgressBar" to="." method="_on_progress_bar_changed"]
+[connection signal="changed" from="Player/Mana" to="." method="_on_progress_bar_changed"]
+[connection signal="input_event" from="Player/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_exited" from="Player/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Player/Timer" to="." method="_on_timer_timeout"]

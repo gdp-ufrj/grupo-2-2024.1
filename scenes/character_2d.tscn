@@ -12,7 +12,8 @@ position = Vector2(446, 182)
 script = ExtResource("1_86vcq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(29, 84)
+position = Vector2(41, 83)
+scale = Vector2(2.52097, 1.55273)
 zoom = Vector2(2, 2)
 
 [node name="Player" type="Node2D" parent="."]

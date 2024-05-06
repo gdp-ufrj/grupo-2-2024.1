@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4f6vd5arei61"]
+
+[ext_resource type="Script" path="res://Scripts/hp_bar.gd" id="1_ixjcj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60nka"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yeqg"]
+bg_color = Color(0.294118, 0.701961, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hwc3"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d1pf"]
+bg_color = Color(0.286275, 0.647059, 0.807843, 1)
+
+[node name="Hp_bar" type="ProgressBar"]
+z_index = 3
+offset_right = 90.0
+offset_bottom = 8.0
+scale = Vector2(0.16, 0.2)
+theme_override_styles/background = SubResource("StyleBoxFlat_60nka")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5yeqg")
+value = 80.0
+show_percentage = false
+script = ExtResource("1_ixjcj")
+
+[node name="Mp_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 90.0
+offset_bottom = 12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_5hwc3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3d1pf")
+value = 40.0
+show_percentage = false

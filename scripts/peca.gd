@@ -1,20 +1,27 @@
-class_name Peça extends Node2D
+extends Node2D
 
 @onready var tile_map = $"../../TileMap"
 @onready var sprite = $Sprite
 @onready var hp_bar = $Sprite/Hp_bar
 @onready var timer = $Timer
+@onready var glow = $SkillTimerParticles
+@onready var skill_timer = $SkillTimer
+
 
 @export var is_player_team := true
 @export var movement_speed : float = 0.5
 @export var range := 1
 @export var basic_attack_damage := 1
 @export var ability_damage := 5
+@export var bonus_ability_damage := 15
 @export var attack_speed := 0.5
 @export var health := 5
 @export var mana := 0
-@export var mana_max := 50
+@export var mana_max := 25
+@export var mouse_over: bool = false
+@export var skill_click: bool = false
 
+var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var astar_grid: AStarGrid2D
 var is_attacking: bool
@@ -55,8 +62,7 @@ func _ready():
 			
 			if tile_data == null or not tile_data.get_custom_data("andavel"):
 				astar_grid.set_point_solid(tile_position)
-	
-	
+
 func _process(delta):
 	if peça_alvo == null:
 		atribuir_alvo()
@@ -68,8 +74,6 @@ func _process(delta):
 		return
 		
 	move()
-	
-	
 func move():
 	var path
 	
@@ -173,20 +177,28 @@ func basic_attack():
 	instance.set_damage(basic_attack_damage)
 	instance.set_is_player_team(is_player_team)
 	add_child(instance)
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
 	mana = min(mana_max, mana + 2)
 	hp_bar._set_mana(mana)
 
+func _quick_time_event():
+	skill_click = true
+	glow.emitting = true
+
 func ability():
+	#await get_tree().create_timer(0.6).timeout
 	mana = 0
 	hp_bar._set_mana(mana)
 	instance = HIT_BOX.instantiate()
 	instance.global_position = peça_alvo.global_position - global_position
-	instance.set_damage(ability_damage)
+	if is_player_team && bonus_dmg:
+		instance.set_damage(bonus_ability_damage)
+	else:
+		instance.set_damage(ability_damage)
 	instance.set_is_player_team(is_player_team)
 	add_child(instance)
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
 	
 func take_damage(damage):
@@ -198,14 +210,43 @@ func take_damage(damage):
 	if health <= 0:
 		queue_free()
 
-
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("attacks") and is_player_team != area.is_player_team:
 		take_damage(area.damage)
 
-
 func _on_timer_timeout():
+	if is_player_team:
+		print("Timer de ataques acabou")
 	if mana == mana_max:
-		ability()
+		if is_player_team:
+			skill_timer.start()
+			_quick_time_event()
+		else:
+			ability()
 	else:
 		basic_attack()
+
+#Check click
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed && skill_click && mouse_over == true:
+				bonus_dmg = true
+				print("Clicked bonus damage")
+
+func check_mouse_over(viewport, event, shape_idx):
+	mouse_over = true
+
+func check_mouse_exited():
+	pass # Replace with function body.
+
+
+func _on_skill_timer_timeout():
+	print("Timer Skill timer acabou")
+	skill_click = false
+	ability()
+	if bonus_dmg == true:
+		print("Bonus damage!")
+		bonus_dmg = false
+	skill_timer.stop()
+	#ability()

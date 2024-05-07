@@ -45,6 +45,7 @@ func _unhandled_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed && qte_allowed && mouse_over == true:
 				bonus_dmg = true
+				print("clicou")
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	mouse_over = true

@@ -52,8 +52,13 @@ wait_time = 0.3
 one_shot = true
 autostart = true
 
+[node name="TimerAfterSkill" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SkillTimer" to="." method="_on_skill_timer_timeout"]
+[connection signal="timeout" from="TimerAfterSkill" to="." method="_on_timer_after_skill_timeout"]

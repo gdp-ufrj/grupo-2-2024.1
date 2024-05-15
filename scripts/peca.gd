@@ -6,6 +6,8 @@ extends Node2D
 @onready var timer = $Timer
 @onready var glow = $SkillTimerParticles
 @onready var skill_timer = $SkillTimer
+@onready var timer_after_skill = $TimerAfterSkill
+@onready var piece = $"."
 
 
 @export var is_player_team := true
@@ -201,7 +203,7 @@ func ability():
 	add_child(instance)
 	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
-	
+	timer_after_skill.start()
 	
 func take_damage(damage):
 	health -= damage
@@ -235,19 +237,13 @@ func _unhandled_input(event):
 					if mouse_over == true: 
 						if skill_click && try_skill_click == false:
 							bonus_dmg = true
-							print("Clicked bonus damage!!!!!!!!!") 
+							print(piece.name, " Bonus damage!!!!!!!!!") 
 						else:
-							print("errou o click")
+							print(piece.name, " Errou o click")
 							try_skill_click = true
 
 func check_mouse_over(viewport, event, shape_idx):
 	mouse_over = true
-	print("entrou")
-
-func check_mouse_exited():
-	print("saiuuuuuuuuu")
-	mouse_over = false
-
 
 func _on_skill_timer_timeout():
 	#print("Timer Skill timer acabou")
@@ -261,5 +257,10 @@ func _on_skill_timer_timeout():
 
 
 func _on_area_2d_mouse_exited():
-	print("saiuuuuuuuuu")
 	mouse_over = false
+
+
+func _on_timer_after_skill_timeout():
+	if try_skill_click == true:
+		try_skill_click = false
+		print(piece.name, ": Perdão aplicado")

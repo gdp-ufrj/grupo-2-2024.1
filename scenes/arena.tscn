@@ -154,20 +154,32 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 
 [node name="Peça1" parent="Peças Aliadas" instance=ExtResource("2_ehdfg")]
-position = Vector2(-24, 40)
+position = Vector2(-40, 8)
+range = 3
+health = 50
+
+[node name="Peça4" parent="Peças Aliadas" instance=ExtResource("2_ehdfg")]
+position = Vector2(11, 40)
 range = 3
 health = 50
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
 [node name="Peça2" parent="Peças Inimigas" instance=ExtResource("2_ehdfg")]
-position = Vector2(40, -40)
+position = Vector2(40, 24)
 is_player_team = false
 attack_speed = 1.0
-health = 50
+health = 99
+mana = 10
+
+[node name="Peça3" parent="Peças Inimigas" instance=ExtResource("2_ehdfg")]
+position = Vector2(-24, -24)
+is_player_team = false
+attack_speed = 1.0
+health = 99
 mana = 10
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(18, 18)
+position = Vector2(19, 1)
 scale = Vector2(1e-05, 0.92)
-zoom = Vector2(17, 17)
+zoom = Vector2(10, 10)

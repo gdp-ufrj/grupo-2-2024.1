@@ -13,13 +13,14 @@ extends Node2D
 @export var range := 1
 @export var basic_attack_damage := 1
 @export var ability_damage := 5
-@export var bonus_ability_damage := 15
+@export var bonus_ability_damage := 35
 @export var attack_speed := 0.5
 @export var health := 5
 @export var mana := 0
 @export var mana_max := 25
 @export var mouse_over: bool = false
 @export var skill_click: bool = false
+@export var try_skill_click:bool = false
 
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
@@ -201,6 +202,7 @@ func ability():
 	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
 	
+	
 func take_damage(damage):
 	health -= damage
 	hp_bar._set_heath(health)
@@ -215,8 +217,6 @@ func _on_area_2d_area_entered(area):
 		take_damage(area.damage)
 
 func _on_timer_timeout():
-	if is_player_team:
-		print("Timer de ataques acabou")
 	if mana == mana_max:
 		if is_player_team:
 			skill_timer.start()
@@ -230,23 +230,36 @@ func _on_timer_timeout():
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed && skill_click && mouse_over == true:
-				bonus_dmg = true
-				print("Clicked bonus damage")
+			if is_player_team:
+				if event.pressed:
+					if mouse_over == true: 
+						if skill_click && try_skill_click == false:
+							bonus_dmg = true
+							print("Clicked bonus damage!!!!!!!!!") 
+						else:
+							print("errou o click")
+							try_skill_click = true
 
 func check_mouse_over(viewport, event, shape_idx):
 	mouse_over = true
+	print("entrou")
 
 func check_mouse_exited():
-	pass # Replace with function body.
+	print("saiuuuuuuuuu")
+	mouse_over = false
 
 
 func _on_skill_timer_timeout():
-	print("Timer Skill timer acabou")
+	#print("Timer Skill timer acabou")
 	skill_click = false
 	ability()
 	if bonus_dmg == true:
-		print("Bonus damage!")
 		bonus_dmg = false
 	skill_timer.stop()
+	try_skill_click = false
 	#ability()
+
+
+func _on_area_2d_mouse_exited():
+	print("saiuuuuuuuuu")
+	mouse_over = false

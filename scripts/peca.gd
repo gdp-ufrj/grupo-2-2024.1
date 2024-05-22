@@ -1,7 +1,6 @@
 extends Node2D
 
 class_name peça
-#SAI SATANAS
 #DEUS É BOM E O DIABO NÃO PRESTA
 @onready var tile_map = $"../../TileMap"
 @onready var sprite = $Sprite

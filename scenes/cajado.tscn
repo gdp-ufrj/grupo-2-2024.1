@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://mu4kv7hdc60s"]
 
-[ext_resource type="Script" path="res://GodScripts/cajado.gd" id="1_y0wpw"]
+[ext_resource type="Script" path="res://scripts/cajado.gd" id="1_y0wpw"]
 [ext_resource type="Texture2D" uid="uid://bqloi0w0mbwa3" path="res://assets/sprites/tile_0084.png" id="2_8q86j"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_1m5mp"]
 

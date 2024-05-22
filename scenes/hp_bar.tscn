@@ -21,7 +21,8 @@ offset_bottom = 8.0
 scale = Vector2(0.16, 0.2)
 theme_override_styles/background = SubResource("StyleBoxFlat_60nka")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5yeqg")
-value = 80.0
+max_value = 1000.0
+value = 1000.0
 show_percentage = false
 script = ExtResource("1_ixjcj")
 
@@ -32,5 +33,5 @@ offset_right = 90.0
 offset_bottom = 12.0
 theme_override_styles/background = SubResource("StyleBoxFlat_5hwc3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3d1pf")
-value = 40.0
+value = 100.0
 show_percentage = false

@@ -155,20 +155,12 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 
 [node name="Sabre" parent="Peças Aliadas" instance=ExtResource("2_ptd5h")]
-position = Vector2(8, -8)
-
-[node name="Sabre2" parent="Peças Aliadas" instance=ExtResource("2_ptd5h")]
-position = Vector2(-40, 40)
+position = Vector2(56, 40)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
-[node name="Cajado" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(8, 24)
-is_player_team = false
-
 [node name="Cajado2" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(8, 40)
-is_player_team = false
+position = Vector2(56, 8)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(19, 1)

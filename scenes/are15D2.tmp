@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=5 format=3 uid="uid://cnpwje68p4eih"]
 
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
-[ext_resource type="PackedScene" uid="uid://bm32smbdn4okg" path="res://scenes/sabre.tscn" id="2_ptd5h"]
 [ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/cajado.tscn" id="3_oc84a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
@@ -154,20 +153,13 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 
-[node name="Sabre" parent="Peças Aliadas" instance=ExtResource("2_ptd5h")]
-position = Vector2(8, -8)
-
-[node name="Sabre2" parent="Peças Aliadas" instance=ExtResource("2_ptd5h")]
+[node name="Cajado" parent="Peças Aliadas" instance=ExtResource("3_oc84a")]
 position = Vector2(-40, 40)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
-[node name="Cajado" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(8, 24)
-is_player_team = false
-
 [node name="Cajado2" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(8, 40)
+position = Vector2(-40, -40)
 is_player_team = false
 
 [node name="Camera" type="Camera2D" parent="."]

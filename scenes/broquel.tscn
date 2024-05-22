@@ -1,23 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://dupxgblmp522f"]
+[gd_scene load_steps=6 format=3 uid="uid://njteghi8uikb"]
 
-[ext_resource type="Script" path="res://Scripts/peca.gd" id="1_u5x6x"]
-[ext_resource type="Texture2D" uid="uid://helnbs1r1osm" path="res://assets/sprites/tile_0096.png" id="2_ruxph"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_47r7p"]
+[ext_resource type="Script" path="res://Scripts/broquel.gd" id="1_u5vvo"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="2_4qh05"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_naj3v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_ruxph")
+atlas = ExtResource("2_4qh05")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[node name="Peça" type="Node2D" groups=["peças"]]
-script = ExtResource("1_u5x6x")
+[node name="Broquel" type="Node2D" groups=["peças"]]
+script = ExtResource("1_u5vvo")
+is_player_team = null
+movement_speed = null
+range = null
+basic_attack_damage = null
+ability_damage = null
+bonus_ability_damage = null
+attack_speed = null
+health = null
+mana = null
+mana_max = null
+mana_por_hit = null
+mouse_over = null
+skill_click = null
+try_skill_click = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_47r7p")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_naj3v")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0

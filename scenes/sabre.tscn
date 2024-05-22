@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dupxgblmp522f"]
+[gd_scene load_steps=6 format=3 uid="uid://bm32smbdn4okg"]
 
-[ext_resource type="Script" path="res://Scripts/peca.gd" id="1_u5x6x"]
-[ext_resource type="Texture2D" uid="uid://helnbs1r1osm" path="res://assets/sprites/tile_0096.png" id="2_ruxph"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_47r7p"]
+[ext_resource type="Script" path="res://Scripts/sabre.gd" id="1_8duqf"]
+[ext_resource type="Texture2D" uid="uid://daj2vy0qjrh1x" path="res://assets/sprites/tile_0097.png" id="2_qcvnk"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_o0f7i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_ruxph")
+atlas = ExtResource("2_qcvnk")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[node name="Peça" type="Node2D" groups=["peças"]]
-script = ExtResource("1_u5x6x")
+[node name="Sabre" type="Node2D" groups=["peças"]]
+script = ExtResource("1_8duqf")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_47r7p")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_o0f7i")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0

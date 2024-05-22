@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm32smbdn4okg"]
 
-[ext_resource type="Script" path="res://Scripts/sabre.gd" id="1_8duqf"]
+[ext_resource type="Script" path="res://GodScripts/sabre.gd" id="1_8duqf"]
 [ext_resource type="Texture2D" uid="uid://daj2vy0qjrh1x" path="res://assets/sprites/tile_0097.png" id="2_qcvnk"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_o0f7i"]
 

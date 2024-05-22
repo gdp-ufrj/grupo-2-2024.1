@@ -9,6 +9,7 @@ func _ready():
 	ability_damage = 10
 	mana_por_hit = 25
 	
+	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana)
@@ -67,10 +68,11 @@ func habilidade():
 	instance.set_is_player_team(is_player_team)
 	
 	if is_player_team && bonus_dmg:
-		instance.set_damage(ability_damage + 10)
-		mana = 30
+		bonus_skill_effect()
+	elif is_player_team == false && enemy_bonus_dmg_randomizer():
+		bonus_skill_effect()
 	else:
-		instance.set_damage(ability_damage)
+		skill_effect()
 	
 	var tile_position = peça_alvo.global_position - diff
 	var ocupado: bool = false
@@ -86,3 +88,6 @@ func habilidade():
 	add_child(instance)
 	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
+
+func bonus_skill_effect():
+	instance.set_damage(ability_damage + bonus)

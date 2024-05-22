@@ -16,6 +16,7 @@ class_name peça
 @export var range := 1
 @export var basic_attack_damage := 1
 @export var ability_damage := 5
+@export var bonus := 10
 @export var bonus_ability_damage := 35
 @export var attack_speed := 0.5
 @export var health := 5
@@ -214,3 +215,16 @@ func _on_timer_after_skill_timeout():
 		
 func habilidade():
 	pass
+
+func enemy_bonus_dmg_randomizer():
+	var randnumb = randi() % 100+1
+	if randnumb > 5:
+		return true
+	else:
+		return false
+
+func skill_effect():
+	instance.set_damage(ability_damage)
+
+func bonus_skill_effect():
+	instance.set_damage(ability_damage + bonus)

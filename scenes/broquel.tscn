@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://njteghi8uikb"]
 
-[ext_resource type="Script" path="res://scripts/broquel.gd" id="1_u5vvo"]
+[ext_resource type="Script" path="res://Scripts/broquel.gd" id="1_dokdh"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="2_4qh05"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_naj3v"]
 
@@ -12,21 +12,7 @@ region = Rect2(0, 0, 16, 16)
 size = Vector2(16, 16)
 
 [node name="Broquel" type="Node2D" groups=["peças"]]
-script = ExtResource("1_u5vvo")
-is_player_team = null
-movement_speed = null
-range = null
-basic_attack_damage = null
-ability_damage = null
-bonus_ability_damage = null
-attack_speed = null
-health = null
-mana = null
-mana_max = null
-mana_por_hit = null
-mouse_over = null
-skill_click = null
-try_skill_click = null
+script = ExtResource("1_dokdh")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")

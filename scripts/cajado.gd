@@ -4,9 +4,9 @@ func _ready():
 	health = 90
 	mana_max = 90
 	mana = 0
-	range = 1
-	basic_attack_damage = 10
-	ability_damage = 25
+	range = 2
+	basic_attack_damage = 8
+	ability_damage = 10
 	mana_por_hit = 30
 	bonus = 0
 	
@@ -15,6 +15,11 @@ func _ready():
 	hp_bar.init_health_and_mana(health, mana_max, mana)
 	
 	timer_speed = 1 / attack_speed
+	
+	if is_player_team:
+		direçao = Vector2(0, -16)
+	else:
+		direçao = Vector2(0, 16)
 	
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
@@ -70,7 +75,6 @@ func habilidade():
 	if is_player_team && bonus_dmg:
 		bonus_skill_effect()
 	elif is_player_team == false && enemy_bonus_dmg_randomizer():
-		print("enemybonusdmgtiminggg")
 		bonus_skill_effect()
 	else:
 		skill_effect()

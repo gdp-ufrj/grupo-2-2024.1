@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://mu4kv7hdc60s"]
+[gd_scene load_steps=6 format=3 uid="uid://c70ykydw55bw3"]
 
-[ext_resource type="Script" path="res://Scripts/cajado.gd" id="1_do744"]
-[ext_resource type="Texture2D" uid="uid://bqloi0w0mbwa3" path="res://assets/sprites/tile_0084.png" id="2_8q86j"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_1m5mp"]
+[ext_resource type="Script" path="res://Scripts/flecha.gd" id="1_4b7s2"]
+[ext_resource type="Texture2D" uid="uid://6o7ybc71fq3f" path="res://assets/sprites/tile_0088.png" id="2_qitxw"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_r2cdm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_8q86j")
+atlas = ExtResource("2_qitxw")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[node name="Cajado" type="Node2D" groups=["peças"]]
-script = ExtResource("1_do744")
+[node name="Flecha" type="Node2D" groups=["peças"]]
+script = ExtResource("1_4b7s2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_1m5mp")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_r2cdm")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0

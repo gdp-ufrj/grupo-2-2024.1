@@ -17,7 +17,6 @@ class_name peça
 @export var basic_attack_damage := 1
 @export var ability_damage := 5
 @export var bonus := 10
-@export var bonus_ability_damage := 35
 @export var attack_speed := 0.5
 @export var health := 5
 @export var mana := 0
@@ -38,6 +37,7 @@ var peça_alvo
 var instance
 var timer_speed
 var occupied_posions
+var direçao
 
 func move():
 	var path
@@ -100,6 +100,8 @@ func move():
 	global_position = tile_map.map_to_local(path[0])
 	sprite.global_position = original_position
 	
+	direçao = global_position - original_position
+	
 	is_moving = true
 
 func _physics_process(delta):
@@ -113,6 +115,8 @@ func _physics_process(delta):
 
 func atribuir_alvo():
 	var menor_distancia = 100000
+	
+	peças = get_tree().get_nodes_in_group("peças")
 	
 	for p in peças:
 		if p == self:

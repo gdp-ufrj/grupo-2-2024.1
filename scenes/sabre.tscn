@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm32smbdn4okg"]
 
-[ext_resource type="Script" path="res://scripts/sabre.gd" id="1_8duqf"]
+[ext_resource type="Script" path="res://Scripts/sabre.gd" id="1_7554w"]
 [ext_resource type="Texture2D" uid="uid://daj2vy0qjrh1x" path="res://assets/sprites/tile_0097.png" id="2_qcvnk"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_o0f7i"]
 
@@ -12,7 +12,7 @@ region = Rect2(0, 0, 16, 16)
 size = Vector2(16, 16)
 
 [node name="Sabre" type="Node2D" groups=["peças"]]
-script = ExtResource("1_8duqf")
+script = ExtResource("1_7554w")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")

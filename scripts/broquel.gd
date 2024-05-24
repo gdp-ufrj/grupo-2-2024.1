@@ -3,17 +3,23 @@ extends peça
 func _ready():
 	health = 120
 	mana_max = 100
-	mana = 100
+	mana = 0
 	range = 1
 	basic_attack_damage = 6
 	ability_damage = 10
 	mana_por_hit = 20
+	bonus = 8
 	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana)
 	
 	timer_speed = 1 / attack_speed
+	
+	if is_player_team:
+		direçao = Vector2(0, -16)
+	else:
+		direçao = Vector2(0, 16)
 	
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
@@ -53,6 +59,10 @@ func _process(delta):
 func habilidade():
 	var maior_distancia = 0
 	
+	var peça_alvo_anterior = peça_alvo
+	
+	peças = get_tree().get_nodes_in_group("peças")
+	
 	for p in peças:
 		if p == self:
 			continue
@@ -73,30 +83,41 @@ func habilidade():
 						peça_alvo = p
 					elif p.global_position.x > peça_alvo.global_position.x and p.global_position.y == peça_alvo.global_position.y:
 						peça_alvo = p
+
+	var tile_position = global_position + direçao
+	var ocupado: bool = false
+		
+	for op in occupied_posions:
+		if op == tile_map.local_to_map(tile_position) or peça_alvo_anterior.global_position == tile_position:
+			ocupado = true
 	
-	var diff = global_position - peça_alvo.global_position
+	if tile_position.x <= 56 and tile_position.x >= -40 and tile_position.y <= 40 and tile_position.y >= -40 and not ocupado:
+		tile_position = global_position - direçao
+		for op in occupied_posions:
+			if op == tile_map.local_to_map(tile_position) or peça_alvo_anterior.global_position == tile_position:
+				ocupado = true
+		if ocupado:
+			tile_position = global_position + Vector2(direçao.y, direçao.x)
+		for op in occupied_posions:
+			if op == tile_map.local_to_map(tile_position) or peça_alvo_anterior.global_position == tile_position:
+				ocupado = true
+		if ocupado:
+			tile_position = global_position - Vector2(direçao.y, direçao.x)
 	
-	if diff.x > diff.y:
-		diff = Vector2(16, 0)
-	elif diff.x < 0 and diff.y == 0:
-		diff = Vector2(-16, 0)
-	elif diff.x == 0 and diff.y > 0:
-		diff = Vector2(0, 16)
-	elif diff.x == 0 and diff.y < 0:
-		diff = Vector2(0, -16)
+	peça_alvo.global_position = tile_position
+	
 	
 	instance = HIT_BOX.instantiate()
-	#instance.global_position = peça_alvo.global_position - global_position
+	instance.global_position = peça_alvo.global_position - global_position
 	instance.set_is_player_team(is_player_team)
 	
 	if is_player_team && bonus_dmg:
-		instance.set_damage(ability_damage + 8)
-		mana = 30
+		bonus_skill_effect()
+	elif is_player_team == false && enemy_bonus_dmg_randomizer():
+		print("enemybonusdmgtiminggg")
+		bonus_skill_effect()
 	else:
-		instance.set_damage(ability_damage)
-	
-	#if is_player_team
-	
+		skill_effect()
 	
 	add_child(instance)
 	await get_tree().create_timer(0.1).timeout

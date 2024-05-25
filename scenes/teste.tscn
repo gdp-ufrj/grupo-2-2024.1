@@ -1,0 +1,283 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2yqo2rtdl5br"]
+
+[ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="1_65u0d"]
+[ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="2_mtxbs"]
+[ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/cajado.tscn" id="3_x0s76"]
+[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/flecha.tscn" id="4_ppdw0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
+texture = ExtResource("2_mtxbs")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+0:4/0/custom_data_0 = true
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_75lfw"]
+custom_data_layer_0/name = "andavel"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_lptho")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Plataforms" type="Node2D" parent="."]
+position = Vector2(1, 1)
+
+[node name="Drop" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-41, 39)
+
+[node name="Drop2" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-25, 39)
+
+[node name="Drop3" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-9, 39)
+
+[node name="Drop4" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(7, 39)
+
+[node name="Drop5" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(23, 39)
+
+[node name="Drop6" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(39, 39)
+
+[node name="Drop7" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(55, 39)
+
+[node name="Drop8" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-41, 23)
+
+[node name="Drop9" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-25, 23)
+
+[node name="Drop10" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-9, 23)
+
+[node name="Drop11" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(7, 23)
+
+[node name="Drop12" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(23, 23)
+
+[node name="Drop13" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(39, 23)
+
+[node name="Drop14" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(55, 23)
+
+[node name="Drop15" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-41, 7)
+
+[node name="Drop16" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-25, 7)
+
+[node name="Drop17" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(-9, 7)
+
+[node name="Drop18" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(7, 7)
+
+[node name="Drop19" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(23, 7)
+
+[node name="Drop20" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(39, 7)
+
+[node name="Drop21" parent="Plataforms" instance=ExtResource("1_65u0d")]
+z_index = 10
+position = Vector2(55, 7)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(16, -4)
+ignore_rotation = false
+zoom = Vector2(6, 6)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_75lfw")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 4, -131072, 0, 4, 65536, 0, 4, -196608, 0, 4, 131072, 0, 4, 131071, 0, 4, 196607, 0, 4, -65537, 0, 4, -131073, 0, 4, -196607, 0, 4, -131071, 0, 4, -65535, 0, 4, 1, 0, 4, 65537, 0, 4, 131073, 0, 4, -131074, 0, 4, -65538, 0, 4, -2, 0, 4, 65534, 0, 4, 131070, 0, 4, 196606, 0, 4, -131075, 0, 4, -65539, 0, 4, -3, 0, 4, 65533, 0, 4, 131069, 0, 4, 196605, 0, 4, -196606, 0, 4, -131070, 0, 4, -65534, 0, 4, 2, 0, 4, 65538, 0, 4, 131074, 0, 4, -196605, 0, 4, -131069, 0, 4, -65533, 0, 4, 3, 0, 4, 65539, 0, 4, 131075, 0, 4, 262141, 131072, 2, -262147, 131072, 0, -262146, 131072, 0, -262145, 131072, 0, -327678, 131072, 0, -327680, 131072, 0, -327679, 131072, 0, -327677, 131072, 0, 262142, 131072, 2, 262143, 131072, 2, 196608, 131072, 2, 196609, 131072, 2, 196610, 131072, 2, 196611, 131072, 2, 196612, 196608, 2, 262140, 65536, 2, 196604, 65536, 1, 131068, 65536, 1, 65532, 65536, 1, -4, 65536, 1, -65540, 65536, 1, -131076, 65536, 1, 131076, 196608, 1, 65540, 196608, 1, 4, 196608, 1, -65532, 196608, 1, -131068, 196608, 1, -196604, 196608, 1, -327676, 196608, 0, -262148, 65536, 0, -262140, 196608, 1, -196612, 65536, 1, -196611, 131072, 1, -196610, 131072, 1, -196609, 131072, 1, -262144, 131072, 1, -262143, 131072, 1, -262142, 131072, 1, -262141, 131072, 1, -327675, 0, 0, -262139, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 0, 0, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 0, 0, 327675, 0, 0, 262139, 0, 0, 196603, 0, 0, 131067, 0, 0, 65531, 0, 0, -5, 0, 0, -65541, 0, 0, -131077, 0, 0, -196613, 0, 0, -262149, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393222, 589824, 5, -458746, 720896, 5, -393221, 655360, 5, -393220, 655360, 5, -393219, 655360, 5, -393218, 655360, 5, -393217, 655360, 5, -458752, 655360, 5, -458751, 655360, 5, -458750, 655360, 5, -458749, 655360, 5, -458748, 655360, 5, -458747, 655360, 5, -393210, 720896, 6, -327674, 720896, 6, -262138, 720896, 6, -196602, 720896, 6, -131066, 720896, 6, -65530, 720896, 6, 6, 720896, 6, 65542, 720896, 6, 131078, 720896, 6, 196614, 720896, 6, -327686, 589824, 6, -262150, 589824, 6, -196614, 589824, 6, -131078, 589824, 6, -65542, 720896, 6, -6, 589824, 6, 65530, 589824, 6, 131066, 589824, 6, 196602, 589824, 6, 262138, 589824, 6, 327674, 589824, 6, 262150, 720896, 6, 393210, 589824, 7, 327686, 720896, 7, 393211, 655360, 7, 393212, 655360, 7, 393213, 655360, 7, 393214, 655360, 7, 393215, 655360, 7, 327680, 655360, 7, 327681, 655360, 7, 327682, 655360, 7, 327683, 655360, 7, 327684, 655360, 7, 327685, 655360, 7)
+
+[node name="Peças Aliadas" type="Node2D" parent="."]
+process_priority = 11
+
+[node name="Cajado" parent="Peças Aliadas" instance=ExtResource("3_x0s76")]
+z_index = 11
+position = Vector2(-46, 69)
+
+[node name="Cajado2" parent="Peças Aliadas" instance=ExtResource("3_x0s76")]
+z_index = 11
+position = Vector2(-28, 69)
+
+[node name="Cajado3" parent="Peças Aliadas" instance=ExtResource("3_x0s76")]
+z_index = 11
+position = Vector2(-11, 69)
+
+[node name="Cajado4" parent="Peças Aliadas" instance=ExtResource("3_x0s76")]
+z_index = 11
+position = Vector2(6, 69)
+
+[node name="Cajado5" parent="Peças Aliadas" instance=ExtResource("3_x0s76")]
+z_index = 11
+position = Vector2(24, 69)
+
+[node name="Peças Inimigas" type="Node2D" parent="."]
+
+[node name="Flecha" parent="Peças Inimigas" instance=ExtResource("4_ppdw0")]
+z_index = 11
+position = Vector2(-40, -40)
+is_player_team = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -286.0
+offset_top = -1.0
+offset_right = -128.0
+offset_bottom = 27.0
+color = Color(0, 0, 0, 0.662745)

@@ -26,6 +26,15 @@ class_name peça
 @export var skill_click: bool = false
 @export var try_skill_click:bool = false
 
+
+###############Drag and drop###############
+var occupying := false
+var draggable = false
+var is_inside_dropable = false
+var body_ref
+var offset: Vector2
+var initialPos: Vector2
+###########################################
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var astar_grid: AStarGrid2D
@@ -103,6 +112,7 @@ func move():
 	direçao = global_position - original_position
 	
 	is_moving = true
+
 
 func _physics_process(delta):
 	if is_moving:
@@ -189,7 +199,7 @@ func _unhandled_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if is_player_team:
 				if event.pressed:
-					if mouse_over == true: 
+					if mouse_over == true && Global.combat_started: 
 						if skill_click && try_skill_click == false:
 							bonus_dmg = true
 							print(piece.name, " Bonus damage!!!!!!!!!") 
@@ -200,6 +210,7 @@ func _unhandled_input(event):
 func check_mouse_over(viewport, event, shape_idx):
 	mouse_over = true
 
+
 func _on_skill_timer_timeout():
 	skill_click = false
 	ability()
@@ -208,8 +219,7 @@ func _on_skill_timer_timeout():
 	skill_timer.stop()
 	try_skill_click = false
 
-func _on_area_2d_mouse_exited():
-	mouse_over = false
+
 
 
 func _on_timer_after_skill_timeout():
@@ -232,3 +242,51 @@ func skill_effect():
 
 func bonus_skill_effect():
 	instance.set_damage(ability_damage + bonus)
+
+func _on_area_2d_mouse_exited():
+	mouse_over = false
+
+
+func check_drag():
+		if draggable:
+			if Input.is_action_just_pressed("click"):
+				initialPos = global_position
+				offset = get_global_mouse_position() - global_position
+				Global.is_dragging = true
+			if Input.is_action_pressed("click"):
+				global_position = get_global_mouse_position() - offset
+			elif Input.is_action_just_released("click"):
+				Global.is_dragging = false
+				var tween = get_tree().create_tween()
+				if is_inside_dropable:
+					
+					print("porra")
+					tween.tween_property(self,"position", body_ref.position,0.2).set_ease(Tween.EASE_OUT)
+				else:
+					tween.tween_property(self,"global_position", initialPos,0.2).set_ease(Tween.EASE_OUT)
+
+
+
+func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):
+	if body.is_in_group('dropable'):
+		is_inside_dropable = true
+		body.modulate = Color(Color.REBECCA_PURPLE,1)
+		body_ref = body
+
+
+func _on_drag_drop_area_2d_body_exited(body):
+	if body.is_in_group("dropable"):
+		is_inside_dropable = false
+		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+
+
+func _on_drag_drop_area_2d_mouse_entered():
+	if not Global.is_dragging && is_player_team && Global.combat_started == false:
+		draggable = true
+		scale = Vector2(1.05,1.05)
+
+
+func _on_drag_drop_area_2d_mouse_exited():
+	if not Global.is_dragging && is_player_team && Global.combat_started == false:
+		draggable = false
+		scale = Vector2(1,1)

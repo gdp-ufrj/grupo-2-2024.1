@@ -9,7 +9,6 @@ func _ready():
 	ability_damage = 10
 	mana_por_hit = 30
 	bonus = 0
-	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana)
@@ -45,16 +44,20 @@ func _ready():
 				astar_grid.set_point_solid(tile_position)
 
 func _process(delta):
-	if peça_alvo == null:
-		atribuir_alvo()
-	
-	if is_moving:
-		return
+	if Global.combat_started == false:
+		if is_player_team:
+			check_drag()
+	else:
+		if peça_alvo == null:
+			atribuir_alvo()
 		
-	if is_attacking:
-		return
-		
-	move()
+		if is_moving:
+			return
+			
+		if is_attacking:
+			return
+			
+		move()
 
 func habilidade():
 	var diff = global_position - peça_alvo.global_position

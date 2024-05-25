@@ -15,6 +15,10 @@ run/main_scene="res://scenes/arena.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Global="*res://saintholyscripts/global.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -22,6 +26,23 @@ window/size/viewport_height=1080
 window/size/window_width_override=800
 window/size/window_height_override=600
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/mjpeg_quality=0.7
+movie_writer/movie_file="F:/GodotRecordings/recording.avi"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

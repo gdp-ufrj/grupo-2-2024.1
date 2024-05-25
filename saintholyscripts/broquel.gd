@@ -45,17 +45,20 @@ func _ready():
 				astar_grid.set_point_solid(tile_position)
 
 func _process(delta):
-	if peça_alvo == null:
-		atribuir_alvo()
-	
-	if is_moving:
-		return
+	if Global.combat_started == false:
+		if is_player_team:
+			check_drag()
+	else:
+		if peça_alvo == null:
+			atribuir_alvo()
 		
-	if is_attacking:
-		return
-		
-	move()
-
+		if is_moving:
+			return
+			
+		if is_attacking:
+			return
+			
+		move()
 func habilidade():
 	var maior_distancia = 0
 	

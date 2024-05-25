@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c70ykydw55bw3"]
 
-[ext_resource type="Script" path="res://Scripts/flecha.gd" id="1_4b7s2"]
+[ext_resource type="Script" path="res://saintholyscripts/flecha.gd" id="1_4b7s2"]
 [ext_resource type="Texture2D" uid="uid://6o7ybc71fq3f" path="res://assets/sprites/tile_0088.png" id="2_qitxw"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_r2cdm"]
 

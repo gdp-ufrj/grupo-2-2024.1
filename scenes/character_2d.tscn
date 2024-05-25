@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwubmegoj0ww0"]
 
-[ext_resource type="Script" path="res://scripts/timer.gd" id="1_86vcq"]
+[ext_resource type="Script" path="res://saintholyscripts/timer.gd" id="1_86vcq"]
 [ext_resource type="Texture2D" uid="uid://dn1bfka2piwsw" path="res://assets/sprites/icon.svg" id="2_ypsdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13gu2"]

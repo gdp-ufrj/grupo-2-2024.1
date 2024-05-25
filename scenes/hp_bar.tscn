@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4f6vd5arei61"]
 
-[ext_resource type="Script" path="res://scripts/hp_bar.gd" id="1_ixjcj"]
+[ext_resource type="Script" path="res://saintholyscripts/hp_bar.gd" id="1_4ri7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60nka"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
@@ -24,7 +24,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5yeqg")
 max_value = 1000.0
 value = 1000.0
 show_percentage = false
-script = ExtResource("1_ixjcj")
+script = ExtResource("1_4ri7i")
 
 [node name="Mp_bar" type="ProgressBar" parent="."]
 layout_mode = 0

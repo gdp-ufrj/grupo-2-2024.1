@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://njteghi8uikb"]
 
-[ext_resource type="Script" path="res://Scripts/broquel.gd" id="1_dokdh"]
+[ext_resource type="Script" path="res://saintholyscripts/broquel.gd" id="1_dokdh"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="2_4qh05"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_naj3v"]
 

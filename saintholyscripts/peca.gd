@@ -34,7 +34,9 @@ var is_inside_dropable = false
 var body_ref
 var offset: Vector2
 var initialPos: Vector2
-###########################################
+var current_plataform
+var old_plataform
+############^^^Drag and drop^^^############
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var astar_grid: AStarGrid2D
@@ -257,13 +259,23 @@ func check_drag():
 				global_position = get_global_mouse_position() - offset
 			elif Input.is_action_just_released("click"):
 				Global.is_dragging = false
-				var tween = get_tree().create_tween()
+				#var tween = get_tree().create_tween()
 				if is_inside_dropable:
-					
-					print("porra")
-					tween.tween_property(self,"position", body_ref.position,0.2).set_ease(Tween.EASE_OUT)
+					if body_ref.is_in_group("free"):
+						old_plataform = current_plataform
+						current_plataform = body_ref
+						if current_plataform!= old_plataform && old_plataform!=null:
+							old_plataform.remove_from_group("occupied")
+							old_plataform.add_to_group("free")
+							current_plataform.add_to_group("occupied")
+							current_plataform.remove_from_group("free")
+							go_to_new_plataform()
+					elif body_ref.is_in_group("occupied"):
+						back_to_old_plataform()
+						print("Ocupado amigo!")
 				else:
-					tween.tween_property(self,"global_position", initialPos,0.2).set_ease(Tween.EASE_OUT)
+					print("Posição inválida")
+					back_to_old_plataform()
 
 
 
@@ -272,6 +284,7 @@ func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):
 		is_inside_dropable = true
 		body.modulate = Color(Color.REBECCA_PURPLE,1)
 		body_ref = body
+		old_plataform = body_ref
 
 
 func _on_drag_drop_area_2d_body_exited(body):
@@ -290,3 +303,19 @@ func _on_drag_drop_area_2d_mouse_exited():
 	if not Global.is_dragging && is_player_team && Global.combat_started == false:
 		draggable = false
 		scale = Vector2(1,1)
+
+func check_current():
+	print(body_ref,"está no grupo free:",body_ref.is_in_group("free"))
+	print(body_ref,"está no grupo occupied:",body_ref.is_in_group("occupied"))
+
+func check_old_plataform():
+	print("old plataform:",old_plataform,"está no grupo free:",old_plataform.is_in_group("free"))
+	print("old plataform:",old_plataform,"está no grupo occupied:",old_plataform.is_in_group("occupied"))
+
+func back_to_old_plataform():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"global_position", initialPos,0.1).set_ease(Tween.EASE_OUT)
+
+func go_to_new_plataform():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"position", body_ref.position,0.1).set_ease(Tween.EASE_OUT)

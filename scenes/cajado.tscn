@@ -11,7 +11,9 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ev3i2"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ophnc"]
+radius = 10.5894
+height = 24.7087
 
 [node name="Cajado" type="Node2D" groups=["peças"]]
 script = ExtResource("1_do744")
@@ -33,10 +35,10 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_dl35f")
 
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
+scale = Vector2(0.566603, 0.566603)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
-scale = Vector2(0.486418, 0.486418)
-shape = SubResource("CircleShape2D_ev3i2")
+shape = SubResource("CapsuleShape2D_ophnc")
 debug_color = Color(0.901961, 0.211765, 0.568627, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]

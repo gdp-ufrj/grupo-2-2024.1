@@ -11,8 +11,8 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5mlu"]
-size = Vector2(8, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhin4"]
+radius = 6.08276
 
 [node name="Broquel" type="Node2D" groups=["peças"]]
 script = ExtResource("1_dokdh")
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_dl35f")
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
-shape = SubResource("RectangleShape2D_x5mlu")
+shape = SubResource("CircleShape2D_mhin4")
 debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]

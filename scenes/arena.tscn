@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=9 format=3 uid="uid://cnpwje68p4eih"]
 
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
-[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/flecha.tscn" id="2_kcurx"]
-[ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/cajado.tscn" id="3_oc84a"]
-[ext_resource type="PackedScene" uid="uid://njteghi8uikb" path="res://scenes/broquel.tscn" id="4_ltrdk"]
+[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/flecha_Turonia.tscn" id="2_kcurx"]
+[ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/broquel_Solesia.tscn" id="2_si6hv"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="6_4tnw0"]
 
@@ -161,33 +160,13 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 z_index = 2
 
-[node name="Cajado" parent="Peças Aliadas" instance=ExtResource("3_oc84a")]
-position = Vector2(-40, 67)
-
-[node name="Cajado2" parent="Peças Aliadas" instance=ExtResource("3_oc84a")]
-position = Vector2(-24, 67)
-
-[node name="Cajado3" parent="Peças Aliadas" instance=ExtResource("3_oc84a")]
-position = Vector2(-8, 67)
-
-[node name="Flecha" parent="Peças Aliadas" instance=ExtResource("2_kcurx")]
-position = Vector2(8, 67)
-
-[node name="Broquel" parent="Peças Aliadas" instance=ExtResource("4_ltrdk")]
-position = Vector2(24, 67)
+[node name="Broquel_Turonia" parent="Peças Aliadas" instance=ExtResource("2_si6hv")]
+position = Vector2(-40, 8)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
 [node name="Flecha" parent="Peças Inimigas" instance=ExtResource("2_kcurx")]
 position = Vector2(-40, -40)
-is_player_team = false
-
-[node name="Cajado" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(8, -39)
-is_player_team = false
-
-[node name="Cajado2" parent="Peças Inimigas" instance=ExtResource("3_oc84a")]
-position = Vector2(24, -24)
 is_player_team = false
 
 [node name="Camera" type="Camera2D" parent="."]

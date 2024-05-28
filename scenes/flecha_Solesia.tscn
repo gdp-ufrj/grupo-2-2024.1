@@ -1,27 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://mu4kv7hdc60s"]
+[gd_scene load_steps=7 format=3 uid="uid://bd01n4xnh0kxk"]
 
-[ext_resource type="Script" path="res://saintholyscripts/cajado.gd" id="1_do744"]
-[ext_resource type="Texture2D" uid="uid://bqloi0w0mbwa3" path="res://assets/sprites/tile_0084.png" id="2_8q86j"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_1m5mp"]
+[ext_resource type="Script" path="res://saintholyscripts/flecha_Solesia.gd" id="1_d782s"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="2_bth5y"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_ak2hu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_8q86j")
+atlas = ExtResource("2_bth5y")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ophnc"]
-radius = 10.5894
-height = 24.7087
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2kbc"]
+radius = 6.0
+height = 14.0
 
-[node name="Cajado" type="Node2D" groups=["peças"]]
-script = ExtResource("1_do744")
+[node name="Flecha_Solesia" type="Node2D" groups=["peças"]]
+script = ExtResource("1_d782s")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_1m5mp")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_ak2hu")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0
@@ -35,14 +35,14 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_dl35f")
 
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
-scale = Vector2(0.566603, 0.566603)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
-shape = SubResource("CapsuleShape2D_ophnc")
-debug_color = Color(0.901961, 0.211765, 0.568627, 0.419608)
+shape = SubResource("CapsuleShape2D_u2kbc")
+debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
+one_shot = true
 
 [node name="SkillTimerParticles" type="CPUParticles2D" parent="."]
 z_index = 6
@@ -67,10 +67,7 @@ wait_time = 0.7
 one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="body_entered" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_exited"]

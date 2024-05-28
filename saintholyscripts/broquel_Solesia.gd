@@ -1,14 +1,15 @@
 extends peça
 
 func _ready():
-	health = 80
-	mana_max = 70
-	mana = 60
-	range = 3
-	basic_attack_damage = 12
-	ability_damage = 20
-	mana_por_hit = 10
-	bonus = 0
+	health = 120
+	mana_max = 100
+	mana = 80
+	range = 1
+	basic_attack_damage = 6
+	ability_damage = 6
+	mana_por_hit = 20
+	bonus = 6
+	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana)
@@ -49,6 +50,8 @@ func _process(delta):
 			check_drag()
 	else:
 		if peça_alvo == null:
+			is_attacking = false
+			timer.stop()
 			atribuir_alvo()
 		
 		if is_moving:
@@ -60,20 +63,10 @@ func _process(delta):
 		move()
 
 func habilidade():
-	var diff = global_position - peça_alvo.global_position
-	
-	if diff.x > 0 and diff.y == 0:
-		diff = Vector2(16, 0)
-	elif diff.x < 0 and diff.y == 0:
-		diff = Vector2(-16, 0)
-	elif diff.x == 0 and diff.y > 0:
-		diff = Vector2(0, 16)
-	elif diff.x == 0 and diff.y < 0:
-		diff = Vector2(0, -16)
-		
 	instance = HIT_BOX.instantiate()
-	instance.global_position -= diff
+	instance.global_position = peça_alvo.global_position - global_position
 	instance.set_is_player_team(is_player_team)
+	instance.set_is_burn(true)
 	
 	if is_player_team && bonus_dmg:
 		bonus_skill_effect()
@@ -82,15 +75,7 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	#bug
 	add_child(instance)
-	
-	for x in 10:
-		await get_tree().create_timer(0.1).timeout
-		instance.global_position -= diff
-
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(3).timeout
 	instance.queue_free()
-
-func bonus_skill_effect():
-	instance.set_damage(ability_damage + bonus)
-	mana = 30

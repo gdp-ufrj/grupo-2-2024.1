@@ -1,14 +1,14 @@
 extends peça
 
 func _ready():
-	health = 100
+	health = 90
 	mana_max = 100
 	mana = 0
-	range = 1
-	basic_attack_damage = 8
+	range = 3
+	basic_attack_damage = 6
 	ability_damage = 10
-	mana_por_hit = 25
-	
+	mana_por_hit = 50
+	bonus = 4
 	
 	peças = get_tree().get_nodes_in_group("peças")
 	
@@ -50,6 +50,8 @@ func _process(delta):
 			check_drag()
 	else:
 		if peça_alvo == null:
+			is_attacking = false
+			timer.stop()
 			atribuir_alvo()
 		
 		if is_moving:
@@ -61,17 +63,31 @@ func _process(delta):
 		move()
 
 func habilidade():
-	var diff = global_position - peça_alvo.global_position
+	var maior_distancia = 0
 	
-	if diff.x > 0 and diff.y == 0:
-		diff = Vector2(16, 0)
-	elif diff.x < 0 and diff.y == 0:
-		diff = Vector2(-16, 0)
-	elif diff.x == 0 and diff.y > 0:
-		diff = Vector2(0, 16)
-	elif diff.x == 0 and diff.y < 0:
-		diff = Vector2(0, -16)
+	peças = get_tree().get_nodes_in_group("peças")
 	
+	for p in peças:
+		if p == self:
+			continue
+		
+		if p.is_player_team == !is_player_team:
+			var distance = global_position.distance_to(p.global_position)
+			if distance > maior_distancia:
+				maior_distancia = distance
+				peça_alvo = p
+			elif distance == maior_distancia:
+				if is_player_team:
+					if p.global_position.y < peça_alvo.global_position.y:
+						peça_alvo = p
+					elif p.global_position.x < peça_alvo.global_position.x and p.global_position.y == peça_alvo.global_position.y:
+						peça_alvo = p
+				else:
+					if p.global_position.y > peça_alvo.global_position.y:
+						peça_alvo = p
+					elif p.global_position.x > peça_alvo.global_position.x and p.global_position.y == peça_alvo.global_position.y:
+						peça_alvo = p
+		
 	instance = HIT_BOX.instantiate()
 	instance.global_position = peça_alvo.global_position - global_position
 	instance.set_is_player_team(is_player_team)
@@ -83,20 +99,6 @@ func habilidade():
 	else:
 		skill_effect()
 	
-	var tile_position = peça_alvo.global_position - diff
-	var ocupado: bool = false
-	
-	for op in occupied_posions:
-		if op == tile_map.local_to_map(tile_position):
-			ocupado = true
-	
-	if tile_position.x <= 56 and tile_position.x >= -40 and tile_position.y <= 40 and tile_position.y >= -40 and not ocupado:
-		instance.global_position = global_position - peça_alvo.global_position
-		global_position = tile_position
-		
 	add_child(instance)
 	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
-
-func bonus_skill_effect():
-	instance.set_damage(ability_damage + bonus)

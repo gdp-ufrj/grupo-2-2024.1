@@ -1,27 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://c70ykydw55bw3"]
+[gd_scene load_steps=7 format=3 uid="uid://njteghi8uikb"]
 
-[ext_resource type="Script" path="res://saintholyscripts/flecha.gd" id="1_4b7s2"]
-[ext_resource type="Texture2D" uid="uid://6o7ybc71fq3f" path="res://assets/sprites/tile_0088.png" id="2_qitxw"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_r2cdm"]
+[ext_resource type="Script" path="res://saintholyscripts/broquel_Turonia.gd" id="1_t3uun"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="2_nv8yy"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_6rhxe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_qitxw")
+atlas = ExtResource("2_nv8yy")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2kbc"]
-radius = 6.0
-height = 14.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhin4"]
+radius = 6.08276
 
-[node name="Flecha" type="Node2D" groups=["peças"]]
-script = ExtResource("1_4b7s2")
+[node name="Broquel_Turonia" type="Node2D" groups=["peças"]]
+script = ExtResource("1_t3uun")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_r2cdm")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_6rhxe")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0
@@ -37,7 +36,7 @@ shape = SubResource("RectangleShape2D_dl35f")
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
-shape = SubResource("CapsuleShape2D_u2kbc")
+shape = SubResource("CircleShape2D_mhin4")
 debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]

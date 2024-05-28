@@ -8,7 +8,8 @@ func _ready():
 	basic_attack_damage = 8
 	ability_damage = 10
 	mana_por_hit = 30
-	bonus = 0
+	bonus = 8
+	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana)
@@ -49,6 +50,8 @@ func _process(delta):
 			check_drag()
 	else:
 		if peça_alvo == null:
+			is_attacking = false
+			timer.stop()
 			atribuir_alvo()
 		
 		if is_moving:
@@ -83,13 +86,8 @@ func habilidade():
 		skill_effect()
 	
 	add_child(instance)
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.001).timeout
 	instance.global_position -= diff
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.001).timeout
 	instance.global_position -= diff
-	await get_tree().create_timer(0.1).timeout
 	instance.queue_free()
-
-func bonus_skill_effect():
-	instance.set_damage(ability_damage + bonus)
-	mana = 30

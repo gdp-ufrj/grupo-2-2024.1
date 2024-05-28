@@ -3,7 +3,7 @@ extends peça
 func _ready():
 	health = 120
 	mana_max = 100
-	mana = 0
+	mana = 100
 	range = 1
 	basic_attack_damage = 6
 	ability_damage = 10
@@ -50,6 +50,8 @@ func _process(delta):
 			check_drag()
 	else:
 		if peça_alvo == null:
+			is_attacking = false
+			timer.stop()
 			atribuir_alvo()
 		
 		if is_moving:
@@ -59,6 +61,7 @@ func _process(delta):
 			return
 			
 		move()
+
 func habilidade():
 	var maior_distancia = 0
 	
@@ -117,7 +120,6 @@ func habilidade():
 	if is_player_team && bonus_dmg:
 		bonus_skill_effect()
 	elif is_player_team == false && enemy_bonus_dmg_randomizer():
-		print("enemybonusdmgtiminggg")
 		bonus_skill_effect()
 	else:
 		skill_effect()

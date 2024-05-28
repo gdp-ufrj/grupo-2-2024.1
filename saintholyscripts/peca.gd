@@ -1,7 +1,9 @@
 extends Node2D
 
 class_name peça
+
 #DEUS É BOM E O DIABO NÃO PRESTA
+
 @onready var tile_map = $"../../TileMap"
 @onready var sprite = $Sprite
 @onready var hp_bar = $Sprite/Hp_bar
@@ -26,7 +28,6 @@ class_name peça
 @export var skill_click: bool = false
 @export var try_skill_click:bool = false
 
-
 ###############Drag and drop###############
 var occupying := false
 var draggable = false
@@ -37,6 +38,7 @@ var initialPos: Vector2
 var current_plataform
 var old_plataform
 ############^^^Drag and drop^^^############
+
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var astar_grid: AStarGrid2D
@@ -51,6 +53,8 @@ var occupied_posions
 var direçao
 
 func move():
+	peças = get_tree().get_nodes_in_group("peças")
+	
 	var path
 	
 	occupied_posions = []
@@ -125,6 +129,7 @@ func _physics_process(delta):
 		
 		is_moving = false
 
+
 func atribuir_alvo():
 	var menor_distancia = 100000
 	
@@ -153,6 +158,7 @@ func atribuir_alvo():
 						
 	print(peça_alvo)
 
+
 func basic_attack():
 	instance = HIT_BOX.instantiate()
 	instance.global_position = peça_alvo.global_position - global_position
@@ -164,16 +170,19 @@ func basic_attack():
 	mana = min(mana_max, mana + mana_por_hit)
 	hp_bar._set_mana(mana)
 
+
 func _quick_time_event():
 	skill_click = true
 	glow.emitting = true
+
 
 func ability():
 	mana = 0
 	hp_bar._set_mana(mana)
 	habilidade()
 	timer_after_skill.start()
-	
+
+
 func take_damage(damage):
 	health -= damage
 	hp_bar._set_heath(health)
@@ -181,9 +190,13 @@ func take_damage(damage):
 	if health <= 0:
 		queue_free()
 
+
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("attacks") and is_player_team != area.is_player_team:
+	if area.is_in_group("attacks") and is_player_team != area.is_player_team and area.is_burn == false:
 		take_damage(area.damage)
+	elif area.is_in_group("attacks") and is_player_team != area.is_player_team and area.is_burn == true:
+		queimar(area.damage, 3)
+
 
 func _on_timer_timeout():
 	if mana == mana_max:
@@ -194,6 +207,7 @@ func _on_timer_timeout():
 			ability()
 	else:
 		basic_attack()
+
 
 #Check click
 func _unhandled_input(event):
@@ -209,6 +223,7 @@ func _unhandled_input(event):
 							print(piece.name, " Errou o click")
 							try_skill_click = true
 
+
 func check_mouse_over(viewport, event, shape_idx):
 	mouse_over = true
 
@@ -222,15 +237,23 @@ func _on_skill_timer_timeout():
 	try_skill_click = false
 
 
-
-
 func _on_timer_after_skill_timeout():
 	if try_skill_click == true:
 		try_skill_click = false
 		print(piece.name, ": Perdão aplicado")
-		
+
+
 func habilidade():
 	pass
+
+
+func queimar(dano, tempo):
+	var _dano : float = dano/5.0
+	var _tempo : float = tempo/5.0
+	for x in 5:
+		take_damage(_dano)
+		await get_tree().create_timer(_tempo).timeout
+
 
 func enemy_bonus_dmg_randomizer():
 	var randnumb = randi() % 100+1
@@ -239,11 +262,14 @@ func enemy_bonus_dmg_randomizer():
 	else:
 		return false
 
+
 func skill_effect():
 	instance.set_damage(ability_damage)
 
+
 func bonus_skill_effect():
 	instance.set_damage(ability_damage + bonus)
+
 
 func _on_area_2d_mouse_exited():
 	mouse_over = false
@@ -276,7 +302,6 @@ func check_drag():
 				else:
 					print("Posição inválida")
 					back_to_old_plataform()
-
 
 
 func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):

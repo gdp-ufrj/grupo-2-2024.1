@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bky1ecxcmmlv0"]
+[gd_scene load_steps=7 format=3 uid="uid://cg8ohnm22wnsp"]
 
-[ext_resource type="Script" path="res://saintholyscripts/cajado_Solesia.gd" id="1_1desq"]
-[ext_resource type="Texture2D" uid="uid://dfeof38fhxofo" path="res://assets/sprites/tile_0100.png" id="2_1bp3g"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_rm0gn"]
+[ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/cajado_Solesia_Inimigo.gd" id="1_tt2qm"]
+[ext_resource type="Texture2D" uid="uid://dfeof38fhxofo" path="res://assets/sprites/tile_0100.png" id="2_2xysr"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_4uso3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_1bp3g")
+atlas = ExtResource("2_2xysr")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
@@ -15,13 +15,13 @@ size = Vector2(16, 16)
 radius = 10.5894
 height = 24.7087
 
-[node name="Cajado_Solesia" type="Node2D" groups=["peças"]]
-script = ExtResource("1_1desq")
+[node name="Cajado_Solesia_Inimigo" type="Node2D" groups=["peças"]]
+script = ExtResource("1_tt2qm")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_rm0gn")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_4uso3")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0

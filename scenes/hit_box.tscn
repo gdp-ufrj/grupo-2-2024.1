@@ -14,3 +14,7 @@ script = ExtResource("1_wx8m8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d17vb")
 debug_color = Color(0.913725, 0.247059, 0.4, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

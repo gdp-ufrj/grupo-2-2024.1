@@ -13,20 +13,20 @@ class_name peça
 @onready var timer_after_skill = $TimerAfterSkill
 @onready var piece = $"."
 
-@export var is_player_team := true
-@export var movement_speed : float = 0.5
-@export var range := 1
-@export var basic_attack_damage := 1
-@export var ability_damage := 5
-@export var bonus := 10
-@export var attack_speed := 0.5
-@export var health := 5
-@export var mana := 0
-@export var mana_max := 25
-@export var mana_por_hit := 10
-@export var mouse_over: bool = false
-@export var skill_click: bool = false
-@export var try_skill_click:bool = false
+var is_player_team : bool
+var movement_speed : float = 0.5
+var range := 1
+var basic_attack_damage := 1
+var ability_damage := 5
+var bonus := 10
+var attack_speed := 0.5
+var health := 5
+var mana := 0
+var mana_max := 25
+var mana_por_hit := 10
+var mouse_over: bool = false
+var skill_click: bool = false
+var try_skill_click:bool = false
 
 ###############Drag and drop###############
 var occupying := false
@@ -51,6 +51,63 @@ var instance
 var timer_speed
 var occupied_posions
 var direçao
+
+func _ready():
+	peças = get_tree().get_nodes_in_group("peças")
+	
+	print(self.name, " ", is_player_team)
+	
+	timer_speed = 1 / attack_speed
+	
+	hp_bar.init_health_and_mana(health, mana_max, mana, is_player_team)
+	
+	if is_player_team:
+		direçao = Vector2(0, -16)
+	else:
+		direçao = Vector2(0, 16)
+	
+	astar_grid = AStarGrid2D.new()
+	astar_grid.region = tile_map.get_used_rect()
+	astar_grid.cell_size = Vector2(16, 16)
+	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
+	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	astar_grid.update()
+	
+	var region_size = astar_grid.region.size
+	var region_position = astar_grid.region.position
+	
+	for x in region_size.x:
+		for y in region_size.y:
+			var tile_position = Vector2i(
+				x + region_position.x,
+				y + region_position.y
+			)
+			
+			var tile_data = tile_map.get_cell_tile_data(0, tile_position)
+			
+			if tile_data == null or not tile_data.get_custom_data("andavel"):
+				astar_grid.set_point_solid(tile_position)
+
+
+func _process(delta):
+	if Global.combat_started == false:
+		if is_player_team:
+			check_drag()
+	else:
+		if peça_alvo == null:
+			is_attacking = false
+			timer.stop()
+			atribuir_alvo()
+		
+		if is_moving:
+			return
+			
+		if is_attacking:
+			return
+			
+		move()
+
 
 func move():
 	peças = get_tree().get_nodes_in_group("peças")
@@ -154,9 +211,7 @@ func atribuir_alvo():
 					if p.global_position.y > peça_alvo.global_position.y:
 						peça_alvo = p
 					elif p.global_position.x > peça_alvo.global_position.x and p.global_position.y == peça_alvo.global_position.y:
-						peça_alvo = p	
-						
-	print(peça_alvo)
+						peça_alvo = p
 
 
 func basic_attack():
@@ -164,9 +219,8 @@ func basic_attack():
 	instance.global_position = peça_alvo.global_position - global_position
 	instance.set_damage(basic_attack_damage)
 	instance.set_is_player_team(is_player_team)
+	instance.set_timer(0.1)
 	add_child(instance)
-	await get_tree().create_timer(0.1).timeout
-	instance.queue_free()
 	mana = min(mana_max, mana + mana_por_hit)
 	hp_bar._set_mana(mana)
 

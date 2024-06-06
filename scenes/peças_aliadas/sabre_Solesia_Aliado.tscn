@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfa0beat016ua"]
 
-[ext_resource type="Script" path="res://saintholyscripts/sabre_Solesia.gd" id="1_207ug"]
+[ext_resource type="Script" path="res://saintholyscripts/script_peças_aliadas/sabre_Solesia_Aliado.gd" id="1_207ug"]
 [ext_resource type="Texture2D" uid="uid://dxqlx8jnssnah" path="res://assets/sprites/tile_0098.png" id="2_rvrt5"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_fn3h0"]
 
@@ -14,7 +14,7 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtjks"]
 radius = 4.0
 
-[node name="Sabre_Solesia" type="Node2D" groups=["peças"]]
+[node name="Sabre_Solesia_Aliado" type="Node2D" groups=["peças"]]
 script = ExtResource("1_207ug")
 
 [node name="Sprite" type="Sprite2D" parent="."]

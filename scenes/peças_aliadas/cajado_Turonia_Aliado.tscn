@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://mu4kv7hdc60s"]
+
+[ext_resource type="Script" path="res://saintholyscripts/script_peças_aliadas/cajado_Turonia_Aliado.gd" id="1_p0jqk"]
+[ext_resource type="Texture2D" uid="uid://bqloi0w0mbwa3" path="res://assets/sprites/tile_0084.png" id="2_byx8t"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_hjkeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
+atlas = ExtResource("2_byx8t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
+size = Vector2(16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ophnc"]
+radius = 10.5894
+height = 24.7087
+
+[node name="Cajado_Turonia_Aliado" type="Node2D" groups=["peças"]]
+script = ExtResource("1_p0jqk")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_0sk80")
+
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_hjkeu")]
+offset_left = -7.0
+offset_top = -10.0
+offset_right = 83.0
+offset_bottom = -2.0
+scale = Vector2(0.16, 0.16)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="Colisor" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dl35f")
+
+[node name="DragDropArea2D" type="Area2D" parent="Area2D"]
+scale = Vector2(0.566603, 0.566603)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
+shape = SubResource("CapsuleShape2D_ophnc")
+debug_color = Color(0.901961, 0.211765, 0.568627, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="SkillTimerParticles" type="CPUParticles2D" parent="."]
+z_index = 6
+scale = Vector2(-0.134924, -0.133046)
+emitting = false
+amount = 100
+lifetime = 0.06
+one_shot = true
+speed_scale = 0.6
+fixed_fps = 60
+emission_shape = 1
+emission_sphere_radius = 65.06
+gravity = Vector2(0, -980)
+
+[node name="SkillTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.3
+one_shot = true
+
+[node name="TimerAfterSkill" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SkillTimer" to="." method="_on_skill_timer_timeout"]
+[connection signal="timeout" from="TimerAfterSkill" to="." method="_on_timer_after_skill_timeout"]

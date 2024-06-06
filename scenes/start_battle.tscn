@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtf5ehpmq3aq7"]
 
-[ext_resource type="Script" path="res://scenes/startbattle.gd" id="1_urad1"]
+[ext_resource type="Script" path="res://saintholyscripts/startbattle.gd" id="1_urad1"]
 
 [node name="StartBattle" type="Button"]
 offset_left = -20.0

@@ -18,10 +18,12 @@ func _set_mana(mana):
 	mp_bar.value = mana
 	
 
-func init_health_and_mana(_health, _mana_max, _mana):
+func init_health_and_mana(_health, _mana_max, _mana, is_player_team):
 	health = _health
 	max_value = health
 	value = health
 	mp_bar.max_value = _mana_max
 	mp_bar.value = _mana
-	print(mp_bar.value)
+	print(is_player_team)
+	if is_player_team == true:
+		get("theme_override_styles/fill").bg_color = Color("f85e58")

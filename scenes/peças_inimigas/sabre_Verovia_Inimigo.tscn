@@ -1,26 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://njteghi8uikb"]
+[gd_scene load_steps=7 format=3 uid="uid://cuopgedrhracd"]
 
-[ext_resource type="Script" path="res://saintholyscripts/broquel_Turonia.gd" id="1_t3uun"]
-[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="2_nv8yy"]
-[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_6rhxe"]
+[ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/sabre_Verovia_Inimigo.gd" id="1_8im7a"]
+[ext_resource type="Texture2D" uid="uid://diq55wbya52an" path="res://assets/sprites/tile_0099.png" id="2_dlhcl"]
+[ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_ogpep"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
-atlas = ExtResource("2_nv8yy")
+atlas = ExtResource("2_dlhcl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl35f"]
 size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mhin4"]
-radius = 6.08276
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtjks"]
+radius = 4.0
 
-[node name="Broquel_Turonia" type="Node2D" groups=["peças"]]
-script = ExtResource("1_t3uun")
+[node name="Sabre_Verovia_Inimigo" type="Node2D" groups=["peças"]]
+script = ExtResource("1_8im7a")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_0sk80")
 
-[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_6rhxe")]
+[node name="Hp_bar" parent="Sprite" instance=ExtResource("3_ogpep")]
 offset_left = -7.0
 offset_top = -10.0
 offset_right = 83.0
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_dl35f")
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
-shape = SubResource("CircleShape2D_mhin4")
+shape = SubResource("CircleShape2D_xtjks")
 debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]

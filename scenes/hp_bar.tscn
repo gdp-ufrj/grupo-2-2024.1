@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60nka"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yeqg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swmcy"]
 bg_color = Color(0.294118, 0.701961, 0.286275, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hwc3"]
@@ -20,7 +20,7 @@ offset_right = 90.0
 offset_bottom = 8.0
 scale = Vector2(0.16, 0.2)
 theme_override_styles/background = SubResource("StyleBoxFlat_60nka")
-theme_override_styles/fill = SubResource("StyleBoxFlat_5yeqg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_swmcy")
 max_value = 1000.0
 value = 1000.0
 show_percentage = false

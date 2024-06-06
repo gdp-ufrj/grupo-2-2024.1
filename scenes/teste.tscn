@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="1_65u0d"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="2_mtxbs"]
-[ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/cajado_Turonia.tscn" id="3_x0s76"]
-[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/flecha_Turonia.tscn" id="4_ppdw0"]
+[ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/peças_aliadas/cajado_Turonia_Aliado.tscn" id="3_x0s76"]
+[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="4_ppdw0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("2_mtxbs")

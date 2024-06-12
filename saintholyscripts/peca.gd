@@ -29,6 +29,8 @@ var skill_click: bool = false
 var try_skill_click:bool = false
 
 ###############Drag and drop###############
+var another_piece_present := false
+var being_dragged:= false
 var occupying := false
 var draggable = false
 var is_inside_dropable = false
@@ -53,6 +55,7 @@ var occupied_posions
 var direçao
 
 func _ready():
+	
 	peças = get_tree().get_nodes_in_group("peças")
 	
 	print(self.name, " ", is_player_team)
@@ -251,7 +254,6 @@ func _on_area_2d_area_entered(area):
 	elif area.is_in_group("attacks") and is_player_team != area.is_player_team and area.is_burn == true:
 		queimar(area.damage, 3)
 
-
 func _on_timer_timeout():
 	if mana == mana_max:
 		if is_player_team:
@@ -269,10 +271,10 @@ func _unhandled_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if is_player_team:
 				if event.pressed:
-					if mouse_over == true && Global.combat_started: 
+					if mouse_over == true && Global.combat_started:
 						if skill_click && try_skill_click == false:
 							bonus_dmg = true
-							print(piece.name, " Bonus damage!!!!!!!!!") 
+							print(piece.name, " Bonus damage!!!!!!!!!")
 						else:
 							print(piece.name, " Errou o click")
 							try_skill_click = true
@@ -330,32 +332,42 @@ func _on_area_2d_mouse_exited():
 
 
 func check_drag():
-		if draggable:
-			if Input.is_action_just_pressed("click"):
-				initialPos = global_position
-				offset = get_global_mouse_position() - global_position
-				Global.is_dragging = true
-			if Input.is_action_pressed("click"):
-				global_position = get_global_mouse_position() - offset
-			elif Input.is_action_just_released("click"):
-				Global.is_dragging = false
-				#var tween = get_tree().create_tween()
-				if is_inside_dropable:
-					if body_ref.is_in_group("free"):
-						old_plataform = current_plataform
-						current_plataform = body_ref
-						if current_plataform!= old_plataform && old_plataform!=null:
-							old_plataform.remove_from_group("occupied")
-							old_plataform.add_to_group("free")
-							current_plataform.add_to_group("occupied")
-							current_plataform.remove_from_group("free")
-							go_to_new_plataform()
-					elif body_ref.is_in_group("occupied"):
-						back_to_old_plataform()
-						print("Ocupado amigo!")
+	if draggable:
+		if Input.is_action_just_pressed("click"):
+			initialPos = global_position
+			offset = get_global_mouse_position() - global_position
+			Global.is_dragging = true
+			being_dragged = true
+		if Input.is_action_pressed("click") && being_dragged:
+			global_position = get_global_mouse_position() - offset
+		elif Input.is_action_just_released("click"):
+			Global.is_dragging = false
+			being_dragged = false
+			if is_inside_dropable:
+				if body_ref.is_in_group("free") && another_piece_present== false:
+					body_ref.add_to_group("occupied")
+					body_ref.remove_from_group("free")
+					if old_plataform== null:
+						pass
+					else:
+						old_plataform.add_to_group("free")
+						old_plataform.remove_from_group("occupied")
+					go_to_new_plataform()
 				else:
-					print("Posição inválida")
+					#if body_ref.is_in_group("bench"):
+						#if body_ref.is_in_group("occupied") && body_ref.first_time:
+							#if old_plataform==null:
+								#pass
+							#elif old_plataform.is_in_group("bench"):
+								#back_to_old_plataform()
+						#else:
+							##go_to_new_plataform()
+					#else:
 					back_to_old_plataform()
+					print("Ocupado amigo!")
+			else:
+				print("Posição inválida")
+				back_to_old_plataform()
 
 
 func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):
@@ -363,10 +375,9 @@ func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):
 		is_inside_dropable = true
 		body.modulate = Color(Color.REBECCA_PURPLE,1)
 		body_ref = body
-		old_plataform = body_ref
 
 
-func _on_drag_drop_area_2d_body_exited(body):
+func _on_drag_drop_area_2d_body_exited(body:StaticBody2D):
 	if body.is_in_group("dropable"):
 		is_inside_dropable = false
 		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
@@ -390,6 +401,8 @@ func check_current():
 func check_old_plataform():
 	print("old plataform:",old_plataform,"está no grupo free:",old_plataform.is_in_group("free"))
 	print("old plataform:",old_plataform,"está no grupo occupied:",old_plataform.is_in_group("occupied"))
+	#if old_plataform == null:
+		#old plataform =
 
 func back_to_old_plataform():
 	var tween = get_tree().create_tween()
@@ -398,3 +411,7 @@ func back_to_old_plataform():
 func go_to_new_plataform():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position", body_ref.position,0.1).set_ease(Tween.EASE_OUT)
+	old_plataform = body_ref
+
+
+

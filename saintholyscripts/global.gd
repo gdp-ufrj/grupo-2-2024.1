@@ -4,7 +4,8 @@ var combat_started:= false
 var is_dragging = false
 var combat_ended = false
 var player_team_winner : bool
-
+var pieces:= 0
+var someone_is_dragging:= false
 func _process(delta):
 	var peças = get_tree().get_nodes_in_group("peças")
 	var time_player = []

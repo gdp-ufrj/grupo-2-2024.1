@@ -30,7 +30,7 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/mjpeg_quality=0.7
-movie_writer/movie_file="F:/GodotRecordings/recording.avi"
+movie_writer/movie_file="C:/Users/shaia/Documents/GitHub/grupo2-pp24-1/recording.avi"
 
 [input]
 

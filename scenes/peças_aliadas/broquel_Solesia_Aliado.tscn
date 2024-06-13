@@ -27,15 +27,15 @@ offset_right = 83.0
 offset_bottom = -2.0
 scale = Vector2(0.16, 0.16)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Colisor" type="Area2D" parent="."]
 collision_mask = 3
 
-[node name="Colisor" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisor"]
 shape = SubResource("RectangleShape2D_dl35f")
 
-[node name="DragDropArea2D" type="Area2D" parent="Area2D"]
+[node name="DragDropArea2D" type="Area2D" parent="Colisor"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisor/DragDropArea2D"]
 shape = SubResource("CircleShape2D_mhin4")
 debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
@@ -64,13 +64,13 @@ one_shot = true
 wait_time = 0.7
 one_shot = true
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_exited"]
+[connection signal="area_entered" from="Colisor" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Colisor" to="." method="check_mouse_over"]
+[connection signal="mouse_exited" from="Colisor" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Colisor/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_entered"]
+[connection signal="body_exited" from="Colisor/DragDropArea2D" to="." method="_on_drag_drop_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Colisor/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Colisor/DragDropArea2D" to="." method="_on_drag_drop_area_2d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SkillTimer" to="." method="_on_skill_timer_timeout"]
 [connection signal="timeout" from="TimerAfterSkill" to="." method="_on_timer_after_skill_timeout"]

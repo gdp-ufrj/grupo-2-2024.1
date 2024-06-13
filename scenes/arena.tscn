@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="2_5dtd2"]
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="4_61gsc"]
 [ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="4_ejjac"]
-[ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="4_woh8a"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="6_4tnw0"]
+[ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="6_firyx"]
 [ext_resource type="PackedScene" uid="uid://njteghi8uikb" path="res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn" id="6_rix2n"]
-[ext_resource type="PackedScene" uid="uid://bclwdk2473ws" path="res://scenes/peças_inimigas/broquel_Turonia_Inimigo.tscn" id="10_7n5hp"]
+[ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="7_nmmbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("1_brhi6")
@@ -165,24 +165,27 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 z_index = 2
 
 [node name="Broquel_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("6_rix2n")]
-position = Vector2(-40, 8)
+position = Vector2(-40, 72)
 
 [node name="Broquel_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("2_5dtd2")]
-position = Vector2(40, 8)
+position = Vector2(-24, 72)
 
 [node name="Flecha_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("4_ejjac")]
-position = Vector2(-40, 40)
+position = Vector2(-8, 72)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
-[node name="Broquel_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("4_woh8a")]
-position = Vector2(-24, -8)
-
 [node name="Cajado_Verovia_Inimigo" parent="Peças Inimigas" instance=ExtResource("4_61gsc")]
+position = Vector2(-40, -40)
+
+[node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("6_firyx")]
 position = Vector2(56, -40)
 
-[node name="Broquel_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("10_7n5hp")]
-position = Vector2(56, -8)
+[node name="Cajado_Verovia_Inimigo2" parent="Peças Inimigas" instance=ExtResource("4_61gsc")]
+position = Vector2(-8, -24)
+
+[node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("7_nmmbx")]
+position = Vector2(8, -40)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)
@@ -205,73 +208,94 @@ z_index = 1
 
 [node name="Drop" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(-40, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop2" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(-24, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop3" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(-8, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop4" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(8, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop5" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(24, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop6" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(40, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop7" parent="BattlePositions/Line1" instance=ExtResource("5_g8txu")]
 position = Vector2(56, 40)
+scale = Vector2(0.3, 0.3)
 
 [node name="Line2" type="Node2D" parent="BattlePositions"]
 
 [node name="Drop8" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(-40, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop9" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(-24, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop10" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(-8, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop11" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(8, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop12" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(24, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop13" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(40, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop14" parent="BattlePositions/Line2" instance=ExtResource("5_g8txu")]
 position = Vector2(56, 24)
+scale = Vector2(0.3, 0.3)
 
 [node name="Line3" type="Node2D" parent="BattlePositions"]
 
 [node name="Drop15" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(-40, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop16" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(-24, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop17" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(-8, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop18" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(8, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop19" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(24, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop20" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(40, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop21" parent="BattlePositions/Line3" instance=ExtResource("5_g8txu")]
 position = Vector2(56, 8)
+scale = Vector2(0.3, 0.3)
 
 [node name="Bench" type="Area2D" parent="."]
-position = Vector2(0, 67)
+position = Vector2(0, 69)
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bench"]
@@ -306,37 +330,44 @@ text = "   Posicione todas as peças
 [node name="Drop" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-40, 68)
+position = Vector2(-40, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop2" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-24, 68)
+position = Vector2(-24, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop3" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-8, 68)
+position = Vector2(-8, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop4" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(8, 68)
+position = Vector2(8, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop5" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(23, 68)
+position = Vector2(24, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop6" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(39, 68)
+position = Vector2(40, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="Drop7" parent="BenchPositions" instance=ExtResource("5_g8txu")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(55, 68)
+position = Vector2(56, 72)
+scale = Vector2(0.3, 0.3)
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

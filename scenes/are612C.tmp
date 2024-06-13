@@ -1,14 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=18 format=3 uid="uid://cnpwje68p4eih"]
 
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
 [ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="2_5dtd2"]
-[ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="4_61gsc"]
+[ext_resource type="PackedScene" uid="uid://clswipo8h1dkn" path="res://scenes/peças_aliadas/cajado_Verovia_Aliado.tscn" id="3_iu2o2"]
 [ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="4_ejjac"]
-[ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="4_woh8a"]
+[ext_resource type="PackedScene" uid="uid://bd01n4xnh0kxk" path="res://scenes/peças_aliadas/flecha_Solesia_Aliado.tscn" id="5_33qby"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="6_4tnw0"]
 [ext_resource type="PackedScene" uid="uid://njteghi8uikb" path="res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn" id="6_rix2n"]
+[ext_resource type="PackedScene" uid="uid://cg8ohnm22wnsp" path="res://scenes/peças_inimigas/cajado_Solesia_Inimigo.tscn" id="7_ffpxs"]
+[ext_resource type="PackedScene" uid="uid://csrffmvdg2skr" path="res://scenes/peças_inimigas/sabre_Turonia_Inimigo.tscn" id="8_l5mao"]
+[ext_resource type="PackedScene" uid="uid://cuopgedrhracd" path="res://scenes/peças_inimigas/sabre_Verovia_Inimigo.tscn" id="9_ukkr5"]
 [ext_resource type="PackedScene" uid="uid://bclwdk2473ws" path="res://scenes/peças_inimigas/broquel_Turonia_Inimigo.tscn" id="10_7n5hp"]
+[ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="12_o6st2"]
+[ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="13_cm4u8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("1_brhi6")
@@ -164,25 +169,43 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 z_index = 2
 
-[node name="Broquel_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("6_rix2n")]
+[node name="Broquel_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("2_5dtd2")]
 position = Vector2(-40, 8)
 
-[node name="Broquel_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("2_5dtd2")]
+[node name="Broquel_Solesia_Aliado2" parent="Peças Aliadas" instance=ExtResource("2_5dtd2")]
 position = Vector2(40, 8)
+
+[node name="Cajado_Verovia_Aliado" parent="Peças Aliadas" instance=ExtResource("3_iu2o2")]
+position = Vector2(40, 40)
 
 [node name="Flecha_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("4_ejjac")]
 position = Vector2(-40, 40)
 
+[node name="Flecha_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("5_33qby")]
+position = Vector2(56, 40)
+
+[node name="Broquel_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("6_rix2n")]
+position = Vector2(-8, 8)
+
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
-[node name="Broquel_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("4_woh8a")]
-position = Vector2(-24, -8)
-
-[node name="Cajado_Verovia_Inimigo" parent="Peças Inimigas" instance=ExtResource("4_61gsc")]
+[node name="Cajado_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("7_ffpxs")]
 position = Vector2(56, -40)
 
+[node name="Sabre_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("8_l5mao")]
+position = Vector2(-40, -8)
+
+[node name="Sabre_Verovia_Inimigo" parent="Peças Inimigas" instance=ExtResource("9_ukkr5")]
+position = Vector2(40, -40)
+
 [node name="Broquel_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("10_7n5hp")]
-position = Vector2(56, -8)
+position = Vector2(40, -8)
+
+[node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("12_o6st2")]
+position = Vector2(-8, -8)
+
+[node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("13_cm4u8")]
+position = Vector2(-8, -40)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)

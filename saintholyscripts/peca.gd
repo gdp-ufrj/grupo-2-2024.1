@@ -39,6 +39,7 @@ var current_plataform
 var old_plataform
 ############^^^Drag and drop^^^############
 
+var desbugar: bool = false
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var astar_grid: AStarGrid2D
@@ -51,11 +52,10 @@ var instance
 var timer_speed
 var occupied_posions
 var direçao
+var original_position
 
 func _ready():
 	peças = get_tree().get_nodes_in_group("peças")
-	
-	print(self.name, " ", is_player_team)
 	
 	timer_speed = 1 / attack_speed
 	
@@ -135,19 +135,20 @@ func move():
 			tile_map.local_to_map(peça_alvo.global_position)
 		)
 	else:
-		if dist_x < dist_y and dist_x != 0:
+		if dist_x < dist_y and dist_x != 0 and desbugar == false:
 			var pos = Vector2i (peça_alvo.global_position.x, global_position.y)
 			path = astar_grid.get_id_path(
 			tile_map.local_to_map(global_position),
 			tile_map.local_to_map(pos)
 			)
-		elif dist_y < dist_x and dist_y != 0:
+		elif dist_y < dist_x and dist_y != 0  and desbugar == false:
 			var pos = Vector2i (global_position.x, peça_alvo.global_position.y)
 			path = astar_grid.get_id_path(
 			tile_map.local_to_map(global_position),
 			tile_map.local_to_map(pos)
 			)
 		else:
+			desbugar = true
 			path = astar_grid.get_id_path(
 			tile_map.local_to_map(global_position),
 			tile_map.local_to_map(peça_alvo.global_position)
@@ -161,13 +162,17 @@ func move():
 	if ((dist_x <= range * 16) and global_position.y == peça_alvo.global_position.y) or ((dist_y <= range * 16) and global_position.x == peça_alvo.global_position.x):
 		timer.start(timer_speed)
 		is_attacking = true
+		desbugar = false
 		return
+	
+	if (global_position.x > 56 or global_position.x < -40 or global_position.y > 40 or global_position.y < -40):
+		global_position = original_position
 	
 	if path.is_empty():
-		print("nao achou")
+		print(self.name, ": nao achou")
 		return
 	
-	var original_position = Vector2(global_position)
+	original_position = Vector2(global_position)
 	
 	global_position = tile_map.map_to_local(path[0])
 	sprite.global_position = original_position
@@ -215,6 +220,15 @@ func atribuir_alvo():
 
 
 func basic_attack():
+	var dist_x = abs(global_position.x - peça_alvo.global_position.x);
+	var dist_y = abs(global_position.y - peça_alvo.global_position.y);
+	
+	if (dist_x > range * 16) or (dist_y > range * 16):
+		is_attacking = false
+		timer.stop()
+		atribuir_alvo()
+		return
+	
 	instance = HIT_BOX.instantiate()
 	instance.global_position = peça_alvo.global_position - global_position
 	instance.set_damage(basic_attack_damage)

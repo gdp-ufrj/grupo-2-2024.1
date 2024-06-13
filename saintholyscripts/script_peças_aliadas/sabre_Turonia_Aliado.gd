@@ -12,6 +12,14 @@ func _init():
 	is_player_team = true
 
 func habilidade():
+	peças = get_tree().get_nodes_in_group("peças")
+	
+	for p in peças:
+		if p == self or p == peça_alvo:
+			continue
+			
+		occupied_posions.append(tile_map.local_to_map(p.global_position))
+	
 	var diff = global_position - peça_alvo.global_position
 	
 	if diff.x > 0 and diff.y == 0:
@@ -43,5 +51,7 @@ func habilidade():
 	if tile_position.x <= 56 and tile_position.x >= -40 and tile_position.y <= 40 and tile_position.y >= -40 and not ocupado:
 		instance.global_position = global_position - peça_alvo.global_position
 		global_position = tile_position
+	
+	occupied_posions = []
 		
 	add_child(instance)

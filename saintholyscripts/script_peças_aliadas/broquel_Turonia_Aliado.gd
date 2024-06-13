@@ -12,12 +12,18 @@ func _init():
 	is_player_team = true
 
 func habilidade():
-	print(self.name, " ", is_player_team)
 	var maior_distancia = 0
 	
 	var target_peça
 	
 	peças = get_tree().get_nodes_in_group("peças")
+	
+	for p in peças:
+		
+		if p == self or p == peça_alvo:
+			continue
+			
+		occupied_posions.append(tile_map.local_to_map(p.global_position))
 	
 	for p in peças:
 		if p == self:
@@ -47,24 +53,27 @@ func habilidade():
 		if op == tile_map.local_to_map(tile_position) or peça_alvo.global_position == tile_position:
 			ocupado = true
 	
-	if tile_position.x <= 56 and tile_position.x >= -40 and tile_position.y <= 40 and tile_position.y >= -40 and not ocupado:
+	if (tile_position.x > 56 or tile_position.x < -40 or tile_position.y > 40 or tile_position.y < -40) or ocupado:
 		tile_position = global_position - direçao
+		ocupado = false
 		for op in occupied_posions:
 			if op == tile_map.local_to_map(tile_position) or peça_alvo.global_position == tile_position:
 				ocupado = true
-		if (tile_position.x >= 56 or tile_position.x <= -40 or tile_position.y >= 40 or tile_position.y <= -40) and ocupado:
+		if (tile_position.x > 56 or tile_position.x < -40 or tile_position.y > 40 or tile_position.y < -40) or ocupado:
 			tile_position = global_position + Vector2(direçao.y, direçao.x)
+			ocupado = false
 		for op in occupied_posions:
 			if op == tile_map.local_to_map(tile_position) or peça_alvo.global_position == tile_position:
 				ocupado = true
-		if (tile_position.x >= 56 or tile_position.x <= -40 or tile_position.y >= 40 or tile_position.y <= -40) and ocupado:
+		if (tile_position.x > 56 or tile_position.x < -40 or tile_position.y > 40 or tile_position.y < -40) or ocupado:
 			tile_position = global_position - Vector2(direçao.y, direçao.x)
 	
-	peça_alvo.global_position = tile_position
+	target_peça.global_position = tile_position
 	
+	occupied_posions = []
 	
 	instance = HIT_BOX.instantiate()
-	instance.global_position = peça_alvo.global_position - global_position
+	instance.global_position = target_peça.global_position - global_position
 	instance.set_is_player_team(is_player_team)
 	instance.set_timer(0.1)
 	

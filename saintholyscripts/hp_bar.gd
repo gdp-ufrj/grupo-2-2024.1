@@ -24,6 +24,7 @@ func init_health_and_mana(_health, _mana_max, _mana, is_player_team):
 	value = health
 	mp_bar.max_value = _mana_max
 	mp_bar.value = _mana
-	print(is_player_team)
-	if is_player_team == true:
-		get("theme_override_styles/fill").bg_color = Color("f85e58")
+	if is_player_team == false:
+		var sb = StyleBoxFlat.new()
+		add_theme_stylebox_override("fill", sb)
+		sb.bg_color = Color("ff0000")

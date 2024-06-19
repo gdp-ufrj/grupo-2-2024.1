@@ -10,6 +10,7 @@ func _init():
 	mana_por_hit = 10
 	bonus = 0
 	is_player_team = false
+	classe = "Flecha"
 
 func habilidade():
 	var diff = global_position - peça_alvo.global_position

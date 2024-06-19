@@ -10,6 +10,7 @@ func _init():
 	mana_por_hit = 50
 	bonus = 4
 	is_player_team = true
+	classe = "Cajado"
 
 func habilidade():
 	var maior_distancia = 0

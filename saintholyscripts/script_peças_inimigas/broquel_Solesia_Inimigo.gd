@@ -10,6 +10,7 @@ func _init():
 	mana_por_hit = 20
 	bonus = 6
 	is_player_team = false
+	classe = "Broquel"
 
 func habilidade():
 	instance = HIT_BOX.instantiate()

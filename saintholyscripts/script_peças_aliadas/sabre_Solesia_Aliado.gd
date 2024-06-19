@@ -10,6 +10,7 @@ func _init():
 	mana_por_hit = 25
 	bonus = 4
 	is_player_team = true
+	classe = "Sabre"
 
 func habilidade():
 	if bonus_dmg:

@@ -10,6 +10,7 @@ func _init():
 	mana_por_hit = 25
 	bonus = 10
 	is_player_team = true
+	classe = "Sabre"
 
 func habilidade():
 	peças = get_tree().get_nodes_in_group("peças")

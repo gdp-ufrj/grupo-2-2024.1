@@ -24,6 +24,7 @@ var health := 5
 var mana := 0
 var mana_max := 25
 var mana_por_hit := 10
+var classe : String
 var mouse_over: bool = false
 var skill_click: bool = false
 var try_skill_click:bool = false
@@ -62,12 +63,20 @@ func _ready():
 	
 	timer_speed = 1 / attack_speed
 	
-	hp_bar.init_health_and_mana(health, mana_max, mana, is_player_team)
-	
 	if is_player_team:
 		direçao = Vector2(0, -16)
+		health += 20 * Global.num_broquel_ali
+		basic_attack_damage += 2 * Global.num_flecha_ali
+		ability_damage += 4 * Global.num_cajado_ali
+		bonus += 3 * Global.num_sabre_ali
 	else:
 		direçao = Vector2(0, 16)
+		health += 20 * Global.num_broquel_ini
+		basic_attack_damage += 2 * Global.num_flecha_ini
+		ability_damage += 4 * Global.num_cajado_ini
+		bonus += 3 * Global.num_sabre_ini
+	
+	hp_bar.init_health_and_mana(health, mana_max, mana, is_player_team)
 	
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()

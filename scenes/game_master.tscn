@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7a0n6u41b5ty"]
+
+[ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_h4nld"]
+
+[node name="GameMaster" type="Node2D"]
+script = ExtResource("1_h4nld")

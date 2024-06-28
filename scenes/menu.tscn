@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv5eucc2wsryf"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_eebcw"]
-[ext_resource type="Texture2D" uid="uid://cmdruhj3figxd" path="res://assets/sprites/pre_game_jpg.png" id="1_rb8pq"]
+[ext_resource type="Script" path="res://saintholyscripts/menu.gd" id="1_xakmv"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_ga7ai"]
+[ext_resource type="Texture2D" uid="uid://b8g5bmpt6jyqf" path="res://assets/sprites/sistema solar GDP PP2024 reparado.png" id="2_u3yrv"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -16,15 +16,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
-script = ExtResource("1_eebcw")
+script = ExtResource("1_xakmv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -960.0
-offset_top = -536.0
+offset_top = -540.0
 offset_right = 953.0
-offset_bottom = 536.0
-texture = ExtResource("1_rb8pq")
+offset_bottom = 532.0
+texture = ExtResource("2_u3yrv")
+expand_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -76,17 +77,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -374.0
-offset_top = -211.0
-offset_right = 349.0
-offset_bottom = 301.0
+offset_left = -742.0
+offset_top = -66.0
+offset_right = -19.0
+offset_bottom = 446.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(360, 252)
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="."]
 process_mode = 3
 layout_mode = 2
+offset_left = 92.0
+offset_top = -147.0
+offset_right = 815.0
+offset_bottom = -22.0
 mouse_filter = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_ga7ai")
@@ -97,8 +102,13 @@ text_overrun_behavior = 4
 clip_text = true
 expand_icon = true
 
-[node name="Config" type="Button" parent="VBoxContainer"]
+[node name="Config" type="Button" parent="."]
+visible = false
 layout_mode = 2
+offset_left = -860.0
+offset_top = -301.0
+offset_right = -137.0
+offset_bottom = -176.0
 mouse_filter = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_ga7ai")
@@ -106,21 +116,42 @@ theme_override_font_sizes/font_size = 92
 text = "Configurações
 "
 
-[node name="Load" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
-mouse_filter = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_ga7ai")
-theme_override_font_sizes/font_size = 92
-text = "Carregar"
-
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+offset_left = 169.0
+offset_top = -1.0
+offset_right = 892.0
+offset_bottom = 124.0
 mouse_filter = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_ga7ai")
 theme_override_font_sizes/font_size = 92
 text = "Sair"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Load" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -869.0
+offset_top = -140.0
+offset_right = -146.0
+offset_bottom = -15.0
+mouse_filter = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ga7ai")
+theme_override_font_sizes/font_size = 92
+text = "Carregar"
+
+[node name="Load2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 156.0
+offset_right = 815.0
+offset_bottom = 281.0
+mouse_filter = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ga7ai")
+theme_override_font_sizes/font_size = 92
+text = "Créditos"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

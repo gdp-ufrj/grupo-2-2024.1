@@ -273,7 +273,6 @@ position = Vector2(24, 69)
 [node name="Flecha" parent="Peças Inimigas" instance=ExtResource("4_ppdw0")]
 z_index = 11
 position = Vector2(-40, -40)
-is_player_team = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -286.0

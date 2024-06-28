@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=15 format=3 uid="uid://cnpwje68p4eih"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_02tvw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="1_rp32l"]
-[ext_resource type="Resource" uid="uid://c8fctxuig10eh" path="res://dialogos/teste.dialogue" id="2_h3eaj"]
+[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_g1hg2"]
+[ext_resource type="Resource" uid="uid://c8fctxuig10eh" path="res://dialogos/teste.dialogue" id="2_0olcq"]
+[ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="2_5dtd2"]
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="4_61gsc"]
+[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="4_ejjac"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="6_4tnw0"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="6_firyx"]
@@ -156,11 +157,8 @@ sources/0 = SubResource("TileSetAtlasSource_lptho")
 size = Vector2(112, 18)
 
 [node name="Arena" type="Node2D"]
-process_mode = 3
-script = ExtResource("1_02tvw")
-dialogue_resource = ExtResource("2_h3eaj")
-
-[node name="GameMaster" parent="." instance=ExtResource("1_rp32l")]
+script = ExtResource("1_g1hg2")
+dialogue_resource = ExtResource("2_0olcq")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5eq22")
@@ -172,6 +170,12 @@ z_index = 2
 
 [node name="Broquel_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("6_rix2n")]
 position = Vector2(-40, 72)
+
+[node name="Broquel_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("2_5dtd2")]
+position = Vector2(-24, 72)
+
+[node name="Flecha_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("4_ejjac")]
+position = Vector2(-8, 72)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
@@ -193,9 +197,9 @@ zoom = Vector2(7, 7)
 
 [node name="StartBattle" parent="." instance=ExtResource("6_4tnw0")]
 offset_left = -18.0
-offset_top = -65.0
+offset_top = -72.0
 offset_right = 683.0
-offset_bottom = 80.0
+offset_bottom = 73.0
 size_flags_vertical = 4
 
 [node name="WarningTimer" type="Timer" parent="StartBattle"]
@@ -369,77 +373,46 @@ z_index = 1
 position = Vector2(56, 72)
 scale = Vector2(0.3, 0.3)
 
-[node name="VictoryWarning" type="TextEdit" parent="."]
-process_mode = 3
+[node name="ProximaFase" type="Control" parent="."]
 visible = false
-z_index = 100
-clip_contents = true
-layout_direction = 1
-offset_left = -36.0
-offset_top = -19.0
-offset_right = 496.0
-offset_bottom = 52.0
-scale = Vector2(0.141, 0.141)
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Parabéns!!!! Você venceu! :)"
-
-[node name="DefeatWarning" type="TextEdit" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
-clip_contents = true
-layout_direction = 1
-offset_left = -41.0
-offset_top = -7.0
-offset_right = 626.0
-offset_bottom = 156.0
-scale = Vector2(0.141, 0.141)
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Poxa...você perdeu :(. Gostaria de tentar novamente?"
-wrap_mode = 1
-
-[node name="GoToSelectWorld" type="Button" parent="."]
-process_mode = 3
-visible = false
-z_index = 80
-offset_left = -40.0
-offset_top = 19.0
-offset_right = 1267.0
-offset_bottom = 164.0
-scale = Vector2(0.0766745, 0.0766745)
-theme_override_font_sizes/font_size = 100
-text = "Voltar para seleção de fase"
-
-[node name="RestartButton" type="Button" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
-offset_left = -14.0
-offset_top = 30.0
-offset_right = 532.0
-offset_bottom = 175.0
-scale = Vector2(0.077, 0.077)
-theme_override_font_sizes/font_size = 100
-text = "Recomeçar"
-
-[node name="GoToSelectWorld2" type="Button" parent="."]
-process_mode = 3
-z_index = 80
-offset_left = -36.0
+layout_mode = 3
+anchors_preset = 0
+offset_left = -129.0
 offset_top = -75.0
-offset_right = 1271.0
-offset_bottom = 70.0
-scale = Vector2(0.0766745, 0.0766745)
+offset_right = 145.0
+offset_bottom = 79.0
+
+[node name="ColorRect" type="ColorRect" parent="ProximaFase"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="MarginContainer" type="MarginContainer" parent="ProximaFase"]
+layout_mode = 0
+offset_right = 1827.0
+offset_bottom = 1027.0
+scale = Vector2(0.15, 0.15)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ProximaFase/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="ProximaFase/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 100
-text = "Voltar para seleção de fase"
+text = "Proxima"
+
+[node name="Button2" type="Button" parent="ProximaFase/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Menu"
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
-[connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
-[connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="GoToSelectWorld2" to="GameMaster" method="_on_go_to_select_world_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cptso1r0yeon2"
+path="res://.godot/imported/inicio_fase.dialogue-df20c4d92776a5761259314bef24a33f.tres"
+
+[deps]
+
+source_file="res://dialogos/inicio_fase.dialogue"
+dest_files=["res://.godot/imported/inicio_fase.dialogue-df20c4d92776a5761259314bef24a33f.tres"]
+
+[params]
+
+defaults=true

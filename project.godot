@@ -23,6 +23,8 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 [dialogue_manager]
 
 general/balloon_path="res://dialogos/balloon.tscn"
+general/states=["Global"]
+general/default_csv_locale=""
 
 [display]
 
@@ -56,7 +58,7 @@ pointing/emulate_mouse_from_touch=false
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogos/teste.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogos/teste.dialogue", "res://dialogos/inicio_fase.dialogue")
 
 [rendering]
 

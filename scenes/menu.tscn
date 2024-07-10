@@ -141,7 +141,7 @@ theme_override_fonts/font = ExtResource("2_ga7ai")
 theme_override_font_sizes/font_size = 92
 text = "Carregar"
 
-[node name="Load2" type="Button" parent="."]
+[node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 156.0
@@ -155,3 +155,4 @@ text = "Créditos"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

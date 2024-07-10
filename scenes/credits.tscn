@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ldtncwx0myu"]
+
+[ext_resource type="Texture2D" uid="uid://b8g5bmpt6jyqf" path="res://assets/sprites/sistema solar GDP PP2024 reparado.png" id="1_8fp64"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.168627)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_8fp64")
+expand_mode = 1
+
+[node name="CreditsTitle" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 4.0
+offset_right = 1169.0
+offset_bottom = 162.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Créditos
+"
+
+[node name="CreditsNames" type="RichTextLabel" parent="."]
+offset_top = 163.0
+offset_right = 1395.0
+offset_bottom = 957.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Programação:
+Roteiro:
+GD:
+Arte:
+Gestão:
+Música:"

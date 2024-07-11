@@ -1,12 +1,12 @@
 extends Button
 @onready var start_battle_warning = $"../StartBattleWarning"
 @onready var go_to_select_world_2 = $"../GoToSelectWorld2"
-
+@onready var bench = $"../Bench/TextureRect"
 
 func _on_pressed():
 	if Global.pieces == 0:
 		Global.combat_started = true
-		$"../Bench/ColorRect".visible = false
+		bench.visible = false
 		self.visible = false
 		go_to_select_world_2.visible = false
 	if Global.pieces != 0:

@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://524ca6lgcjyd"]
+[gd_scene load_steps=12 format=3 uid="uid://524ca6lgcjyd"]
 
 [ext_resource type="Script" path="res://saintholyscripts/pre_game.gd" id="1_sx714"]
-[ext_resource type="Texture2D" uid="uid://b8g5bmpt6jyqf" path="res://assets/sprites/sistema solar GDP PP2024 reparado.png" id="2_f21m5"]
+[ext_resource type="Texture2D" uid="uid://binewwmfivcee" path="res://assets/sprites/Telas_Prancheta 1.png" id="2_qt33d"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_tpl7n"]
+[ext_resource type="Texture2D" uid="uid://3k8r57sx5d2m" path="res://assets/sprites/Telas-05.png" id="4_qch8c"]
+[ext_resource type="Texture2D" uid="uid://diw84ncnd8dlv" path="res://assets/sprites/Telas-07.png" id="5_hj6bi"]
+[ext_resource type="Texture2D" uid="uid://byu7cjamacp6u" path="res://assets/sprites/Telas-15.png" id="6_3aktj"]
+[ext_resource type="Texture2D" uid="uid://b1tqsmtug6cio" path="res://assets/sprites/Telas-16.png" id="7_cc1lv"]
+[ext_resource type="Texture2D" uid="uid://dsx310iu14ht2" path="res://assets/sprites/Telas-17.png" id="8_bfqyq"]
+[ext_resource type="Texture2D" uid="uid://ds2m4tgectjda" path="res://assets/sprites/Telas-12.png" id="9_rin3q"]
+[ext_resource type="Texture2D" uid="uid://cfqx5ikkactlc" path="res://assets/sprites/Telas-13.png" id="10_0hw6k"]
+[ext_resource type="Texture2D" uid="uid://ckcch2qh2qow1" path="res://assets/sprites/Telas-14.png" id="11_dlkov"]
 
 [node name="PreGame" type="Control"]
 process_mode = 3
@@ -15,11 +23,11 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_sx714")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1072.0
-texture = ExtResource("2_f21m5")
+texture = ExtResource("2_qt33d")
 expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -58,6 +66,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho1"
 
 [node name="World2" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 446.0
 offset_top = 485.0
@@ -67,6 +76,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho2"
 
 [node name="World3" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 665.0
 offset_top = 437.0
@@ -76,6 +86,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho3"
 
 [node name="World4" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 775.0
 offset_top = 331.0
@@ -85,6 +96,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho4"
 
 [node name="World5" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 703.0
 offset_top = 796.0
@@ -94,6 +106,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho5"
 
 [node name="World6" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1422.0
 offset_top = 660.0
@@ -103,6 +116,7 @@ theme_override_font_sizes/font_size = 33
 text = "Mundinho6"
 
 [node name="World7" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1593.0
 offset_top = 922.0
@@ -113,6 +127,7 @@ text = "Mundinho7
 "
 
 [node name="World8" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1134.0
 offset_top = 355.0
@@ -121,6 +136,101 @@ offset_bottom = 409.0
 theme_override_font_sizes/font_size = 33
 text = "Mundinho8
 "
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 14.0
+offset_right = 1528.0
+offset_bottom = 2265.0
+scale = Vector2(0.457291, 0.457291)
+texture = ExtResource("4_qch8c")
+
+[node name="Globo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_right = 4175.0
+offset_bottom = 2251.0
+scale = Vector2(0.477658, 0.477658)
+texture = ExtResource("5_hj6bi")
+
+[node name="Linha2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1266.0
+offset_top = 102.0
+offset_right = 2063.0
+offset_bottom = 675.0
+scale = Vector2(0.471943, 0.471943)
+texture = ExtResource("6_3aktj")
+
+[node name="LinhaLonga" type="TextureRect" parent="."]
+offset_left = 878.0
+offset_top = 414.0
+offset_right = 2987.0
+offset_bottom = 1125.0
+scale = Vector2(0.459289, 0.465151)
+texture = ExtResource("7_cc1lv")
+
+[node name="Linha1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1376.0
+offset_top = 691.0
+offset_right = 2073.0
+offset_bottom = 1362.0
+scale = Vector2(0.479259, 0.479259)
+texture = ExtResource("8_bfqyq")
+
+[node name="Level1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 660.0
+offset_right = 1697.0
+offset_bottom = 1021.0
+scale = Vector2(0.486996, 0.486996)
+texture = ExtResource("9_rin3q")
+
+[node name="Level2" type="TextureRect" parent="."]
+offset_left = 871.0
+offset_top = 524.0
+offset_right = 1202.0
+offset_bottom = 885.0
+scale = Vector2(0.486996, 0.486996)
+texture = ExtResource("9_rin3q")
+
+[node name="Level3" type="TextureRect" parent="."]
+offset_left = 1593.0
+offset_top = 691.0
+offset_right = 1924.0
+offset_bottom = 1052.0
+scale = Vector2(0.486996, 0.486996)
+texture = ExtResource("9_rin3q")
+
+[node name="LockedLevel3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1417.0
+offset_top = 21.0
+offset_right = 2131.0
+offset_bottom = 587.0
+scale = Vector2(0.424525, 0.424525)
+texture = ExtResource("10_0hw6k")
+
+[node name="LockedLevel2" type="TextureRect" parent="."]
+offset_left = 1601.0
+offset_top = 378.0
+offset_right = 2315.0
+offset_bottom = 944.0
+scale = Vector2(0.424525, 0.424525)
+texture = ExtResource("10_0hw6k")
+
+[node name="Level4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1501.0
+offset_top = 769.0
+offset_right = 2237.0
+offset_bottom = 1457.0
+rotation = 0.00680461
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("11_dlkov")
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="World1" to="." method="_on_world_1_button_down"]

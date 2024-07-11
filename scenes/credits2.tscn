@@ -17,6 +17,7 @@ script = ExtResource("1_wescv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1072.0
 texture = ExtResource("1_vl3y1")
@@ -41,6 +42,7 @@ expand_mode = 1
 
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 390.0
 offset_right = 1475.0
@@ -51,6 +53,7 @@ text = "credits(asteria.class( ))"
 
 [node name="ProgTitle" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 459.0
 offset_right = 1475.0
@@ -61,6 +64,7 @@ text = "Programação"
 
 [node name="ProgText" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 518.0
 offset_right = 1475.0
@@ -71,6 +75,7 @@ text = "João Victor Barreto | Rafael Lima"
 
 [node name="RoteiroTitle" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 566.0
 offset_right = 1475.0
@@ -81,6 +86,7 @@ text = "Roteiro"
 
 [node name="RoteiroText" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 616.0
 offset_right = 1475.0
@@ -91,6 +97,7 @@ text = "Joana Iozzi | Christian Tucci "
 
 [node name="ArtTitle" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 656.0
 offset_right = 1475.0
@@ -101,6 +108,7 @@ text = "Arte"
 
 [node name="ArtText" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 706.0
 offset_right = 1475.0
@@ -111,6 +119,7 @@ text = "Daniel da Silva | Fernanda Vieira | July Teixeira "
 
 [node name="ArtTitle2" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 744.0
 offset_right = 1475.0
@@ -121,6 +130,7 @@ text = "Game Design"
 
 [node name="ArtText2" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 794.0
 offset_right = 1475.0
@@ -133,6 +143,7 @@ text = "Francisco Taam | Hugo Frota
 [node name="NextPage" type="Button" parent="."]
 modulate = Color(0.906356, 0.939546, 0.923247, 1)
 top_level = true
+layout_mode = 0
 offset_left = 1394.0
 offset_top = 789.0
 offset_right = 1436.0

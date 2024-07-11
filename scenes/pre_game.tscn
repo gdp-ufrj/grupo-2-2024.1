@@ -164,6 +164,7 @@ scale = Vector2(0.471943, 0.471943)
 texture = ExtResource("6_3aktj")
 
 [node name="LinhaLonga" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 878.0
 offset_top = 414.0
 offset_right = 2987.0
@@ -190,6 +191,7 @@ scale = Vector2(0.486996, 0.486996)
 texture = ExtResource("9_rin3q")
 
 [node name="Level2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 871.0
 offset_top = 524.0
 offset_right = 1202.0
@@ -198,6 +200,7 @@ scale = Vector2(0.486996, 0.486996)
 texture = ExtResource("9_rin3q")
 
 [node name="Level3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1593.0
 offset_top = 691.0
 offset_right = 1924.0
@@ -215,6 +218,7 @@ scale = Vector2(0.424525, 0.424525)
 texture = ExtResource("10_0hw6k")
 
 [node name="LockedLevel2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1601.0
 offset_top = 378.0
 offset_right = 2315.0

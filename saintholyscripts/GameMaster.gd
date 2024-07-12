@@ -45,7 +45,7 @@ func _process(delta):
 func init_banco():
 	for i in range(Global.banco.size()):
 		var instance = load(Global.banco[i]).instantiate()
-		instance.global_position = Vector2(-40 + (16 * i), 78)
+		instance.global_position = Vector2(-40 + (16 * i), 80)
 		pecas_aliadas.add_child(instance)
 
 func _on_go_to_select_world_pressed():

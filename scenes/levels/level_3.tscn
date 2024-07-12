@@ -184,7 +184,7 @@ position = Vector2(-8, -8)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)
-zoom = Vector2(7, 7)
+zoom = Vector2(6, 6)
 
 [node name="StartBattle" parent="." instance=ExtResource("13_jeti6")]
 offset_left = -18.0

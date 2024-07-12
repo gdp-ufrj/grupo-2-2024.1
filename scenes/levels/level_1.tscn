@@ -1,12 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbna7pd05tg5y"]
+[gd_scene load_steps=15 format=3 uid="uid://cbna7pd05tg5y"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_4ef0y"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
-[ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="7_mi8k8"]
-[ext_resource type="PackedScene" uid="uid://vfy7ribfrqbb" path="res://scenes/peças_inimigas/flecha_Turonia_Inimigo.tscn" id="8_ekn3m"]
-[ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="9_1c483"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_8dfs8"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_ak88r"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_cujon"]
@@ -176,19 +173,10 @@ z_index = 2
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
 [node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("11_ak88r")]
-position = Vector2(56, -40)
+position = Vector2(8, -8)
 
 [node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("12_cujon")]
-position = Vector2(-8, -8)
-
-[node name="Broquel_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("7_mi8k8")]
-position = Vector2(-40, -40)
-
-[node name="Flecha_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("8_ekn3m")]
-position = Vector2(24, -8)
-
-[node name="Cajado_Verovia_Inimigo" parent="Peças Inimigas" instance=ExtResource("9_1c483")]
-position = Vector2(8, -40)
+position = Vector2(-8, -24)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)

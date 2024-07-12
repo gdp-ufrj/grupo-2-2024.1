@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgdv0kmr55l0p"]
+
+[ext_resource type="Texture2D" uid="uid://c4mpv8uie1b6" path="res://assets/sprites/Inventário.png" id="1_ryarj"]
+[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_n8fok"]
+
+[node name="InventoryBG" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -55.0
+offset_right = 2502.0
+offset_bottom = 1386.0
+scale = Vector2(0.0558291, 0.0558291)
+texture = ExtResource("1_ryarj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
+offset_left = -52.0
+offset_top = -11.0
+offset_right = 1188.0
+offset_bottom = 268.0
+scale = Vector2(0.0205645, 0.0205645)
+theme_override_fonts/normal_font = ExtResource("2_n8fok")
+theme_override_font_sizes/normal_font_size = 200
+text = "Inventário"

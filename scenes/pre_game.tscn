@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://524ca6lgcjyd"]
+[gd_scene load_steps=14 format=3 uid="uid://524ca6lgcjyd"]
 
 [ext_resource type="Script" path="res://saintholyscripts/pre_game.gd" id="1_sx714"]
 [ext_resource type="Texture2D" uid="uid://binewwmfivcee" path="res://assets/sprites/Telas_Prancheta 1.png" id="2_qt33d"]
@@ -12,6 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://cfqx5ikkactlc" path="res://assets/sprites/Telas-13.png" id="10_0hw6k"]
 [ext_resource type="Texture2D" uid="uid://ckcch2qh2qow1" path="res://assets/sprites/Telas-14.png" id="11_dlkov"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gp1m"]
+texture = ExtResource("11_dlkov")
+region_rect = Rect2(249.339, 197.136, 307.438, 307.184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffjcb"]
+texture = ExtResource("11_dlkov")
+region_rect = Rect2(253.059, 195.498, 301.821, 310.103)
+modulate_color = Color(1, 1, 1, 0.654902)
+
 [node name="PreGame" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -23,10 +32,23 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_sx714")
 
+[node name="GoBackButton" type="Button" parent="."]
+top_level = true
+z_index = 10
+layout_mode = 0
+offset_left = 67.0
+offset_top = 938.0
+offset_right = 827.0
+offset_bottom = 1046.0
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 79
+text = "Voltar para menu"
+
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1072.0
+mouse_filter = 2
 texture = ExtResource("2_qt33d")
 expand_mode = 1
 
@@ -46,96 +68,66 @@ theme_override_font_sizes/normal_font_size = 92
 text = "TELA PRÉ JOGO"
 text_direction = 2
 
-[node name="GoBackButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 972.0
-offset_right = 761.0
-offset_bottom = 1080.0
-theme_override_fonts/font = ExtResource("2_tpl7n")
-theme_override_font_sizes/font_size = 79
-text = "Voltar para menu"
-
 [node name="World1" type="Button" parent="."]
+top_level = true
 layout_mode = 0
-offset_left = 99.0
-offset_top = 311.0
-offset_right = 290.0
-offset_bottom = 365.0
+offset_left = 1610.0
+offset_top = 851.0
+offset_right = 1727.0
+offset_bottom = 967.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho1"
+theme_override_styles/normal = SubResource("StyleBoxTexture_8gp1m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ffjcb")
 
 [node name="World2" type="Button" parent="."]
-visible = false
+top_level = true
 layout_mode = 0
-offset_left = 446.0
-offset_top = 485.0
-offset_right = 637.0
-offset_bottom = 539.0
+offset_left = 1625.0
+offset_top = 776.0
+offset_right = 1816.0
+offset_bottom = 830.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho2"
+text = "Level 2"
 
 [node name="World3" type="Button" parent="."]
-visible = false
+top_level = true
 layout_mode = 0
-offset_left = 665.0
-offset_top = 437.0
-offset_right = 856.0
-offset_bottom = 491.0
+offset_left = 1623.0
+offset_top = 702.0
+offset_right = 1814.0
+offset_bottom = 756.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho3"
+text = "Level 3"
 
 [node name="World4" type="Button" parent="."]
-visible = false
+top_level = true
 layout_mode = 0
-offset_left = 775.0
-offset_top = 331.0
-offset_right = 966.0
-offset_bottom = 385.0
+offset_left = 1628.0
+offset_top = 614.0
+offset_right = 1819.0
+offset_bottom = 668.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho4"
+text = "Level 4"
 
 [node name="World5" type="Button" parent="."]
-visible = false
+top_level = true
 layout_mode = 0
-offset_left = 703.0
-offset_top = 796.0
-offset_right = 894.0
-offset_bottom = 850.0
+offset_left = 1638.0
+offset_top = 542.0
+offset_right = 1829.0
+offset_bottom = 596.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho5"
+text = "Level 5"
 
 [node name="World6" type="Button" parent="."]
-visible = false
+top_level = true
 layout_mode = 0
-offset_left = 1422.0
-offset_top = 660.0
-offset_right = 1613.0
-offset_bottom = 714.0
+offset_left = 1642.0
+offset_top = 476.0
+offset_right = 1833.0
+offset_bottom = 530.0
 theme_override_font_sizes/font_size = 33
-text = "Mundinho6"
-
-[node name="World7" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1593.0
-offset_top = 922.0
-offset_right = 1784.0
-offset_bottom = 976.0
-theme_override_font_sizes/font_size = 33
-text = "Mundinho7
-"
-
-[node name="World8" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1134.0
-offset_top = 355.0
-offset_right = 1325.0
-offset_bottom = 409.0
-theme_override_font_sizes/font_size = 33
-text = "Mundinho8
-"
+text = "Level 6"
 
 [node name="Panel" type="TextureRect" parent="."]
 layout_mode = 0
@@ -144,6 +136,7 @@ offset_top = 14.0
 offset_right = 1528.0
 offset_bottom = 2265.0
 scale = Vector2(0.457291, 0.457291)
+mouse_filter = 2
 texture = ExtResource("4_qch8c")
 
 [node name="Globo" type="TextureRect" parent="."]
@@ -152,6 +145,7 @@ offset_left = 175.0
 offset_right = 4175.0
 offset_bottom = 2251.0
 scale = Vector2(0.477658, 0.477658)
+mouse_filter = 2
 texture = ExtResource("5_hj6bi")
 
 [node name="Linha2" type="TextureRect" parent="."]
@@ -161,6 +155,7 @@ offset_top = 102.0
 offset_right = 2063.0
 offset_bottom = 675.0
 scale = Vector2(0.471943, 0.471943)
+mouse_filter = 2
 texture = ExtResource("6_3aktj")
 
 [node name="LinhaLonga" type="TextureRect" parent="."]
@@ -170,6 +165,7 @@ offset_top = 414.0
 offset_right = 2987.0
 offset_bottom = 1125.0
 scale = Vector2(0.459289, 0.465151)
+mouse_filter = 2
 texture = ExtResource("7_cc1lv")
 
 [node name="Linha1" type="TextureRect" parent="."]
@@ -179,33 +175,37 @@ offset_top = 691.0
 offset_right = 2073.0
 offset_bottom = 1362.0
 scale = Vector2(0.479259, 0.479259)
+mouse_filter = 2
 texture = ExtResource("8_bfqyq")
 
-[node name="Level1" type="TextureRect" parent="."]
+[node name="DotLevel1" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 1366.0
 offset_top = 660.0
 offset_right = 1697.0
 offset_bottom = 1021.0
 scale = Vector2(0.486996, 0.486996)
+mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
-[node name="Level2" type="TextureRect" parent="."]
+[node name="DotLevel2" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 871.0
 offset_top = 524.0
 offset_right = 1202.0
 offset_bottom = 885.0
 scale = Vector2(0.486996, 0.486996)
+mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
-[node name="Level3" type="TextureRect" parent="."]
+[node name="DotLevel3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1593.0
-offset_top = 691.0
-offset_right = 1924.0
-offset_bottom = 1052.0
+offset_left = 1236.0
+offset_top = 239.0
+offset_right = 1567.0
+offset_bottom = 600.0
 scale = Vector2(0.486996, 0.486996)
+mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
 [node name="LockedLevel3" type="TextureRect" parent="."]
@@ -215,6 +215,7 @@ offset_top = 21.0
 offset_right = 2131.0
 offset_bottom = 587.0
 scale = Vector2(0.424525, 0.424525)
+mouse_filter = 2
 texture = ExtResource("10_0hw6k")
 
 [node name="LockedLevel2" type="TextureRect" parent="."]
@@ -224,21 +225,12 @@ offset_top = 378.0
 offset_right = 2315.0
 offset_bottom = 944.0
 scale = Vector2(0.424525, 0.424525)
+mouse_filter = 2
 texture = ExtResource("10_0hw6k")
-
-[node name="Level4" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1501.0
-offset_top = 769.0
-offset_right = 2237.0
-offset_bottom = 1457.0
-rotation = 0.00680461
-scale = Vector2(0.425, 0.425)
-texture = ExtResource("11_dlkov")
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="World1" to="." method="_on_world_1_button_down"]
-[connection signal="button_down" from="World2" to="." method="_on_world_2_button_down"]
+[connection signal="pressed" from="World2" to="." method="_on_world_2_pressed"]
 [connection signal="button_down" from="World3" to="." method="_on_world_3_button_down"]
 [connection signal="button_down" from="World4" to="." method="_on_world_4_button_down"]
 [connection signal="button_down" from="World5" to="." method="_on_world_5_button_down"]

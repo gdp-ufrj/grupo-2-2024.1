@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgajtqcep1fkw"]
+[gd_scene load_steps=15 format=3 uid="uid://dgajtqcep1fkw"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_y1pww"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_01lxg"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_dm67h"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_dm67h"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_16n5k"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="9_fh5fr"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="9_k2jas"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="10_oseqj"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="10_uwnj5"]
@@ -292,13 +293,9 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="ColorRect" type="ColorRect" parent="Bench"]
-offset_left = -55.0
-offset_top = -9.0
-offset_right = 70.0
-offset_bottom = 13.0
-mouse_filter = 2
-color = Color(0.215686, 0.215686, 0.215686, 0.796078)
+[node name="InventoryBG" parent="Bench" instance=ExtResource("9_fh5fr")]
+offset_top = -5.0
+offset_bottom = -5.0
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false

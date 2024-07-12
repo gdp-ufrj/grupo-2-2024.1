@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://b27nt5f68vyo3"]
+[gd_scene load_steps=18 format=3 uid="uid://b27nt5f68vyo3"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_hqwj8"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_avwjk"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_pd22c"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_pd22c"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_q8jbq"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="10_qgwpb"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="11_fbk3r"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="12_8iwb4"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="12_acgwt"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="12_i6mhp"]
 [ext_resource type="PackedScene" uid="uid://cg8ohnm22wnsp" path="res://scenes/peças_inimigas/cajado_Solesia_Inimigo.tscn" id="13_lxcbw"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="13_xy4pw"]
@@ -304,13 +305,9 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="ColorRect" type="ColorRect" parent="Bench"]
-offset_left = -55.0
-offset_top = -9.0
-offset_right = 70.0
-offset_bottom = 13.0
-mouse_filter = 2
-color = Color(0.215686, 0.215686, 0.215686, 0.796078)
+[node name="InventoryBG" parent="Bench" instance=ExtResource("12_acgwt")]
+offset_top = -6.0
+offset_bottom = -6.0
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false

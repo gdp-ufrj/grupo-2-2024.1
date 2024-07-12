@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbna7pd05tg5y"]
+[gd_scene load_steps=18 format=3 uid="uid://cbna7pd05tg5y"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_4ef0y"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="7_mi8k8"]
 [ext_resource type="PackedScene" uid="uid://vfy7ribfrqbb" path="res://scenes/peças_inimigas/flecha_Turonia_Inimigo.tscn" id="8_ekn3m"]
@@ -12,9 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_cujon"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="12_o41ni"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="13_sw7bw"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="14_kgnsj"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="14_wr8n2"]
-[ext_resource type="Texture2D" uid="uid://c4mpv8uie1b6" path="res://assets/sprites/Inventário.png" id="14_ysfsd"]
-[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="15_gqlys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_om6bh")
@@ -306,24 +305,7 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="TextureRect" type="TextureRect" parent="Bench"]
-offset_left = -59.0
-offset_top = -55.0
-offset_right = 2502.0
-offset_bottom = 1386.0
-scale = Vector2(0.0558291, 0.0558291)
-texture = ExtResource("14_ysfsd")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Bench"]
-modulate = Color(0.717647, 0.807843, 0.764706, 1)
-offset_left = -52.0
-offset_top = -11.0
-offset_right = 1188.0
-offset_bottom = 268.0
-scale = Vector2(0.0205645, 0.0205645)
-theme_override_fonts/normal_font = ExtResource("15_gqlys")
-theme_override_font_sizes/normal_font_size = 200
-text = "Inventário"
+[node name="InventoryBG" parent="Bench" instance=ExtResource("14_kgnsj")]
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false

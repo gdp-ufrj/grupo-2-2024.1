@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=22 format=3 uid="uid://cnpwje68p4eih"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_02tvw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="1_rp32l"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="1_rp32l"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_vy8nl"]
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="4_61gsc"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="8_yftpi"]
 [ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="9_4ppcv"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="15_1loay"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="15_y3rto"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="16_epxkg"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="17_q1q5b"]
 
@@ -320,13 +321,9 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="ColorRect" type="ColorRect" parent="Bench"]
-offset_left = -55.0
-offset_top = -9.0
-offset_right = 70.0
-offset_bottom = 13.0
-mouse_filter = 2
-color = Color(0.215686, 0.215686, 0.215686, 0.796078)
+[node name="InventoryBG" parent="Bench" instance=ExtResource("15_y3rto")]
+offset_top = -6.0
+offset_bottom = -6.0
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false

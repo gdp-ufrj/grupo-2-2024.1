@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3yh1s7y600ot"]
+[gd_scene load_steps=19 format=3 uid="uid://c3yh1s7y600ot"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_cv203"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_v5tqx"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_q73lw"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_q73lw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_7a0fp"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="10_yebg5"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="11_f10q7"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="12_kt8os"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="13_1ssel"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="13_brdgl"]
 [ext_resource type="PackedScene" uid="uid://cg8ohnm22wnsp" path="res://scenes/peças_inimigas/cajado_Solesia_Inimigo.tscn" id="13_kjfhn"]
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="14_hi4gb"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="14_pgaim"]
@@ -308,13 +309,9 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="ColorRect" type="ColorRect" parent="Bench"]
-offset_left = -55.0
-offset_top = -9.0
-offset_right = 70.0
-offset_bottom = 13.0
-mouse_filter = 2
-color = Color(0.215686, 0.215686, 0.215686, 0.796078)
+[node name="InventoryBG" parent="Bench" instance=ExtResource("13_brdgl")]
+offset_top = -5.0
+offset_bottom = -5.0
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false

@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cnpwje68p4eih"]
+[gd_scene load_steps=21 format=3 uid="uid://cnpwje68p4eih"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_02tvw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="1_rp32l"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="1_rp32l"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_vy8nl"]
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="4_61gsc"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="5_g8txu"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/peças_aliadas/cajado_Turonia_Aliado.tscn" id="7_t1ls1"]
 [ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="8_yftpi"]
 [ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="9_4ppcv"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="15_1loay"]
+[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="16_epxkg"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="17_q1q5b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("1_brhi6")
@@ -451,6 +454,97 @@ offset_bottom = 70.0
 scale = Vector2(0.0766745, 0.0766745)
 theme_override_font_sizes/font_size = 100
 text = "Voltar para seleção de fase"
+
+[node name="Pickin" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Button" type="Button" parent="Pickin"]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -56.0
+offset_right = -8.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Peça 1" type="ColorRect" parent="Pickin/Button"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 112.0
+color = Color(0.0901961, 0.0666667, 0.231373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Pickin/Button/Peça 1"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 65.0
+offset_bottom = 61.0
+texture = ExtResource("15_1loay")
+
+[node name="Title" type="RichTextLabel" parent="Pickin/Button/Peça 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -74.0
+offset_right = 558.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(296.5, 91.5)
+theme_override_fonts/normal_font = ExtResource("16_epxkg")
+theme_override_font_sizes/normal_font_size = 200
+text = "Broquel de Turonia"
+scroll_active = false
+
+[node name="Button2" type="Button" parent="Pickin"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -56.0
+offset_right = 97.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Peça 2" type="ColorRect" parent="Pickin/Button2"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 112.0
+color = Color(0.0901961, 0.0666667, 0.231373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Pickin/Button2/Peça 2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 65.0
+offset_bottom = 61.0
+texture = ExtResource("17_q1q5b")
+
+[node name="Title" type="RichTextLabel" parent="Pickin/Button2/Peça 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -74.0
+offset_right = 558.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(296.5, 91.5)
+theme_override_fonts/normal_font = ExtResource("16_epxkg")
+theme_override_font_sizes/normal_font_size = 200
+text = "Flecha de Solesia"
+scroll_active = false
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

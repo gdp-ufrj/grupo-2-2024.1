@@ -1,20 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbna7pd05tg5y"]
+[gd_scene load_steps=14 format=3 uid="uid://cbna7pd05tg5y"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_4ef0y"]
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_hy70a"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
-[ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="7_mi8k8"]
-[ext_resource type="PackedScene" uid="uid://vfy7ribfrqbb" path="res://scenes/peças_inimigas/flecha_Turonia_Inimigo.tscn" id="8_ekn3m"]
-[ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="9_1c483"]
-[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_8dfs8"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_ak88r"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_cujon"]
-[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="12_o41ni"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="13_sw7bw"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="14_34ek0"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="14_wr8n2"]
-[ext_resource type="Texture2D" uid="uid://c4mpv8uie1b6" path="res://assets/sprites/Inventário.png" id="14_ysfsd"]
-[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="15_gqlys"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="16_eojsa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_om6bh")
@@ -161,7 +156,7 @@ sources/0 = SubResource("TileSetAtlasSource_lptho")
 size = Vector2(112, 18)
 
 [node name="Level 1" type="Node2D" groups=["cena_atual"]]
-script = ExtResource("1_4ef0y")
+script = ExtResource("1_hy70a")
 dialogue_resource = ExtResource("2_or084")
 
 [node name="GameMaster" parent="." instance=ExtResource("3_jplet")]
@@ -177,23 +172,14 @@ z_index = 2
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
 [node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("11_ak88r")]
-position = Vector2(56, -40)
+position = Vector2(8, -8)
 
 [node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("12_cujon")]
-position = Vector2(-8, -8)
-
-[node name="Broquel_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("7_mi8k8")]
-position = Vector2(-40, -40)
-
-[node name="Flecha_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("8_ekn3m")]
-position = Vector2(24, -8)
-
-[node name="Cajado_Verovia_Inimigo" parent="Peças Inimigas" instance=ExtResource("9_1c483")]
-position = Vector2(8, -40)
+position = Vector2(-8, -24)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)
-zoom = Vector2(6, 6)
+zoom = Vector2(7, 7)
 
 [node name="StartBattle" parent="." instance=ExtResource("13_sw7bw")]
 offset_left = -18.0
@@ -306,24 +292,13 @@ monitorable = false
 position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="TextureRect" type="TextureRect" parent="Bench"]
-offset_left = -59.0
-offset_top = -55.0
-offset_right = 2502.0
-offset_bottom = 1386.0
-scale = Vector2(0.0558291, 0.0558291)
-texture = ExtResource("14_ysfsd")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Bench"]
-modulate = Color(0.717647, 0.807843, 0.764706, 1)
-offset_left = -52.0
-offset_top = -11.0
-offset_right = 1188.0
-offset_bottom = 268.0
-scale = Vector2(0.0205645, 0.0205645)
-theme_override_fonts/normal_font = ExtResource("15_gqlys")
-theme_override_font_sizes/normal_font_size = 200
-text = "Inventário"
+[node name="ColorRect" type="ColorRect" parent="Bench"]
+offset_left = -55.0
+offset_top = -9.0
+offset_right = 70.0
+offset_bottom = 13.0
+mouse_filter = 2
+color = Color(0.215686, 0.215686, 0.215686, 0.796078)
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false
@@ -345,43 +320,43 @@ text = "   Posicione todas as peças
 [node name="Drop" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-40, 80)
+position = Vector2(-40, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop2" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-24, 80)
+position = Vector2(-24, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop3" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-8, 80)
+position = Vector2(-8, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop4" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(8, 80)
+position = Vector2(8, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop5" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(24, 80)
+position = Vector2(24, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop6" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(40, 80)
+position = Vector2(40, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop7" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(56, 80)
+position = Vector2(56, 72)
 scale = Vector2(0.3, 0.3)
 
 [node name="VictoryWarning" type="TextEdit" parent="."]
@@ -390,10 +365,10 @@ visible = false
 z_index = 100
 clip_contents = true
 layout_direction = 1
-offset_left = -36.0
-offset_top = -19.0
-offset_right = 496.0
-offset_bottom = 52.0
+offset_left = -32.0
+offset_top = -61.0
+offset_right = 500.0
+offset_bottom = 10.0
 scale = Vector2(0.141, 0.141)
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -447,7 +422,7 @@ visible = false
 z_index = 100
 offset_left = -14.0
 offset_top = 30.0
-offset_right = 641.0
+offset_right = 532.0
 offset_bottom = 175.0
 scale = Vector2(0.077, 0.077)
 theme_override_font_sizes/font_size = 100
@@ -470,8 +445,7 @@ visible = false
 z_index = 80
 layout_mode = 3
 anchors_preset = 0
-offset_left = 5.0
-offset_right = 45.0
+offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.75, 0.75)
 
@@ -486,7 +460,7 @@ offset_bottom = 1064.0
 scale = Vector2(0.1, 0.1)
 theme_override_font_sizes/font_size = 80
 text = "Broquel de Turonia"
-icon = ExtResource("11_8dfs8")
+icon = ExtResource("14_34ek0")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -502,7 +476,7 @@ offset_bottom = 1064.0
 scale = Vector2(0.1, 0.1)
 theme_override_font_sizes/font_size = 80
 text = "Flecha de Solesia"
-icon = ExtResource("12_o41ni")
+icon = ExtResource("16_eojsa")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

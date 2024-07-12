@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://edsrq3h7u73o"]
+
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="1_b34i2"]
+[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_upsxw"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="3_oskrc"]
+
+[node name="Escolha de pecas" type="Control"]
+layout_mode = 3
+anchor_right = 0.521
+anchor_bottom = 0.496
+offset_left = -113.0
+offset_top = -13.0
+offset_right = -113.32
+offset_bottom = -12.6801
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -56.0
+offset_right = -8.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Peça 1" type="ColorRect" parent="Button"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 112.0
+color = Color(0.0901961, 0.0666667, 0.231373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Button/Peça 1"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 65.0
+offset_bottom = 61.0
+texture = ExtResource("1_b34i2")
+
+[node name="Title" type="RichTextLabel" parent="Button/Peça 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -74.0
+offset_right = 558.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(296.5, 91.5)
+theme_override_fonts/normal_font = ExtResource("2_upsxw")
+theme_override_font_sizes/normal_font_size = 200
+text = "Broquel de Turonia"
+scroll_active = false
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -56.0
+offset_right = 97.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Peça 2" type="ColorRect" parent="Button2"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 112.0
+color = Color(0.0901961, 0.0666667, 0.231373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Button2/Peça 2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 65.0
+offset_bottom = 61.0
+texture = ExtResource("3_oskrc")
+
+[node name="Title" type="RichTextLabel" parent="Button2/Peça 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -74.0
+offset_right = 558.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(296.5, 91.5)
+theme_override_fonts/normal_font = ExtResource("2_upsxw")
+theme_override_font_sizes/normal_font_size = 200
+text = "Flecha de Solesia"
+scroll_active = false

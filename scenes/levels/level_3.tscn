@@ -1,14 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://58fvpn7mvge6"]
+[gd_scene load_steps=15 format=3 uid="uid://58fvpn7mvge6"]
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_6k0mn"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_s6tmo"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_4whjc"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_1vndi"]
-[ext_resource type="PackedScene" uid="uid://njteghi8uikb" path="res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn" id="5_5mlgv"]
-[ext_resource type="PackedScene" uid="uid://bky1ecxcmmlv0" path="res://scenes/peças_aliadas/cajado_Solesia_Aliado.tscn" id="6_ceiaa"]
-[ext_resource type="PackedScene" uid="uid://mu4kv7hdc60s" path="res://scenes/peças_aliadas/cajado_Turonia_Aliado.tscn" id="7_rhoqd"]
-[ext_resource type="PackedScene" uid="uid://c70ykydw55bw3" path="res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn" id="8_f8l7b"]
-[ext_resource type="PackedScene" uid="uid://bmu3udj4i8ufb" path="res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn" id="9_3wruq"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="10_2c5rb"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="11_1rc7x"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_e0h31"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_3cyja"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="12_jbiic"]
@@ -172,21 +169,6 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 z_index = 2
-
-[node name="Broquel_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("5_5mlgv")]
-position = Vector2(-40, 72)
-
-[node name="Cajado_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("6_ceiaa")]
-position = Vector2(-24, 72)
-
-[node name="Cajado_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("7_rhoqd")]
-position = Vector2(-8, 72)
-
-[node name="Flecha_Turonia_Aliado" parent="Peças Aliadas" instance=ExtResource("8_f8l7b")]
-position = Vector2(8, 72)
-
-[node name="Broquel_Solesia_Aliado" parent="Peças Aliadas" instance=ExtResource("9_3wruq")]
-position = Vector2(24, 72)
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
@@ -438,6 +420,18 @@ scale = Vector2(0.077, 0.077)
 theme_override_font_sizes/font_size = 100
 text = "Recomeçar"
 
+[node name="NextLevelButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+offset_left = -14.0
+offset_top = 30.0
+offset_right = 641.0
+offset_bottom = 175.0
+scale = Vector2(0.077, 0.077)
+theme_override_font_sizes/font_size = 100
+text = "Próxima Fase"
+
 [node name="GoToSelectWorld2" type="Button" parent="."]
 process_mode = 3
 z_index = 80
@@ -449,9 +443,55 @@ scale = Vector2(0.0766745, 0.0766745)
 theme_override_font_sizes/font_size = 100
 text = "Voltar para seleção de fase"
 
+[node name="Pickin" type="Control" parent="."]
+process_mode = 3
+visible = false
+z_index = 80
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Button" type="Button" parent="Pickin"]
+process_mode = 3
+z_index = 80
+layout_mode = 0
+offset_left = -88.0
+offset_top = -56.0
+offset_right = 712.0
+offset_bottom = 1064.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 80
+text = "Broquel de Turonia"
+icon = ExtResource("10_2c5rb")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Pickin"]
+process_mode = 3
+z_index = 80
+layout_mode = 0
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 816.0
+offset_bottom = 1064.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 80
+text = "Flecha de Solesia"
+icon = ExtResource("11_1rc7x")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
 [connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
 [connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="GameMaster" method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="GoToSelectWorld2" to="GameMaster" method="_on_go_to_select_world_pressed"]
+[connection signal="pressed" from="Pickin/Button" to="GameMaster" method="_on_button_pressed"]
+[connection signal="pressed" from="Pickin/Button2" to="GameMaster" method="_on_button_2_pressed"]

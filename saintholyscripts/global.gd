@@ -1,5 +1,7 @@
 extends Node
 
+var banco = []
+
 var Menu = preload("res://scenes/menu.tscn")
 
 var current_scene
@@ -10,7 +12,6 @@ var player_team_winner : bool
 var pieces:= 0
 var someone_is_dragging:= false
 var game_ended := 0
-
 var arena_started := false
 
 var num_broquel_ali : int = 0
@@ -23,7 +24,13 @@ var num_sabre_ini : int = 0
 var num_cajado_ini : int = 0
 
 func _ready():
-	pass
+	#banco.append("res://scenes/peças_aliadas/cajado_Verovia_Aliado.tscn")
+	#banco.append("res://scenes/peças_aliadas/sabre_Verovia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/sabre_Solesia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/flecha_Solesia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/broquel_Solesia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/cajado_Turonia_Aliado.tscn")
 
 func _process(delta):
 	pass
@@ -33,29 +40,28 @@ func check_scene():
 	return current_scene
 
 func init_arena():
-	if check_scene() == "Arena":
-		var peças = get_tree().get_nodes_in_group("peças")
+	var peças = get_tree().get_nodes_in_group("peças")
 		
-		for p in peças:
-			if p.is_player_team:
-				if p.classe == "Broquel":
-					num_broquel_ali += 1
-				elif p.classe == "Flecha":
-					num_flecha_ali += 1
-				elif p.classe == "Sabre":
-					num_sabre_ali += 1
-				elif p.classe == "Cajado":
-					num_cajado_ali += 1
-			else:
-				if p.classe == "Broquel":
-					num_broquel_ini += 1
-				elif p.classe == "Flecha":
-					num_flecha_ini += 1
-				elif p.classe == "Sabre":
-					num_sabre_ini += 1
-				elif p.classe == "Cajado":
-					num_cajado_ini += 1
-			arena_started = true
+	for p in peças:
+		if p.is_player_team:
+			if p.classe == "Broquel":
+				num_broquel_ali += 1
+			elif p.classe == "Flecha":
+				num_flecha_ali += 1
+			elif p.classe == "Sabre":
+				num_sabre_ali += 1
+			elif p.classe == "Cajado":
+				num_cajado_ali += 1
+		else:
+			if p.classe == "Broquel":
+				num_broquel_ini += 1
+			elif p.classe == "Flecha":
+				num_flecha_ini += 1
+			elif p.classe == "Sabre":
+				num_sabre_ini += 1
+			elif p.classe == "Cajado":
+				num_cajado_ini += 1
+		arena_started = true
 	print("Broquels aliados: ", num_broquel_ali)
 	print("Flechas aliados: ", num_flecha_ali)
 	print("Sabres aliados: ", num_sabre_ali)
@@ -66,7 +72,6 @@ func init_arena():
 	print("Cajados inimigos: ", num_cajado_ini)
 
 func process_arena():
-	print("abacate")
 	var peças = get_tree().get_nodes_in_group("peças")
 	var time_player = []
 	var time_NPC = []
@@ -75,8 +80,8 @@ func process_arena():
 			time_player.append(p)
 		else:
 			time_NPC.append(p)
-	print("Time inimigo:",time_NPC.size())
-	print("Time aliado:", time_player.size())
+	#print("Time inimigo:",time_NPC.size())
+	#print("Time aliado:", time_player.size())
 	if time_NPC.size() == 0:
 		print("Você Ganhou!")
 		game_ended = 1

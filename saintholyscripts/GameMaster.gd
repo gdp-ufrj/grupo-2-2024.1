@@ -16,6 +16,7 @@ var p_paths = []
 var indice_botoes = []
 var current_scene
 var rng = RandomNumberGenerator.new()
+var erro = false
 
 func _ready():
 	init_banco()
@@ -55,7 +56,12 @@ func show_pos_battle_button():
 
 func show_victory():
 	victory_warning.visible = true
-	pickin.visible = true
+	if erro:
+		show_pos_battle_button()
+		if current_scene.name != "Level 6":
+			next_level_button.visible = true
+	else:
+		pickin.visible = true
 
 func show_defeat():
 	defeat_warning.visible = true
@@ -89,9 +95,13 @@ func _on_button_2_pressed():
 	add_peca_banco(1)
 
 func init_botoes_peca():
+	var contador : int = 0
 	var ja_foi : int = -1
 	var achou : bool = false
-	while achou == false:
+	while achou == false and contador < 30:
+		contador += 1
+		if contador == 30:
+			erro = true
 		var ja_tem : bool = false
 		var rnum = rng.randi_range(0, p_inim.size() - 1)
 		for i in range(Global.banco.size() - 1):
@@ -105,13 +115,14 @@ func init_botoes_peca():
 			if indice_botoes.size() == 2:
 				achou = true
 	
-	button_peca1.text = (p_inim[indice_botoes[0]].name).get_slice("_", 0) + " de " + p_inim[indice_botoes[0]].name.get_slice("_", 1)
-	button_peca1.icon = p_inim[indice_botoes[0]].find_child("Sprite").get_texture()
-	button_peca2.text = (p_inim[indice_botoes[1]].name).get_slice("_", 0) + " de " + p_inim[indice_botoes[1]].name.get_slice("_", 1)
-	button_peca2.icon = p_inim[indice_botoes[1]].find_child("Sprite").get_texture()
-	
-	p_paths.append(p_inim[indice_botoes[0]].scene_file_path)
-	p_paths.append(p_inim[indice_botoes[1]].scene_file_path)
+	if achou:
+		button_peca1.text = (p_inim[indice_botoes[0]].name).get_slice("_", 0) + " de " + p_inim[indice_botoes[0]].name.get_slice("_", 1)
+		button_peca1.icon = p_inim[indice_botoes[0]].find_child("Sprite").get_texture()
+		button_peca2.text = (p_inim[indice_botoes[1]].name).get_slice("_", 0) + " de " + p_inim[indice_botoes[1]].name.get_slice("_", 1)
+		button_peca2.icon = p_inim[indice_botoes[1]].find_child("Sprite").get_texture()
+		
+		p_paths.append(p_inim[indice_botoes[0]].scene_file_path)
+		p_paths.append(p_inim[indice_botoes[1]].scene_file_path)
 
 func add_peca_banco(indice):
 	var path = p_paths[indice]

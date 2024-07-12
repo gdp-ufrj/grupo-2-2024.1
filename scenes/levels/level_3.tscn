@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_6k0mn"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_s6tmo"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_4whjc"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_4whjc"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_1vndi"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="10_2c5rb"]
 [ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="10_tgese"]

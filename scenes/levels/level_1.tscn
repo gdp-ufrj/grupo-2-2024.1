@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_4ef0y"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_jplet"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="7_mi8k8"]
 [ext_resource type="PackedScene" uid="uid://vfy7ribfrqbb" path="res://scenes/peças_inimigas/flecha_Turonia_Inimigo.tscn" id="8_ekn3m"]

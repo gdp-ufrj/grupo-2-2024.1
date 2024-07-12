@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_e818o"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_jp4k7"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_6vi1l"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_6vi1l"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_8sqa7"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="10_5jhqv"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="11_4s05c"]
@@ -188,7 +188,7 @@ position = Vector2(8, -24)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 2)
-zoom = Vector2(7, 7)
+zoom = Vector2(6, 6)
 
 [node name="StartBattle" parent="." instance=ExtResource("14_libkp")]
 offset_left = -18.0

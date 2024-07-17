@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://e053qi2cm044"]
 
 [ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="1_vl3y1"]
-[ext_resource type="Script" path="res://scenes/credits.gd" id="1_wescv"]
+[ext_resource type="Script" path="res://saintholyscripts/credits.gd" id="1_wescv"]
 [ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="2_kxcg6"]
 [ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="3_kqabu"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="4_77o8o"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cnpwje68p4eih"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_02tvw"]
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_02tvw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="1_brhi6"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="1_rp32l"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_vy8nl"]

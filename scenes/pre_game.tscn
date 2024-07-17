@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://524ca6lgcjyd"]
+[gd_scene load_steps=15 format=3 uid="uid://524ca6lgcjyd"]
 
 [ext_resource type="Script" path="res://saintholyscripts/pre_game.gd" id="1_sx714"]
 [ext_resource type="Texture2D" uid="uid://binewwmfivcee" path="res://assets/sprites/Telas_Prancheta 1.png" id="2_qt33d"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2m4tgectjda" path="res://assets/sprites/Telas-12.png" id="9_rin3q"]
 [ext_resource type="Texture2D" uid="uid://cfqx5ikkactlc" path="res://assets/sprites/Telas-13.png" id="10_0hw6k"]
 [ext_resource type="Texture2D" uid="uid://ckcch2qh2qow1" path="res://assets/sprites/Telas-14.png" id="11_dlkov"]
+[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="12_s226n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gp1m"]
 texture = ExtResource("11_dlkov")
@@ -227,6 +228,14 @@ offset_bottom = 944.0
 scale = Vector2(0.424525, 0.424525)
 mouse_filter = 2
 texture = ExtResource("10_0hw6k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1601, 378)
+scale = Vector2(0.424525, 0.424525)
+stream = ExtResource("12_s226n")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="World1" to="." method="_on_world_1_button_down"]

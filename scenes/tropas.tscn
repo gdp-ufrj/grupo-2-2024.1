@@ -1,0 +1,432 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwgkwgea7cjaa"]
+
+[ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="1_ms3lo"]
+[ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="2_sw61e"]
+[ext_resource type="Texture2D" uid="uid://diq55wbya52an" path="res://assets/sprites/tile_0099.png" id="3_nn221"]
+
+[node name="Tropas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1080.0
+texture = ExtResource("1_ms3lo")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -805.0
+offset_top = -303.0
+offset_right = 695.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 360
+theme_override_constants/v_separation = 470
+columns = 5
+
+[node name="Tropa" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -116.0
+offset_right = 115.0
+offset_bottom = 25.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 31.0
+offset_right = 16859.0
+offset_bottom = 21031.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "      Sabre de Verovia
+❤: 120    ⚔: 12   🏹: 1
+    💧:  100      💧⚔: 20
+           🌟: +10❤
+
+🌌:  ergue sua espada e  inspira seus aliados trazendo uma brisa revigorante, curando 15 ❤"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Tropa2" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa2"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa2"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa3" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa3"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa3"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa4" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa4"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa4"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa5" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa5"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa5"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa6" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa6"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa6"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa7" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa7"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa7"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa8" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa8"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa8"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa9" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa9"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa9"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false
+
+[node name="Tropa10" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -276.0
+offset_right = 2827.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_sw61e")
+
+[node name="Peca" type="TextureRect" parent="GridContainer/Tropa10"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -109.0
+offset_right = 108.0
+offset_bottom = 17.0
+texture = ExtResource("3_nn221")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa10"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 14574.0
+offset_bottom = 2066.0
+scale = Vector2(0.01, 0.01)
+theme_override_font_sizes/normal_font_size = 1500
+text = "   Sabre de Verovia"
+fit_content = true
+scroll_active = false

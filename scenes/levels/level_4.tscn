@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://oaj0ks2tchc6"]
+[gd_scene load_steps=18 format=3 uid="uid://oaj0ks2tchc6"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_e818o"]
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_e818o"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_jp4k7"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_6vi1l"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_8sqa7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="12_vbo58"]
 [ext_resource type="PackedScene" uid="uid://cg8ohnm22wnsp" path="res://scenes/peças_inimigas/cajado_Solesia_Inimigo.tscn" id="13_5vrqf"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="14_libkp"]
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="14_y2y0p"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="15_k85fl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
@@ -486,6 +487,12 @@ icon = ExtResource("12_up1ac")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_y2y0p")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

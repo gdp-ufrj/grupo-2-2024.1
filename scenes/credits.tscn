@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://qm08n3030ka7"]
+[gd_scene load_steps=7 format=3 uid="uid://qm08n3030ka7"]
 
-[ext_resource type="Script" path="res://scenes/credits.gd" id="1_ffj4b"]
+[ext_resource type="Script" path="res://saintholyscripts/credits.gd" id="1_ffj4b"]
 [ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="2_4kt63"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="3_ooob1"]
 [ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="4_mulkt"]
 [ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="5_5tmpp"]
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="6_e65do"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -162,6 +163,12 @@ text = ">"
 [node name="Timer" type="Timer" parent="NextPage"]
 wait_time = 0.2
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_e65do")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="NextPage" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="NextPage/Timer" to="." method="_on_timer_timeout"]

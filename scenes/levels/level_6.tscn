@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://c3yh1s7y600ot"]
+[gd_scene load_steps=20 format=3 uid="uid://c3yh1s7y600ot"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_cv203"]
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_cv203"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_v5tqx"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_q73lw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_7a0fp"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="14_pgaim"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="15_1kvy2"]
 [ext_resource type="PackedScene" uid="uid://cuopgedrhracd" path="res://scenes/peças_inimigas/sabre_Verovia_Inimigo.tscn" id="15_khcqi"]
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="16_aivhn"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="16_xsxxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
@@ -494,6 +495,12 @@ icon = ExtResource("14_pgaim")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_aivhn")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

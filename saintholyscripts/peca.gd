@@ -235,7 +235,7 @@ func basic_attack():
 	var dist_x = abs(global_position.x - peça_alvo.global_position.x);
 	var dist_y = abs(global_position.y - peça_alvo.global_position.y);
 	
-	if (dist_x > range * 16) or (dist_y > range * 16):
+	if (dist_x != 0 and dist_y != 0) or (dist_x == 0 and dist_y > range * 16) or (dist_x > range * 16 and dist_y == 0):
 		is_attacking = false
 		timer.stop()
 		atribuir_alvo()

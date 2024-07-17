@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://b27nt5f68vyo3"]
+[gd_scene load_steps=19 format=3 uid="uid://b27nt5f68vyo3"]
 
-[ext_resource type="Script" path="res://saintholyscripts/ArenaManager.gd" id="1_hqwj8"]
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_hqwj8"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_avwjk"]
 [ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_pd22c"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_q8jbq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xuipne0qgwkf" path="res://scenes/peças_inimigas/cajado_Verovia_Inimigo.tscn" id="14_1dv2o"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="14_kr0ui"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="15_81gaw"]
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="15_aji68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_q8jbq")
@@ -490,6 +491,12 @@ icon = ExtResource("13_xy4pw")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_aji68")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

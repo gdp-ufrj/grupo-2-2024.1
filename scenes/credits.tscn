@@ -25,6 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(957, 518)
+mouse_filter = 2
 texture = ExtResource("2_4kt63")
 expand_mode = 1
 
@@ -42,12 +43,18 @@ offset_bottom = 1015.6
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.699949, 0.699949)
+mouse_filter = 2
 texture = ExtResource("4_mulkt")
 expand_mode = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_e65do")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"
+
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 390.0
 offset_right = 1475.0
@@ -56,9 +63,13 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 46
 text = "credits(asteria.class( ))"
 
-[node name="ProgTitle" type="RichTextLabel" parent="."]
+[node name="Page1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 459.0
 offset_right = 1475.0
@@ -67,9 +78,8 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 34
 text = "Programação"
 
-[node name="ProgText" type="RichTextLabel" parent="."]
+[node name="ProgText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 518.0
 offset_right = 1475.0
@@ -78,9 +88,8 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 30
 text = "João Victor Barreto | Rafael Lima"
 
-[node name="RoteiroTitle" type="RichTextLabel" parent="."]
+[node name="RoteiroTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 566.0
 offset_right = 1475.0
@@ -89,20 +98,18 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 34
 text = "Roteiro"
 
-[node name="RoteiroText" type="RichTextLabel" parent="."]
+[node name="RoteiroText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 616.0
 offset_right = 1475.0
 offset_bottom = 946.0
 theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 30
-text = "Joana Iozzi | Christian Tucci "
+text = "Joana Iozzi"
 
-[node name="ArtTitle" type="RichTextLabel" parent="."]
+[node name="ArtTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 656.0
 offset_right = 1475.0
@@ -111,9 +118,8 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 34
 text = "Arte"
 
-[node name="ArtText" type="RichTextLabel" parent="."]
+[node name="ArtText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 706.0
 offset_right = 1475.0
@@ -122,9 +128,8 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 30
 text = "Daniel da Silva | Fernanda Vieira | July Teixeira "
 
-[node name="ArtTitle2" type="RichTextLabel" parent="."]
+[node name="GameDesignTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 744.0
 offset_right = 1475.0
@@ -133,19 +138,65 @@ theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 34
 text = "Game Design"
 
-[node name="ArtText2" type="RichTextLabel" parent="."]
+[node name="GameDesignText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
-layout_mode = 0
 offset_left = 524.0
 offset_top = 794.0
 offset_right = 1475.0
 offset_bottom = 1124.0
 theme_override_fonts/normal_font = ExtResource("5_5tmpp")
 theme_override_font_sizes/normal_font_size = 30
-text = "Francisco Taam | Hugo Frota 
+text = "Hugo Frota 
 "
 
-[node name="NextPage" type="Button" parent="."]
+[node name="Page2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioTitle" type="RichTextLabel" parent="Page2"]
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+offset_left = 524.0
+offset_top = 459.0
+offset_right = 1475.0
+offset_bottom = 789.0
+theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_font_sizes/normal_font_size = 34
+text = "Áudio"
+
+[node name="AudioText" type="RichTextLabel" parent="Page2"]
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+offset_left = 524.0
+offset_top = 518.0
+offset_right = 1475.0
+offset_bottom = 848.0
+theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_font_sizes/normal_font_size = 30
+text = "????????????????????????????????????????????????????"
+
+[node name="GestaoTitle" type="RichTextLabel" parent="Page2"]
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+offset_left = 524.0
+offset_top = 566.0
+offset_right = 1475.0
+offset_bottom = 896.0
+theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_font_sizes/normal_font_size = 34
+text = "Gestão"
+
+[node name="GestaoText" type="RichTextLabel" parent="Page2"]
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+offset_left = 524.0
+offset_top = 616.0
+offset_right = 1475.0
+offset_bottom = 946.0
+theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_font_sizes/normal_font_size = 30
+text = "Theo"
+
+[node name="NextButton" type="Button" parent="."]
+process_mode = 3
 modulate = Color(0.906356, 0.939546, 0.923247, 1)
 top_level = true
 layout_mode = 0
@@ -160,15 +211,32 @@ theme_override_fonts/font = ExtResource("3_ooob1")
 theme_override_font_sizes/font_size = 56
 text = ">"
 
-[node name="Timer" type="Timer" parent="NextPage"]
+[node name="Timer" type="Timer" parent="NextButton"]
 wait_time = 0.2
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_e65do")
-volume_db = -10.0
-autoplay = true
-bus = &"Musica"
+[node name="BackButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+modulate = Color(0.906356, 0.939546, 0.923247, 1)
+top_level = true
+offset_left = 524.0
+offset_top = 872.0
+offset_right = 566.0
+offset_bottom = 952.0
+rotation = -3.14159
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_outline_color = Color(0.345098, 0.345098, 0.345098, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_ooob1")
+theme_override_font_sizes/font_size = 56
+text = ">"
 
-[connection signal="pressed" from="NextPage" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="NextPage/Timer" to="." method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="BackButton"]
+wait_time = 0.2
+autostart = true
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="timeout" from="NextButton/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="BackButton/Timer" to="." method="_on_timer_timeout"]

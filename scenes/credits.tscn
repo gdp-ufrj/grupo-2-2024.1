@@ -55,6 +55,7 @@ bus = &"Musica"
 
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 390.0
 offset_right = 1475.0
@@ -70,6 +71,7 @@ offset_bottom = 40.0
 
 [node name="ProgTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 459.0
 offset_right = 1475.0
@@ -80,6 +82,7 @@ text = "Programação"
 
 [node name="ProgText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 518.0
 offset_right = 1475.0
@@ -90,6 +93,7 @@ text = "João Victor Barreto | Rafael Lima"
 
 [node name="RoteiroTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 566.0
 offset_right = 1475.0
@@ -100,6 +104,7 @@ text = "Roteiro"
 
 [node name="RoteiroText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 616.0
 offset_right = 1475.0
@@ -110,6 +115,7 @@ text = "Joana Iozzi"
 
 [node name="ArtTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 656.0
 offset_right = 1475.0
@@ -120,6 +126,7 @@ text = "Arte"
 
 [node name="ArtText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 706.0
 offset_right = 1475.0
@@ -130,6 +137,7 @@ text = "Daniel da Silva | Fernanda Vieira | July Teixeira "
 
 [node name="GameDesignTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 744.0
 offset_right = 1475.0
@@ -140,6 +148,7 @@ text = "Game Design"
 
 [node name="GameDesignText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 794.0
 offset_right = 1475.0
@@ -157,6 +166,7 @@ offset_bottom = 40.0
 
 [node name="AudioTitle" type="RichTextLabel" parent="Page2"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 459.0
 offset_right = 1475.0
@@ -167,6 +177,7 @@ text = "Áudio"
 
 [node name="AudioText" type="RichTextLabel" parent="Page2"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 518.0
 offset_right = 1475.0
@@ -177,6 +188,7 @@ text = "????????????????????????????????????????????????????"
 
 [node name="GestaoTitle" type="RichTextLabel" parent="Page2"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 566.0
 offset_right = 1475.0
@@ -187,6 +199,7 @@ text = "Gestão"
 
 [node name="GestaoText" type="RichTextLabel" parent="Page2"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+layout_mode = 0
 offset_left = 524.0
 offset_top = 616.0
 offset_right = 1475.0
@@ -220,6 +233,7 @@ process_mode = 3
 visible = false
 modulate = Color(0.906356, 0.939546, 0.923247, 1)
 top_level = true
+layout_mode = 0
 offset_left = 524.0
 offset_top = 872.0
 offset_right = 566.0

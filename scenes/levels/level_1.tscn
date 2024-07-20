@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_4ef0y"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
-[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
 [ext_resource type="Texture2D" uid="uid://0k6slnmuq1d7" path="res://assets/sprites/cenário principal teste 2.png" id="5_6cala"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_8dfs8"]
@@ -171,11 +171,16 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-offset_left = -153.0
-offset_top = -102.0
-offset_right = 3047.0
-offset_bottom = 1698.0
-scale = Vector2(0.1, 0.1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -103.0
+offset_right = 1766.0
+offset_bottom = 977.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.177592, 0.177592)
 texture = ExtResource("5_6cala")
 
 [node name="Peças Aliadas" type="Node2D" parent="."]
@@ -190,7 +195,7 @@ position = Vector2(8, -8)
 position = Vector2(-8, -24)
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(8, 2)
+position = Vector2(10, 8)
 zoom = Vector2(6, 6)
 
 [node name="StartBattle" parent="." instance=ExtResource("13_sw7bw")]

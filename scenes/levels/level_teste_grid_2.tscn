@@ -1,0 +1,519 @@
+[gd_scene load_steps=16 format=3 uid="uid://cohfvgxyiwtup"]
+
+[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_3hnds"]
+[ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_ep6wa"]
+[ext_resource type="Texture2D" uid="uid://dfv57f2w4ji5w" path="res://assets/sprites/cenário só o tabuleiro teste 6.png" id="3_64ljj"]
+[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="4_kf4j8"]
+[ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="5_3xxto"]
+[ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="6_6s2lp"]
+[ext_resource type="PackedScene" uid="uid://bclwdk2473ws" path="res://scenes/peças_inimigas/broquel_Turonia_Inimigo.tscn" id="7_qbyfh"]
+[ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="8_dg1k5"]
+[ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="9_kvx3r"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="10_ugj5d"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_h1qyl"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="12_xyvdb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
+texture = ExtResource("5_3xxto")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+0:4/0/custom_data_0 = true
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5eq22"]
+tile_size = Vector2i(160, 140)
+custom_data_layer_0/name = "andavel"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_lptho")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mveu"]
+size = Vector2(206, 18)
+
+[node name="Level Teste" type="Node2D" groups=["cena_atual"]]
+position = Vector2(1, -1)
+script = ExtResource("1_3hnds")
+dialogue_resource = ExtResource("2_ep6wa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 1081.0
+texture = ExtResource("3_64ljj")
+
+[node name="GameMaster" parent="." instance=ExtResource("4_kf4j8")]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+position = Vector2(888, 735)
+tile_set = SubResource("TileSet_5eq22")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 0, 4, -65536, 0, 4, 0, 0, 4, 65535, 0, 4, -131072, 0, 4, 65536, 0, 4, -196608, 0, 4, 131072, 0, 4, 131071, 0, 4, 196607, 0, 4, -65537, 0, 4, -131073, 0, 4, -196607, 0, 4, -131071, 0, 4, -65535, 0, 4, 1, 0, 4, 65537, 0, 4, 131073, 0, 4, -131074, 0, 4, -65538, 0, 4, -2, 0, 4, 65534, 0, 4, 131070, 0, 4, 196606, 0, 4, -131075, 0, 4, -65539, 0, 4, -3, 0, 4, 65533, 0, 4, 131069, 0, 4, 196605, 0, 4, -196606, 0, 4, -131070, 0, 4, -65534, 0, 4, 2, 0, 4, 65538, 0, 4, 131074, 0, 4, -196605, 0, 4, -131069, 0, 4, -65533, 0, 4, 3, 0, 4, 65539, 0, 4, 131075, 0, 4, 262141, 131072, 2, -262147, 131072, 0, -262146, 131072, 0, -262145, 131072, 0, -327678, 131072, 0, -327680, 131072, 0, -327679, 131072, 0, -327677, 131072, 0, 262142, 131072, 2, 262143, 131072, 2, 196608, 131072, 2, 196609, 131072, 2, 196610, 131072, 2, 196611, 131072, 2, 196612, 196608, 2, 262140, 65536, 2, 196604, 65536, 1, 131068, 65536, 1, 65532, 65536, 1, -4, 65536, 1, -65540, 65536, 1, -131076, 65536, 1, 131076, 196608, 1, 65540, 196608, 1, 4, 196608, 1, -65532, 196608, 1, -131068, 196608, 1, -196604, 196608, 1, -327676, 196608, 0, -262148, 65536, 0, -262140, 196608, 1, -196612, 65536, 1, -196611, 131072, 1, -196610, 131072, 1, -196609, 131072, 1, -262144, 131072, 1, -262143, 131072, 1, -262142, 131072, 1, -262141, 131072, 1, -327675, 0, 0, -262139, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 0, 0, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 0, 0, 327675, 0, 0, 262139, 0, 0, 196603, 0, 0, 131067, 0, 0, 65531, 0, 0, -5, 0, 0, -65541, 0, 0, -131077, 0, 0, -196613, 0, 0, -262149, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393222, 589824, 5, -458746, 720896, 5, -393221, 655360, 5, -393220, 655360, 5, -393219, 655360, 5, -393218, 655360, 5, -393217, 655360, 5, -458752, 655360, 5, -458751, 655360, 5, -458750, 655360, 5, -458749, 655360, 5, -458748, 655360, 5, -458747, 655360, 5, -393210, 720896, 6, -327674, 720896, 6, -262138, 720896, 6, -196602, 720896, 6, -131066, 720896, 6, -65530, 720896, 6, 6, 720896, 6, 65542, 720896, 6, 131078, 720896, 6, 196614, 720896, 6, -327686, 589824, 6, -262150, 589824, 6, -196614, 589824, 6, -131078, 589824, 6, -65542, 720896, 6, -6, 589824, 6, 65530, 589824, 6, 131066, 589824, 6, 196602, 589824, 6, 262138, 589824, 6, 327674, 589824, 6, 262150, 720896, 6, 393210, 589824, 7, 327686, 720896, 7, 393211, 655360, 7, 393212, 655360, 7, 393213, 655360, 7, 393214, 655360, 7, 393215, 655360, 7, 327680, 655360, 7, 327681, 655360, 7, 327682, 655360, 7, 327683, 655360, 7, 327684, 655360, 7, 327685, 655360, 7)
+
+[node name="Peças Aliadas" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(480, 1106)
+
+[node name="Peças Inimigas" type="Node2D" parent="."]
+position = Vector2(1125, 388)
+
+[node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("6_6s2lp")]
+position = Vector2(2, -6)
+scale = Vector2(9.754, 8.778)
+
+[node name="Broquel_Turonia_Inimigo" parent="Peças Inimigas" instance=ExtResource("7_qbyfh")]
+position = Vector2(-157, -148)
+scale = Vector2(9.754, 8.778)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(959, 541)
+scale = Vector2(17.9211, 17.9211)
+
+[node name="StartBattle" parent="." instance=ExtResource("8_dg1k5")]
+offset_left = -18.0
+offset_top = -65.0
+offset_right = 683.0
+offset_bottom = 80.0
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="WarningTimer" type="Timer" parent="StartBattle"]
+wait_time = 3.0
+
+[node name="BattlePositions" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(480, 632)
+
+[node name="Line1" type="Node2D" parent="BattlePositions"]
+position = Vector2(408, -216)
+scale = Vector2(10.0178, 10.0178)
+
+[node name="Drop" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(-40, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop2" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(-24, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop3" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(-8, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop4" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(8, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop5" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(24, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop6" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(40, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop7" parent="BattlePositions/Line1" instance=ExtResource("9_kvx3r")]
+position = Vector2(56, 40)
+scale = Vector2(0.3, 0.3)
+
+[node name="Line2" type="Node2D" parent="BattlePositions"]
+position = Vector2(405, -205)
+scale = Vector2(10.018, 10.018)
+
+[node name="Drop8" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(-40, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop9" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(-24, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop10" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(-8, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop11" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(8, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop12" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(24, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop13" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(40, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop14" parent="BattlePositions/Line2" instance=ExtResource("9_kvx3r")]
+position = Vector2(56, 24)
+scale = Vector2(0.3, 0.3)
+
+[node name="Line3" type="Node2D" parent="BattlePositions"]
+position = Vector2(408, -184)
+scale = Vector2(10.018, 10.018)
+
+[node name="Drop15" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(-40, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop16" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(-24, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop17" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(-8, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop18" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(8, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop19" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(24, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop20" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(40, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop21" parent="BattlePositions/Line3" instance=ExtResource("9_kvx3r")]
+position = Vector2(56, 8)
+scale = Vector2(0.3, 0.3)
+
+[node name="Bench" type="Area2D" parent="."]
+position = Vector2(825, 1009)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bench"]
+position = Vector2(55.0001, 2)
+shape = SubResource("RectangleShape2D_3mveu")
+
+[node name="InventoryBG" parent="Bench" instance=ExtResource("10_ugj5d")]
+scale = Vector2(9.23329, 9.23329)
+metadata/_edit_use_anchors_ = true
+
+[node name="StartBattleWarning" type="TextEdit" parent="."]
+visible = false
+clip_contents = true
+layout_direction = 1
+offset_left = -25.0
+offset_top = -49.0
+offset_right = 541.0
+offset_bottom = 127.0
+scale = Vector2(0.14106, 0.14106)
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "   Posicione todas as peças 
+  antes de iniciar a batalha!"
+
+[node name="BenchPositions" type="Node2D" parent="."]
+position = Vector2(888, 305)
+scale = Vector2(10.018, 10.018)
+
+[node name="Drop" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(-40, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop2" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(-24, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop3" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(-8, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop4" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(8, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop5" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(24, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop6" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(40, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="Drop7" parent="BenchPositions" instance=ExtResource("9_kvx3r")]
+modulate = Color(0.615686, 0.192157, 0.133333, 1)
+z_index = 1
+position = Vector2(56, 80)
+scale = Vector2(0.3, 0.3)
+
+[node name="VictoryWarning" type="TextEdit" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+clip_contents = true
+layout_direction = 1
+offset_left = -36.0
+offset_top = -19.0
+offset_right = 496.0
+offset_bottom = 52.0
+scale = Vector2(0.141, 0.141)
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Parabéns!!!! Você venceu! :)"
+
+[node name="DefeatWarning" type="TextEdit" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+clip_contents = true
+layout_direction = 1
+offset_left = -41.0
+offset_top = -7.0
+offset_right = 626.0
+offset_bottom = 156.0
+scale = Vector2(0.141, 0.141)
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Poxa...você perdeu :(. Gostaria de tentar novamente?"
+wrap_mode = 1
+
+[node name="GoToSelectWorld" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 80
+offset_left = -40.0
+offset_top = 19.0
+offset_right = 1267.0
+offset_bottom = 164.0
+scale = Vector2(0.0766745, 0.0766745)
+theme_override_font_sizes/font_size = 100
+text = "Voltar para seleção de fase"
+
+[node name="RestartButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+offset_left = -14.0
+offset_top = 30.0
+offset_right = 532.0
+offset_bottom = 175.0
+scale = Vector2(0.077, 0.077)
+theme_override_font_sizes/font_size = 100
+text = "Recomeçar"
+
+[node name="NextLevelButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+offset_left = -14.0
+offset_top = 30.0
+offset_right = 641.0
+offset_bottom = 175.0
+scale = Vector2(0.077, 0.077)
+theme_override_font_sizes/font_size = 100
+text = "Próxima Fase"
+
+[node name="GoToSelectWorld2" type="Button" parent="."]
+process_mode = 3
+z_index = 80
+offset_left = -36.0
+offset_top = -75.0
+offset_right = 1271.0
+offset_bottom = 70.0
+scale = Vector2(0.0766745, 0.0766745)
+theme_override_font_sizes/font_size = 100
+text = "Voltar para seleção de fase"
+metadata/_edit_use_anchors_ = true
+
+[node name="Pickin" type="Control" parent="."]
+process_mode = 3
+visible = false
+z_index = 80
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Button" type="Button" parent="Pickin"]
+process_mode = 3
+z_index = 80
+layout_mode = 0
+offset_left = -88.0
+offset_top = -56.0
+offset_right = 712.0
+offset_bottom = 1064.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 80
+text = "Broquel de Turonia"
+icon = ExtResource("11_h1qyl")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Pickin"]
+process_mode = 3
+z_index = 80
+layout_mode = 0
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 816.0
+offset_bottom = 1064.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 80
+text = "Flecha de Solesia"
+icon = ExtResource("12_xyvdb")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
+[connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
+[connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
+[connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
+[connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="GameMaster" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="GoToSelectWorld2" to="GameMaster" method="_on_go_to_select_world_pressed"]
+[connection signal="pressed" from="Pickin/Button" to="GameMaster" method="_on_button_pressed"]
+[connection signal="pressed" from="Pickin/Button2" to="GameMaster" method="_on_button_2_pressed"]

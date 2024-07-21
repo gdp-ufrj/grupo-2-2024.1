@@ -84,11 +84,16 @@ offset_left = 1610.0
 offset_top = 851.0
 offset_right = 1727.0
 offset_bottom = 967.0
+scale = Vector2(1e-05, 1e-05)
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = SubResource("StyleBoxTexture_8gp1m")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ffjcb")
 
+[node name="World1Timer" type="Timer" parent="Buttons/World1"]
+wait_time = 0.1
+
 [node name="World2" type="Button" parent="Buttons"]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 1625.0
@@ -99,6 +104,7 @@ theme_override_font_sizes/font_size = 33
 text = "Level 2"
 
 [node name="World3" type="Button" parent="Buttons"]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 1623.0
@@ -109,6 +115,7 @@ theme_override_font_sizes/font_size = 33
 text = "Level 3"
 
 [node name="World4" type="Button" parent="Buttons"]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 1628.0
@@ -119,6 +126,7 @@ theme_override_font_sizes/font_size = 33
 text = "Level 4"
 
 [node name="World5" type="Button" parent="Buttons"]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 1638.0
@@ -129,6 +137,7 @@ theme_override_font_sizes/font_size = 33
 text = "Level 5"
 
 [node name="World6" type="Button" parent="Buttons"]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 1642.0
@@ -148,8 +157,7 @@ scale = Vector2(1e-05, 1e-05)
 theme_override_styles/normal = SubResource("StyleBoxTexture_6pl2c")
 
 [node name="TropasResizeTimer" type="Timer" parent="Buttons/TropasButton"]
-wait_time = 0.2
-autostart = true
+wait_time = 0.1
 
 [node name="TutorialButton" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -157,11 +165,11 @@ offset_left = 173.0
 offset_top = 706.0
 offset_right = 707.0
 offset_bottom = 793.0
+scale = Vector2(1e-05, 1e-05)
 theme_override_styles/normal = SubResource("StyleBoxTexture_svyr0")
 
 [node name="TutorialResizeTimer" type="Timer" parent="Buttons/TutorialButton"]
-wait_time = 0.2
-autostart = true
+wait_time = 0.1
 
 [node name="SettingsButton" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -169,11 +177,11 @@ offset_left = 215.0
 offset_top = 814.0
 offset_right = 749.0
 offset_bottom = 901.0
+scale = Vector2(1e-05, 1e-05)
 theme_override_styles/normal = SubResource("StyleBoxTexture_56jq8")
 
 [node name="SettingsResizeTimer" type="Timer" parent="Buttons/SettingsButton"]
-wait_time = 0.2
-autostart = true
+wait_time = 0.1
 
 [node name="Panels&Texts" type="Control" parent="."]
 anchors_preset = 0
@@ -215,17 +223,21 @@ mouse_filter = 2
 texture = ExtResource("4_qch8c")
 
 [node name="ResizeTournamantTimer" type="Timer" parent="Panels&Texts/TournamentPanel"]
-wait_time = 0.2
+wait_time = 0.1
 autostart = true
 
 [node name="Globo" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
-offset_left = 175.0
-offset_right = 4175.0
-offset_bottom = 2251.0
-scale = Vector2(0.477658, 0.477658)
+offset_left = 171.0
+offset_top = -6.0
+offset_right = 4171.0
+offset_bottom = 2245.0
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("5_hj6bi")
+
+[node name="GloboResizeTimer" type="Timer" parent="Panels&Texts/Globo"]
+wait_time = 0.2
 
 [node name="Linha2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -233,19 +245,25 @@ offset_left = 1266.0
 offset_top = 102.0
 offset_right = 2063.0
 offset_bottom = 675.0
-scale = Vector2(0.471943, 0.471943)
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("6_3aktj")
 
+[node name="Linha2ResizeTimer" type="Timer" parent="Panels&Texts/Linha2"]
+wait_time = 0.1
+
 [node name="LinhaLonga" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
-offset_left = 878.0
-offset_top = 414.0
-offset_right = 2987.0
-offset_bottom = 1125.0
-scale = Vector2(0.459289, 0.465151)
+offset_left = 848.0
+offset_top = 411.0
+offset_right = 2957.0
+offset_bottom = 1122.0
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("7_cc1lv")
+
+[node name="LinhaLongResizeTimer" type="Timer" parent="Panels&Texts/LinhaLonga"]
+wait_time = 0.1
 
 [node name="Linha1" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -253,9 +271,12 @@ offset_left = 1376.0
 offset_top = 691.0
 offset_right = 2073.0
 offset_bottom = 1362.0
-scale = Vector2(0.479259, 0.479259)
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("8_bfqyq")
+
+[node name="Linha1ResizeTimer" type="Timer" parent="Panels&Texts/Linha1"]
+wait_time = 0.1
 
 [node name="DotLevel1" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -263,19 +284,25 @@ offset_left = 1366.0
 offset_top = 660.0
 offset_right = 1697.0
 offset_bottom = 1021.0
-scale = Vector2(0.486996, 0.486996)
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
+[node name="DotLevel1ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel1"]
+wait_time = 0.1
+
 [node name="DotLevel2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
-offset_left = 871.0
-offset_top = 524.0
-offset_right = 1202.0
-offset_bottom = 885.0
-scale = Vector2(0.486996, 0.486996)
+offset_left = 852.0
+offset_top = 526.0
+offset_right = 1183.0
+offset_bottom = 887.0
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("9_rin3q")
+
+[node name="DotLevel2ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel2"]
+wait_time = 0.1
 
 [node name="DotLevel3" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -283,9 +310,12 @@ offset_left = 1236.0
 offset_top = 239.0
 offset_right = 1567.0
 offset_bottom = 600.0
-scale = Vector2(0.486996, 0.486996)
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("9_rin3q")
+
+[node name="DotLevel3ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel3"]
+wait_time = 0.1
 
 [node name="LockedLevel3" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -293,19 +323,25 @@ offset_left = 1417.0
 offset_top = 21.0
 offset_right = 2131.0
 offset_bottom = 587.0
-scale = Vector2(0.424525, 0.424525)
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("10_0hw6k")
 
+[node name="LockedLevel3ResizeTimer" type="Timer" parent="Panels&Texts/LockedLevel3"]
+wait_time = 0.1
+
 [node name="LockedLevel2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
-offset_left = 1601.0
-offset_top = 378.0
-offset_right = 2315.0
-offset_bottom = 944.0
-scale = Vector2(0.424525, 0.424525)
+offset_left = 1593.0
+offset_top = 369.0
+offset_right = 2307.0
+offset_bottom = 935.0
+scale = Vector2(1e-05, 1e-05)
 mouse_filter = 2
 texture = ExtResource("10_0hw6k")
+
+[node name="LockedLevel2ResizeTimer" type="Timer" parent="Panels&Texts/LockedLevel2"]
+wait_time = 0.1
 
 [node name="TorneioTitle" type="RichTextLabel" parent="Panels&Texts"]
 layout_mode = 0
@@ -320,8 +356,7 @@ theme_override_font_sizes/normal_font_size = 60
 text = "T0RN3IO"
 
 [node name="TorneioTitleResizeTimer" type="Timer" parent="Panels&Texts/TorneioTitle"]
-wait_time = 0.2
-autostart = true
+wait_time = 0.1
 
 [node name="TorneioText" type="RichTextLabel" parent="Panels&Texts"]
 layout_mode = 0
@@ -338,17 +373,28 @@ text = "zapapzpadadowkdaokaofkfwodoakdowadkowadkawodkaokdaowdaowdkawodkawodkawod
 zzpapdwapdkokodkoakdokawodkaoakdowakdowaodkoawdkod"
 
 [node name="TorneioTextResizerTimer" type="Timer" parent="Panels&Texts/TorneioText"]
-wait_time = 0.2
-autostart = true
+wait_time = 0.1
 
 [connection signal="pressed" from="Buttons/GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Buttons/World1" to="." method="_on_world_1_button_down"]
+[connection signal="timeout" from="Buttons/World1/World1Timer" to="." method="_on_world_1_timer_timeout"]
 [connection signal="pressed" from="Buttons/World2" to="." method="_on_world_2_pressed"]
 [connection signal="button_down" from="Buttons/World3" to="." method="_on_world_3_button_down"]
 [connection signal="button_down" from="Buttons/World4" to="." method="_on_world_4_button_down"]
 [connection signal="button_down" from="Buttons/World5" to="." method="_on_world_5_button_down"]
 [connection signal="button_down" from="Buttons/World6" to="." method="_on_world_6_button_down"]
 [connection signal="timeout" from="Buttons/TropasButton/TropasResizeTimer" to="." method="_on_tropas_resize_timer_timeout"]
+[connection signal="timeout" from="Buttons/TutorialButton/TutorialResizeTimer" to="." method="_on_tutorial_resize_timer_timeout"]
+[connection signal="timeout" from="Buttons/SettingsButton/SettingsResizeTimer" to="." method="_on_settings_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/TournamentPanel/ResizeTournamantTimer" to="." method="_on_resize_tournmant_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/Globo/GloboResizeTimer" to="." method="_on_globo_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/Linha2/Linha2ResizeTimer" to="." method="_on_linha_2_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/LinhaLonga/LinhaLongResizeTimer" to="." method="_on_linha_long_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/Linha1/Linha1ResizeTimer" to="." method="_on_linha_1_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/DotLevel1/DotLevel1ResizeTimer" to="." method="_on_dot_level_1_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/DotLevel2/DotLevel2ResizeTimer" to="." method="_on_dot_level_2_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/DotLevel3/DotLevel3ResizeTimer" to="." method="_on_dot_level_3_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/LockedLevel3/LockedLevel3ResizeTimer" to="." method="_on_locked_level_3_resize_timer_timeout"]
+[connection signal="timeout" from="Panels&Texts/LockedLevel2/LockedLevel2ResizeTimer" to="." method="_on_locked_level_2_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/TorneioTitle/TorneioTitleResizeTimer" to="." method="_on_torneio_title_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/TorneioText/TorneioTextResizerTimer" to="." method="_on_torneio_text_resizer_timer_timeout"]

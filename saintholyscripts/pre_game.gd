@@ -1,27 +1,56 @@
 extends Control
 
-@onready var resize_tournament_timer = $"Panels&Texts/TournmantPanel/ResizetournamentTimer"
 @onready var tournament_panel = $"Panels&Texts/TournamentPanel"
-@onready var torneio_title = $"Panels&Texts/TorneioTitle"
-@onready var torneio_text = $"Panels&Texts/TorneioText"
-@onready var tropas_button = $Buttons/TropasButton
-@onready var tutorial_button = $Buttons/TutorialButton
-@onready var settings_button = $Buttons/SettingsButton
-
-
-
-
-@onready var torneio_title_resize_timer = $"Panels&Texts/TorneioTitle/TorneioTitleResizeTimer"
-@onready var torneio_text_resizer_timer = $"Panels&Texts/TorneioText/TorneioTextResizerTimer"
 @onready var resize_tournamant_timer = $"Panels&Texts/TournamentPanel/ResizeTournamantTimer"
+
+@onready var torneio_title = $"Panels&Texts/TorneioTitle"
+@onready var torneio_title_resize_timer = $"Panels&Texts/TorneioTitle/TorneioTitleResizeTimer"
+
+@onready var torneio_text = $"Panels&Texts/TorneioText"
+@onready var torneio_text_resizer_timer = $"Panels&Texts/TorneioText/TorneioTextResizerTimer"
+
+@onready var tropas_button = $Buttons/TropasButton
 @onready var tropas_resize_timer = $Buttons/TropasButton/TropasResizeTimer
+
+@onready var tutorial_button = $Buttons/TutorialButton
 @onready var tutorial_resize_timer = $Buttons/TutorialButton/TutorialResizeTimer
-@onready var settings_resize_timer = $Buttons/SettingsButton2/SettingsResizeTimer
+
+@onready var settings_button = $Buttons/SettingsButton
+@onready var settings_resize_timer = $Buttons/SettingsButton/SettingsResizeTimer
+
+@onready var world_1 = $Buttons/World1
+@onready var world_1_timer = $Buttons/World1/World1Timer
+
+@onready var globo = $"Panels&Texts/Globo"
+@onready var globo_resize_timer = $"Panels&Texts/Globo/GloboResizeTimer"
+
+@onready var linha_2 = $"Panels&Texts/Linha2"
+@onready var linha_2_resize_timer = $"Panels&Texts/Linha2/Linha2ResizeTimer"
+
+
+@onready var linha_longa = $"Panels&Texts/LinhaLonga"
+@onready var linha_long_resize_timer = $"Panels&Texts/LinhaLonga/LinhaLongResizeTimer"
+
+@onready var linha_1 = $"Panels&Texts/Linha1"
+@onready var linha_1_resize_timer = $"Panels&Texts/Linha1/Linha1ResizeTimer"
+
+@onready var dot_level_1 = $"Panels&Texts/DotLevel1"
+@onready var dot_level_1_resize_timer = $"Panels&Texts/DotLevel1/DotLevel1ResizeTimer"
+
+@onready var dot_level_2 = $"Panels&Texts/DotLevel2"
+@onready var dot_level_2_resize_timer = $"Panels&Texts/DotLevel2/DotLevel2ResizeTimer"
+
+@onready var dot_level_3 = $"Panels&Texts/DotLevel3"
+@onready var dot_level_3_resize_timer = $"Panels&Texts/DotLevel3/DotLevel3ResizeTimer"
+
+@onready var locked_level_3 = $"Panels&Texts/LockedLevel3"
+@onready var locked_level_3_resize_timer = $"Panels&Texts/LockedLevel3/LockedLevel3ResizeTimer"
+
+@onready var locked_level_2 = $"Panels&Texts/LockedLevel2"
+@onready var locked_level_2_resize_timer = $"Panels&Texts/LockedLevel2/LockedLevel2ResizeTimer"
 
 
 
-
-var tourn
 var scale_start_panel = Vector2(0,0)
 var scale_start_button =Vector2(0,0)
 var scale_start_text=Vector2(0,0)
@@ -37,26 +66,47 @@ var torneio_text_ready:= false
 var to_go_tropas_button:= false
 var to_go_tutorial_button:=false
 var to_go_settings_button:=false
-
-
+var to_go_to_globe:= false
+var to_go_dot_level_3:= false
+var to_go_dot_level_2:= false
+var to_go_linha_2:=false
+var to_go_linha_1:=false
+var to_go_locked_level_3:=false
+var to_go_linha_longa:=false
+var to_go_dot_level_1:=false
+var to_go_locked_level_2:= false
+var to_go_level_1:= false
+var load_complete:= false
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_world_1_button_down():
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
-
 #Coleta um node e aumenta seu tamanho um pouco caso não esteja na escala ideal
 func resize(node, node_type, goal_scale):
-	if node_type == "button" or node_type == "text":
+	#print("resize_called")
+	if scale_start_text >= normal_scale:
+		scale_start_text = Vector2(0,0)
+	if scale_start_panel>= tournament_panel_scale:
+		scale_start_panel = Vector2(0,0)
+	if scale_start_button>= normal_scale:
+		scale_start_button =Vector2(0,0)
+	if node_type == "text":
 		if node.get_scale() <= goal_scale:
-			scale_start_button += Vector2(0.34,0.34)
-			node.set_scale(scale_start_button)
+			scale_start_text += Vector2(0.34,0.34)
+			node.set_scale(scale_start_text)
 		else:
-			scale_start_button = 0
 			scale_start_text = 0
 			return true
-	if node_type == "panel":
+	elif node_type == "button":
+		if node.get_scale() <= goal_scale:
+			scale_start_button += Vector2(0.2,0.2)
+			node.set_scale(scale_start_button)
+		else:
+			scale_start_text=0
+			return true
+	elif node_type == "panel":
 		if node.get_scale()<= goal_scale:
 			scale_start_panel += Vector2(0.16,0.16)
 			node.set_scale(scale_start_panel)
@@ -66,16 +116,21 @@ func resize(node, node_type, goal_scale):
 
 #Aqui vão ficar guardados os sinais dos timers de cada node
 func _on_resize_tournmant_timer_timeout():
+	print("timer_called")
 	if tournament_panel.scale == tournament_panel_scale:
 		tournament_panel_ready = true
+		torneio_title_resize_timer.start()
+		resize_tournamant_timer.stop()
 	else:
 		resize(tournament_panel, "panel", tournament_panel_scale)
 
 
 func _on_torneio_title_resize_timer_timeout():
+	print("timer_called")
 	if tournament_panel_ready:
 		if torneio_title.scale >= normal_scale:
 			torneio_title_ready = true
+			torneio_text_resizer_timer.start()
 			scale_start_button = Vector2(0,0)
 			torneio_title_resize_timer.stop()
 		else:
@@ -83,9 +138,11 @@ func _on_torneio_title_resize_timer_timeout():
 
 
 func _on_torneio_text_resizer_timer_timeout():
+	print("timer_called")
 	if tournament_panel_ready && torneio_title_ready == true:
 		if torneio_text.scale >= normal_scale:
 			to_go_tropas_button = true
+			tropas_resize_timer.start()
 			scale_start_panel = Vector2(0,0)
 			torneio_text_resizer_timer.stop()
 		else:
@@ -94,10 +151,149 @@ func _on_torneio_text_resizer_timer_timeout():
 
 
 func _on_tropas_resize_timer_timeout():
+	print("timer_called")
 	if to_go_tropas_button == true:
 		if tropas_button.scale >= normal_scale:
 			to_go_tutorial_button = true
+			tutorial_resize_timer.start()
 			scale_start_button = Vector2(0,0)
 			tropas_resize_timer.stop()
 		else:
 			resize(tropas_button,"button",normal_scale)
+
+
+func _on_tutorial_resize_timer_timeout():
+	print("timer_called")
+	if to_go_tutorial_button == true:
+		if tutorial_button.scale >= normal_scale:
+			to_go_settings_button = true
+			settings_resize_timer.start()
+			scale_start_button = Vector2(0,0)
+			tutorial_resize_timer.stop()
+		else:
+			resize(tutorial_button,"button",normal_scale)
+
+
+func _on_settings_resize_timer_timeout():
+	print("timer_called")
+	if to_go_settings_button == true:
+		if settings_button.scale >= normal_scale:
+			to_go_to_globe = true
+			globo_resize_timer.start()
+			scale_start_button = Vector2(0,0)
+			settings_resize_timer.stop()
+		else:
+			resize(settings_button,"button",normal_scale)
+
+
+func _on_globo_resize_timer_timeout():
+	print("timer_called")
+	if to_go_to_globe == true:
+		if globo.scale >= tournament_panel_scale:
+			to_go_dot_level_3 = true
+			dot_level_3_resize_timer.start()
+			globo_resize_timer.stop()
+		else:
+			resize(globo,"panel",tournament_panel_scale)
+	
+
+
+func _on_dot_level_3_resize_timer_timeout():
+	print("timer_called")
+	if to_go_dot_level_3 == true:
+		if dot_level_3.scale >= tournament_panel_scale:
+			to_go_dot_level_2 = true
+			dot_level_2_resize_timer.start()
+			dot_level_3_resize_timer.stop()
+		else:
+			resize(dot_level_3,"panel",tournament_panel_scale)
+
+
+
+
+func _on_dot_level_2_resize_timer_timeout():
+	print("timer_called")
+	if to_go_dot_level_2 == true:
+		if dot_level_2.scale >= tournament_panel_scale:
+			to_go_linha_2 = true
+			linha_2_resize_timer.start()
+			dot_level_2_resize_timer.stop()
+		else:
+			resize(dot_level_2,"panel",tournament_panel_scale)
+
+
+func _on_linha_2_resize_timer_timeout():
+	print("timer_called")
+	if to_go_linha_2 == true:
+		if linha_2.scale >= tournament_panel_scale:
+			to_go_linha_1 = true
+			linha_1_resize_timer.start()
+			linha_2_resize_timer.stop()
+		else:
+			resize(linha_2,"panel",tournament_panel_scale)
+
+
+func _on_linha_1_resize_timer_timeout():
+	print("timer_called")
+	if to_go_linha_1 == true:
+		if linha_1.scale >= tournament_panel_scale:
+			to_go_locked_level_3 = true
+			locked_level_3_resize_timer.start()
+			linha_1_resize_timer.stop()
+		else:
+			resize(linha_1,"panel",tournament_panel_scale)
+
+func _on_locked_level_3_resize_timer_timeout():
+	print("timer_called")
+	if to_go_locked_level_3 == true:
+		if locked_level_3.scale >= tournament_panel_scale:
+			to_go_linha_longa = true
+			linha_long_resize_timer.start()
+			locked_level_3_resize_timer.stop()
+		else:
+			resize(locked_level_3,"panel",tournament_panel_scale)
+
+
+
+func _on_linha_long_resize_timer_timeout():
+	print("timer_called")
+	if to_go_linha_longa == true:
+		if linha_longa.scale >= tournament_panel_scale:
+			to_go_dot_level_1 = true
+			dot_level_1_resize_timer.start()
+			linha_long_resize_timer.stop()
+		else:
+			resize(linha_longa,"panel",tournament_panel_scale)
+
+
+
+func _on_dot_level_1_resize_timer_timeout():
+	print("timer_called")
+	if to_go_dot_level_1 == true:
+		if dot_level_1.scale >= tournament_panel_scale:
+			to_go_locked_level_2 = true
+			locked_level_2_resize_timer.start()
+			dot_level_1_resize_timer.stop()
+		else:
+			resize(dot_level_1,"panel",tournament_panel_scale)
+
+func _on_locked_level_2_resize_timer_timeout():
+	print("timer_called")
+	if to_go_locked_level_2 == true:
+		if locked_level_2.scale >= tournament_panel_scale:
+			to_go_level_1 = true
+			world_1_timer.start()
+			locked_level_2_resize_timer.stop()
+		else:
+			resize(locked_level_2,"panel",tournament_panel_scale)
+
+
+
+func _on_world_1_timer_timeout():
+	print("timer_called")
+	if to_go_level_1 == true:
+		if world_1.scale >= normal_scale:
+			load_complete = true
+			world_1_timer.stop()
+		else:
+			resize(world_1,"button",normal_scale)

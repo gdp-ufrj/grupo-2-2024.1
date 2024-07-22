@@ -50,8 +50,12 @@ extends Control
 @onready var locked_level_2_resize_timer = $"Panels&Texts/LockedLevel2/LockedLevel2ResizeTimer"
 @onready var level_1_stages = $Buttons/Level_1_Stages
 @onready var go_back_button = $Buttons/GoBackButton
-
 @onready var stage_1 = $Buttons/Level_1_Stages/Stage_1
+@onready var stage_2 = $Buttons/Level_1_Stages/Stage_2
+@onready var stage_3 = $Buttons/Level_1_Stages/Stage_3
+@onready var stage_4 = $Buttons/Level_1_Stages/Stage_4
+@onready var stage_5 = $Buttons/Level_1_Stages/Stage_5
+@onready var stage_6 = $Buttons/Level_1_Stages/Stage_6
 
 
 var scale_start_panel = Vector2(0,0)

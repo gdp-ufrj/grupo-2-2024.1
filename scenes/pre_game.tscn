@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://524ca6lgcjyd"]
+[gd_scene load_steps=27 format=3 uid="uid://524ca6lgcjyd"]
 
 [ext_resource type="Script" path="res://saintholyscripts/pre_game.gd" id="1_sx714"]
 [ext_resource type="Texture2D" uid="uid://binewwmfivcee" path="res://assets/sprites/Telas_Prancheta 1.png" id="2_qt33d"]
@@ -20,24 +20,41 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gp1m"]
 texture = ExtResource("11_dlkov")
-region_rect = Rect2(249.339, 197.136, 307.438, 307.184)
+region_rect = Rect2(259, 205, 305, 312)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffjcb"]
 texture = ExtResource("11_dlkov")
-region_rect = Rect2(253.059, 195.498, 301.821, 310.103)
+region_rect = Rect2(259, 205, 305, 312)
 modulate_color = Color(1, 1, 1, 0.654902)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pl2c"]
 texture = ExtResource("5_j36q3")
 region_rect = Rect2(702, 204, 1149, 193)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekahp"]
+texture = ExtResource("5_j36q3")
+region_rect = Rect2(702, 204, 1149, 193)
+modulate_color = Color(1, 1, 1, 0.592157)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svyr0"]
 texture = ExtResource("6_tda2b")
 region_rect = Rect2(719, 186, 1150, 194)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etjjx"]
+texture = ExtResource("6_tda2b")
+region_rect = Rect2(719, 186, 1150, 194)
+modulate_color = Color(1, 1, 1, 0.592157)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56jq8"]
 texture = ExtResource("7_m8bur")
 region_rect = Rect2(727, 168, 1150, 194)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1vq1"]
+texture = ExtResource("7_m8bur")
+region_rect = Rect2(727, 168, 1150, 194)
+modulate_color = Color(1, 1, 1, 0.592157)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_81u66"]
 
 [node name="PreGame" type="Control"]
 process_mode = 3
@@ -69,13 +86,17 @@ visible = false
 top_level = true
 z_index = 1
 layout_mode = 0
-offset_left = 67.0
-offset_top = 938.0
-offset_right = 827.0
-offset_bottom = 1046.0
+offset_left = 97.0
+offset_top = 879.0
+offset_right = 210.0
+offset_bottom = 963.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_tpl7n")
-theme_override_font_sizes/font_size = 79
-text = "Voltar para menu"
+theme_override_font_sizes/font_size = 59
+text = "<<<"
 
 [node name="World1" type="Button" parent="Buttons"]
 top_level = true
@@ -85,67 +106,13 @@ offset_top = 851.0
 offset_right = 1727.0
 offset_bottom = 967.0
 scale = Vector2(1e-05, 1e-05)
+mouse_filter = 2
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = SubResource("StyleBoxTexture_8gp1m")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ffjcb")
 
 [node name="World1Timer" type="Timer" parent="Buttons/World1"]
-wait_time = 0.1
-
-[node name="World2" type="Button" parent="Buttons"]
-visible = false
-top_level = true
-layout_mode = 0
-offset_left = 1625.0
-offset_top = 776.0
-offset_right = 1816.0
-offset_bottom = 830.0
-theme_override_font_sizes/font_size = 33
-text = "Level 2"
-
-[node name="World3" type="Button" parent="Buttons"]
-visible = false
-top_level = true
-layout_mode = 0
-offset_left = 1623.0
-offset_top = 702.0
-offset_right = 1814.0
-offset_bottom = 756.0
-theme_override_font_sizes/font_size = 33
-text = "Level 3"
-
-[node name="World4" type="Button" parent="Buttons"]
-visible = false
-top_level = true
-layout_mode = 0
-offset_left = 1628.0
-offset_top = 614.0
-offset_right = 1819.0
-offset_bottom = 668.0
-theme_override_font_sizes/font_size = 33
-text = "Level 4"
-
-[node name="World5" type="Button" parent="Buttons"]
-visible = false
-top_level = true
-layout_mode = 0
-offset_left = 1638.0
-offset_top = 542.0
-offset_right = 1829.0
-offset_bottom = 596.0
-theme_override_font_sizes/font_size = 33
-text = "Level 5"
-
-[node name="World6" type="Button" parent="Buttons"]
-visible = false
-top_level = true
-layout_mode = 0
-offset_left = 1642.0
-offset_top = 476.0
-offset_right = 1833.0
-offset_bottom = 530.0
-theme_override_font_sizes/font_size = 33
-text = "Level 6"
+wait_time = 0.05
 
 [node name="TropasButton" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -154,10 +121,12 @@ offset_top = 591.0
 offset_right = 672.0
 offset_bottom = 678.0
 scale = Vector2(1e-05, 1e-05)
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_6pl2c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ekahp")
 
 [node name="TropasResizeTimer" type="Timer" parent="Buttons/TropasButton"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="TutorialButton" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -166,10 +135,12 @@ offset_top = 706.0
 offset_right = 707.0
 offset_bottom = 793.0
 scale = Vector2(1e-05, 1e-05)
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_svyr0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etjjx")
 
 [node name="TutorialResizeTimer" type="Timer" parent="Buttons/TutorialButton"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="SettingsButton" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -178,12 +149,191 @@ offset_top = 814.0
 offset_right = 749.0
 offset_bottom = 901.0
 scale = Vector2(1e-05, 1e-05)
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_56jq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1vq1")
 
 [node name="SettingsResizeTimer" type="Timer" parent="Buttons/SettingsButton"]
-wait_time = 0.1
+wait_time = 0.05
+
+[node name="Level_1_Stages" type="Control" parent="Buttons"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 207.0
+offset_top = 807.0
+offset_right = 247.0
+offset_bottom = 847.0
+
+[node name="Estágios" type="RichTextLabel" parent="Buttons/Level_1_Stages"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -560.0
+offset_right = 586.0
+offset_bottom = -384.0
+scale = Vector2(0.504521, 0.504521)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("17_7bix2")
+theme_override_font_sizes/normal_font_size = 120
+text = "Estágios"
+
+[node name="Stage_1" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = -74.0
+offset_top = -496.0
+offset_right = 78.0
+offset_bottom = -387.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[1]"
+
+[node name="Stage_2" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = 78.0
+offset_top = -496.0
+offset_right = 230.0
+offset_bottom = -387.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[2]"
+
+[node name="TextureRect" type="TextureRect" parent="Buttons/Level_1_Stages/Stage_2"]
+modulate = Color(0, 0, 0, 0.615686)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = -19.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_81u66")
+
+[node name="Stage_3" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = 233.0
+offset_top = -496.0
+offset_right = 385.0
+offset_bottom = -387.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[3]"
+
+[node name="TextureRect2" type="TextureRect" parent="Buttons/Level_1_Stages/Stage_3"]
+modulate = Color(0, 0, 0, 0.615686)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -32.5
+offset_right = 57.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_81u66")
+
+[node name="Stage_4" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = -76.0
+offset_top = -399.0
+offset_right = 76.0
+offset_bottom = -290.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[4]"
+
+[node name="TextureRect3" type="TextureRect" parent="Buttons/Level_1_Stages/Stage_4"]
+modulate = Color(0, 0, 0, 0.615686)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -32.5
+offset_right = 57.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_81u66")
+
+[node name="Stage_5" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = 79.0
+offset_top = -399.0
+offset_right = 231.0
+offset_bottom = -290.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[5]"
+
+[node name="TextureRect4" type="TextureRect" parent="Buttons/Level_1_Stages/Stage_5"]
+modulate = Color(0, 0, 0, 0.615686)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -32.5
+offset_right = 56.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_81u66")
+
+[node name="Stage_6" type="Button" parent="Buttons/Level_1_Stages"]
+offset_left = 233.0
+offset_top = -399.0
+offset_right = 385.0
+offset_bottom = -290.0
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_tpl7n")
+theme_override_font_sizes/font_size = 80
+text = "[6]"
+
+[node name="TextureRect5" type="TextureRect" parent="Buttons/Level_1_Stages/Stage_6"]
+modulate = Color(0, 0, 0, 0.615686)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -32.5
+offset_right = 57.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_81u66")
 
 [node name="Panels&Texts" type="Control" parent="."]
+texture_filter = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -197,6 +347,7 @@ texture = ExtResource("2_qt33d")
 expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panels&Texts"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -223,7 +374,7 @@ mouse_filter = 2
 texture = ExtResource("4_qch8c")
 
 [node name="ResizeTournamantTimer" type="Timer" parent="Panels&Texts/TournamentPanel"]
-wait_time = 0.1
+wait_time = 0.05
 autostart = true
 
 [node name="Globo" type="TextureRect" parent="Panels&Texts"]
@@ -237,7 +388,7 @@ mouse_filter = 2
 texture = ExtResource("5_hj6bi")
 
 [node name="GloboResizeTimer" type="Timer" parent="Panels&Texts/Globo"]
-wait_time = 0.2
+wait_time = 0.05
 
 [node name="Linha2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -250,7 +401,7 @@ mouse_filter = 2
 texture = ExtResource("6_3aktj")
 
 [node name="Linha2ResizeTimer" type="Timer" parent="Panels&Texts/Linha2"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="LinhaLonga" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -263,7 +414,7 @@ mouse_filter = 2
 texture = ExtResource("7_cc1lv")
 
 [node name="LinhaLongResizeTimer" type="Timer" parent="Panels&Texts/LinhaLonga"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="Linha1" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -276,7 +427,7 @@ mouse_filter = 2
 texture = ExtResource("8_bfqyq")
 
 [node name="Linha1ResizeTimer" type="Timer" parent="Panels&Texts/Linha1"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="DotLevel1" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -289,7 +440,7 @@ mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
 [node name="DotLevel1ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel1"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="DotLevel2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -302,7 +453,7 @@ mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
 [node name="DotLevel2ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel2"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="DotLevel3" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -315,7 +466,7 @@ mouse_filter = 2
 texture = ExtResource("9_rin3q")
 
 [node name="DotLevel3ResizeTimer" type="Timer" parent="Panels&Texts/DotLevel3"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="LockedLevel3" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -328,7 +479,7 @@ mouse_filter = 2
 texture = ExtResource("10_0hw6k")
 
 [node name="LockedLevel3ResizeTimer" type="Timer" parent="Panels&Texts/LockedLevel3"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="LockedLevel2" type="TextureRect" parent="Panels&Texts"]
 layout_mode = 0
@@ -341,14 +492,14 @@ mouse_filter = 2
 texture = ExtResource("10_0hw6k")
 
 [node name="LockedLevel2ResizeTimer" type="Timer" parent="Panels&Texts/LockedLevel2"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="TorneioTitle" type="RichTextLabel" parent="Panels&Texts"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 127.0
-offset_right = 608.0
-offset_bottom = 275.0
+offset_left = 222.0
+offset_top = 124.0
+offset_right = 702.0
+offset_bottom = 272.0
 scale = Vector2(1e-05, 1e-05)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("16_au571")
@@ -356,9 +507,10 @@ theme_override_font_sizes/normal_font_size = 60
 text = "T0RN3IO"
 
 [node name="TorneioTitleResizeTimer" type="Timer" parent="Panels&Texts/TorneioTitle"]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="TorneioText" type="RichTextLabel" parent="Panels&Texts"]
+visible = false
 layout_mode = 0
 offset_left = 118.0
 offset_top = 227.0
@@ -373,20 +525,16 @@ text = "zapapzpadadowkdaokaofkfwodoakdowadkowadkawodkaokdaowdaowdkawodkawodkawod
 zzpapdwapdkokodkoakdokawodkaoakdowakdowaodkoawdkod"
 
 [node name="TorneioTextResizerTimer" type="Timer" parent="Panels&Texts/TorneioText"]
-wait_time = 0.1
+wait_time = 0.05
 
 [connection signal="pressed" from="Buttons/GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Buttons/World1" to="." method="_on_world_1_button_down"]
 [connection signal="timeout" from="Buttons/World1/World1Timer" to="." method="_on_world_1_timer_timeout"]
-[connection signal="pressed" from="Buttons/World2" to="." method="_on_world_2_pressed"]
-[connection signal="button_down" from="Buttons/World3" to="." method="_on_world_3_button_down"]
-[connection signal="button_down" from="Buttons/World4" to="." method="_on_world_4_button_down"]
-[connection signal="button_down" from="Buttons/World5" to="." method="_on_world_5_button_down"]
-[connection signal="button_down" from="Buttons/World6" to="." method="_on_world_6_button_down"]
 [connection signal="pressed" from="Buttons/TropasButton" to="." method="_on_tropas_button_pressed"]
 [connection signal="timeout" from="Buttons/TropasButton/TropasResizeTimer" to="." method="_on_tropas_resize_timer_timeout"]
 [connection signal="timeout" from="Buttons/TutorialButton/TutorialResizeTimer" to="." method="_on_tutorial_resize_timer_timeout"]
 [connection signal="timeout" from="Buttons/SettingsButton/SettingsResizeTimer" to="." method="_on_settings_resize_timer_timeout"]
+[connection signal="pressed" from="Buttons/Level_1_Stages/Stage_1" to="." method="_on_stage_1_pressed"]
 [connection signal="timeout" from="Panels&Texts/TournamentPanel/ResizeTournamantTimer" to="." method="_on_resize_tournmant_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/Globo/GloboResizeTimer" to="." method="_on_globo_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/Linha2/Linha2ResizeTimer" to="." method="_on_linha_2_resize_timer_timeout"]

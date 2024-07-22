@@ -48,7 +48,10 @@ extends Control
 
 @onready var locked_level_2 = $"Panels&Texts/LockedLevel2"
 @onready var locked_level_2_resize_timer = $"Panels&Texts/LockedLevel2/LockedLevel2ResizeTimer"
+@onready var level_1_stages = $Buttons/Level_1_Stages
+@onready var go_back_button = $Buttons/GoBackButton
 
+@onready var stage_1 = $Buttons/Level_1_Stages/Stage_1
 
 
 var scale_start_panel = Vector2(0,0)
@@ -82,8 +85,8 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_world_1_button_down():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
-#Coleta um node e aumenta seu tamanho um pouco caso não esteja na escala ideal
+	level_1_stages.visible = true
+
 func resize(node, node_type, goal_scale):
 	#print("resize_called")
 	if scale_start_text >= normal_scale:
@@ -295,9 +298,25 @@ func _on_world_1_timer_timeout():
 		if world_1.scale >= normal_scale:
 			load_complete = true
 			world_1_timer.stop()
+			unlock_click()
 		else:
 			resize(world_1,"button",normal_scale)
 
 
 func _on_tropas_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/tropas.tscn")
+
+
+
+
+func _on_stage_1_pressed():
+	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+
+func unlock_click():
+	if load_complete == true:
+		world_1.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+		tropas_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+		tutorial_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+		settings_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+		go_back_button.visible = true
+		go_back_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)

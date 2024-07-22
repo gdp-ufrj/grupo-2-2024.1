@@ -44,7 +44,7 @@ func update_tropa():
 	dano_basic_texto.text = "⚔: " + str(tropas[indice].basic_attack_damage) + "💥"
 	range_texto.text = "🏹: " + str(tropas[indice].range)
 	if indice == 9:
-		bonus_texto.text = "🌟: +4💥 e +15💧"
+		bonus_texto.text = "🌟: +4💥⠀⠀⠀+15💧"
 	else:
 		bonus_texto.text = "🌟: +" + str(tropas[indice].bonus) + tropas[indice].bonus_tipo
 	

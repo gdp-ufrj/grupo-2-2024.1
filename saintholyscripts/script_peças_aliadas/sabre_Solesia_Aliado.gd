@@ -3,7 +3,7 @@ extends peça
 func _init():
 	nome = "Sabre de Solesia"
 	bonus_tipo = "💥"
-	habilidade_txt = "Faz arder sua lâmina para causar queimaduras severas no oponente por 2⏱️, causando 16💥."
+	habilidade_txt = "Faz arder sua lâmina para causar queimaduras severas no oponente por 2⏱️, causando 16💥 por ⏱️."
 	imagem = preload("res://assets/sprites/tile_0098.png")
 	health = 90
 	mana_max = 100
@@ -18,6 +18,6 @@ func _init():
 
 func habilidade():
 	if bonus_dmg:
-		peça_alvo.queimar(ability_damage + bonus, 2)
+		peça_alvo.queimar((ability_damage + bonus) * 2, 2)
 	else:
-		peça_alvo.queimar(ability_damage, 2)
+		peça_alvo.queimar(ability_damage * 2, 2)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_4ef0y"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_jplet"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_jplet"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
 [ext_resource type="Texture2D" uid="uid://0k6slnmuq1d7" path="res://assets/sprites/cenário principal teste 2.png" id="5_6cala"]
 [ext_resource type="Texture2D" uid="uid://bu0f0kq8a1s5p" path="res://assets/sprites/cenário só o tabuleiro teste 7 160x160 cada quadrado.png" id="5_ntuig"]

@@ -37,6 +37,8 @@ var t9 = T9.new()
 var tropas = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9]
 var indice : int = 0
 
+@export var indice_max : int = 9
+
 func update_tropa():
 	vida_texto.text = "❤: " + str(tropas[indice].health)
 	mana_texto.text = "💧: " + str(tropas[indice].mana_max)
@@ -54,16 +56,26 @@ func update_tropa():
 
 func _on_seta_direita_pressed():
 	indice += 1
-	if indice == 10:
+	if indice == indice_max + 1:
 		indice = 0
 	update_tropa()
 
 func _on_seta_esquerda_pressed():
 	indice -= 1
 	if indice == -1:
-		indice = 9
+		indice = indice_max
 	update_tropa()
 
 
 func _on_voltar_pressed():
+	print(get_tree().current_scene.name)
+	if get_tree().current_scene.name == "Tropas":
+		get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+
+func _on_escolher_pressed():
+	var path = tropas[indice].path
+	Global.banco.append(path)
 	get_tree().change_scene_to_file("res://scenes/pre_game.tscn")

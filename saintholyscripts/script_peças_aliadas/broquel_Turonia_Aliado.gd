@@ -1,5 +1,7 @@
 extends peça
 
+var path : String = "res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn"
+
 func _init():
 	nome = "Broquel de Turonia"
 	bonus_tipo = "💥"

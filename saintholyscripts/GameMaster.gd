@@ -106,7 +106,7 @@ func init_botoes_peca():
 		var path = p_inim[rnum].scene_file_path 
 		path = ((path).get_slice("_", 0) + "_aliadas/" + (path).get_slice("/", 4)).left(-12) + "Aliado.tscn"
 		for i in range(Global.banco.size()):
-			if path == Global.banco[i]:
+			if path == Global.banco[i] or path == "res://scenes/peças_aliadas/sabre_Verovia_Aliado.tscn" or path == "res://scenes/peças_aliadas/cajado_Verovia_Aliado.tscn":
 				ja_tem = true
 		if ja_tem == false and rnum != ja_foi:
 			print("entrou: ", path)

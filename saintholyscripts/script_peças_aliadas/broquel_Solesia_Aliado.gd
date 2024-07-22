@@ -3,7 +3,7 @@ extends peça
 func _init():
 	nome = "Broquel de Solesia"
 	bonus_tipo = "💥"
-	habilidade_txt = "Incendia o chão à frente com uma cortina de chamas, queimando os oponentes por 3⏱️, causando 6💥."
+	habilidade_txt = "Incendia o chão à frente com uma cortina de chamas, queimando os oponentes por 3⏱️, causando 6💥 por ⏱️."
 	imagem = preload("res://assets/sprites/tile_0096.png")
 	health = 120
 	mana_max = 100
@@ -24,8 +24,8 @@ func habilidade():
 	instance.set_is_burn(true)
 	
 	if bonus_dmg:
-		bonus_skill_effect()
+		instance.set_damage((ability_damage + bonus) * 3)
 	else:
-		skill_effect()
+		instance.set_damage(ability_damage * 3)
 	
 	add_child(instance)

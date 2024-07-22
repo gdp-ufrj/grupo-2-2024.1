@@ -1,5 +1,7 @@
 extends peça
 
+var path : String = "res://scenes/peças_aliadas/sabre_Turonia_Aliado.tscn"
+
 func _init():
 	nome = "Sabre de Turonia"
 	bonus_tipo = "💥"

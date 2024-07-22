@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Broquel de Turonia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Magnetiza seu escudo, atraindo o oponente mais distante para se chocar contra ele, causando 10💥. Começa o combate com a mana máxima."
+	imagem = preload("res://assets/sprites/tile_0087.png")
 	health = 120
 	mana_max = 100
 	mana = 100

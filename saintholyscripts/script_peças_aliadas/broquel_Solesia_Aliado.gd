@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Broquel de Solesia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Incendia o chão à frente com uma cortina de chamas, queimando os oponentes por 3⏱️, causando 6💥."
+	imagem = preload("res://assets/sprites/tile_0096.png")
 	health = 120
 	mana_max = 100
 	mana = 0

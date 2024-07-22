@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Sabre de Turonia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Surpreende o flanco do oponente, indo para suas costas, golpeando-o repetidamente com seu pesado punhal, causando 25💥."
+	imagem = preload("res://assets/sprites/tile_0097.png")
 	health = 100
 	mana_max = 100
 	mana = 0

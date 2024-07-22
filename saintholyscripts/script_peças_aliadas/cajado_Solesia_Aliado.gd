@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Cajado de Solesia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Aquece seu cetro invocando um pilar de labaredas no oponente mais distante, causando 10💥."
+	imagem = preload("res://assets/sprites/tile_0100.png")
 	health = 90
 	mana_max = 100
 	mana = 0

@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwgkwgea7cjaa"]
+[gd_scene load_steps=11 format=3 uid="uid://bwgkwgea7cjaa"]
 
-[ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="1_ms3lo"]
-[ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="2_sw61e"]
-[ext_resource type="Texture2D" uid="uid://diq55wbya52an" path="res://assets/sprites/tile_0099.png" id="3_nn221"]
+[ext_resource type="Texture2D" uid="uid://chp35nmif1c6o" path="res://assets/sprites/Telas-02.png" id="1_38p78"]
+[ext_resource type="Script" path="res://saintholyscripts/tropasManager.gd" id="1_pfbhq"]
+[ext_resource type="Texture2D" uid="uid://daj2vy0qjrh1x" path="res://assets/sprites/tile_0097.png" id="2_cu0pg"]
+[ext_resource type="Texture2D" uid="uid://dsek3qlvmtnyp" path="res://assets/sprites/Telas-06.png" id="3_715xe"]
+[ext_resource type="Texture2D" uid="uid://o4n1r3gae57c" path="res://assets/sprites/UI_Blocagem-06.png" id="4_4dums"]
+[ext_resource type="Texture2D" uid="uid://d0pnulhesv680" path="res://assets/sprites/Telas-04.png" id="5_433mh"]
+[ext_resource type="Texture2D" uid="uid://bxxnppmx8vmv8" path="res://assets/sprites/Telas-08.png" id="7_fhnh1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efj1n"]
+atlas = ExtResource("5_433mh")
+region = Rect2(1472, 288, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0pcv"]
+atlas = ExtResource("5_433mh")
+region = Rect2(176, 288, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p48tp"]
+atlas = ExtResource("7_fhnh1")
+region = Rect2(304, 96, 544, 160)
 
 [node name="Tropas" type="Control"]
 layout_mode = 3
@@ -11,422 +27,173 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pfbhq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1921.0
-offset_bottom = 1080.0
-texture = ExtResource("1_ms3lo")
-
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -805.0
-offset_top = -303.0
-offset_right = 695.0
-offset_bottom = 275.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 360
-theme_override_constants/v_separation = 470
-columns = 5
-
-[node name="Tropa" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa"]
+[node name="Fundo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
+offset_left = -3.0
+offset_top = -12.0
+offset_right = -3.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
+texture = ExtResource("1_38p78")
+expand_mode = 1
 
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa"]
+[node name="Tropa Imagem" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -26.0
-offset_top = -116.0
-offset_right = 115.0
-offset_bottom = 25.0
-texture = ExtResource("3_nn221")
+offset_left = 356.0
+offset_top = 404.0
+offset_right = 756.0
+offset_bottom = 804.0
+texture = ExtResource("2_cu0pg")
+expand_mode = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa"]
+[node name="Hud Habilidade" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -41.0
-offset_top = 31.0
-offset_right = 16859.0
-offset_bottom = 21031.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "      Sabre de Verovia
-❤: 120    ⚔: 12   🏹: 1
-    💧:  100      💧⚔: 20
-           🌟: +10❤
+offset_left = 897.0
+offset_top = 503.0
+offset_right = 2939.0
+offset_bottom = 1528.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_715xe")
+expand_mode = 1
 
-🌌:  ergue sua espada e  inspira seus aliados trazendo uma brisa revigorante, curando 15 ❤"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-
-[node name="Tropa2" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa2"]
+[node name="Habilidade Texto" type="Label" parent="Hud Habilidade"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
+offset_left = 226.0
+offset_top = 234.0
+offset_right = 1782.0
+offset_bottom = 812.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Surpreende o flanco do oponente, indo para suas costas, golpeando-o repetidamente com seu pesado punhal, causando 25💥."
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa2"]
+[node name="UiBlocagem-06" type="Sprite2D" parent="."]
+position = Vector2(4308, 437)
+texture = ExtResource("4_4dums")
+
+[node name="Seta Direita" type="Button" parent="."]
 layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
-fit_content = true
-scroll_active = false
+offset_left = 819.0
+offset_top = 571.0
+offset_right = 987.0
+offset_bottom = 739.0
+scale = Vector2(0.5, 0.5)
+icon = SubResource("AtlasTexture_efj1n")
+flat = true
 
-[node name="Tropa3" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa3"]
+[node name="Seta Esquerda" type="Button" parent="."]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
+offset_left = 206.0
+offset_top = 571.0
+offset_right = 374.0
+offset_bottom = 739.0
+scale = Vector2(0.5, 0.5)
+icon = SubResource("AtlasTexture_f0pcv")
+flat = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa3"]
+[node name="Nome Tropa" type="Label" parent="."]
 layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 207.0
+offset_top = 152.0
+offset_right = 905.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "Sabre de Turonia"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Status" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1062.0
+offset_top = 309.0
+offset_right = 1820.0
+offset_bottom = 538.0
+
+[node name="Vida Texto" type="RichTextLabel" parent="Status"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 16.0
+offset_right = 222.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 50
+text = "❤: 100"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa4" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa4"]
+[node name="Mana Texto" type="RichTextLabel" parent="Status"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa4"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 263.0
+offset_top = 16.0
+offset_right = 429.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 50
+text = "💧: 100"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa5" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa5"]
+[node name="Mana_Basic Texto" type="RichTextLabel" parent="Status"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa5"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 478.0
+offset_top = 16.0
+offset_right = 717.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 50
+text = "💧⚔: 100"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa6" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa6"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa6"]
+[node name="Dano_Basic Texto" type="RichTextLabel" parent="Status"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa6"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 18.0
+offset_top = 141.0
+offset_right = 241.0
+offset_bottom = 210.0
+theme_override_font_sizes/normal_font_size = 50
+text = "⚔: 10💥"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa7" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa7"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa7"]
+[node name="Range Texto" type="RichTextLabel" parent="Status"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa7"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 308.0
+offset_top = 141.0
+offset_right = 445.0
+offset_bottom = 210.0
+theme_override_font_sizes/normal_font_size = 50
+text = "🏹: 1"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa8" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa8"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa8"]
+[node name="Bonus Texto" type="RichTextLabel" parent="Status"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa8"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
+offset_left = 493.0
+offset_top = 141.0
+offset_right = 745.0
+offset_bottom = 210.0
+theme_override_font_sizes/normal_font_size = 50
+text = "🌟: +10💥"
 fit_content = true
 scroll_active = false
 
-[node name="Tropa9" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa9"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa9"]
+[node name="Voltar" type="Button" parent="."]
 layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
+offset_left = 73.0
+offset_top = 935.0
+offset_right = 625.0
+offset_bottom = 1103.0
+scale = Vector2(0.4, 0.4)
+icon = SubResource("AtlasTexture_p48tp")
+flat = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa9"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
-fit_content = true
-scroll_active = false
-
-[node name="Tropa10" type="Control" parent="GridContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Fundo" type="TextureRect" parent="GridContainer/Tropa10"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -276.0
-offset_right = 2827.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_sw61e")
-
-[node name="Peca" type="TextureRect" parent="GridContainer/Tropa10"]
-layout_mode = 0
-offset_left = -18.0
-offset_top = -109.0
-offset_right = 108.0
-offset_bottom = 17.0
-texture = ExtResource("3_nn221")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer/Tropa10"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 22.0
-offset_right = 14574.0
-offset_bottom = 2066.0
-scale = Vector2(0.01, 0.01)
-theme_override_font_sizes/normal_font_size = 1500
-text = "   Sabre de Verovia"
-fit_content = true
-scroll_active = false
+[connection signal="pressed" from="Seta Direita" to="." method="_on_seta_direita_pressed"]
+[connection signal="pressed" from="Seta Esquerda" to="." method="_on_seta_esquerda_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

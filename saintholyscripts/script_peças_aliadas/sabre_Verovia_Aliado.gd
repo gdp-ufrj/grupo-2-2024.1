@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Sabre de Verovia"
+	bonus_tipo = "❤"
+	habilidade_txt = "Ergue sua espada e inspira seus aliados trazendo uma brisa revigorante, curando-os em 15❤."
+	imagem = preload("res://assets/sprites/tile_0099.png")
 	health = 120
 	mana_max = 100
 	mana = 0

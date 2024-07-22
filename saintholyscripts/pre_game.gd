@@ -297,3 +297,7 @@ func _on_world_1_timer_timeout():
 			world_1_timer.stop()
 		else:
 			resize(world_1,"button",normal_scale)
+
+
+func _on_tropas_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/tropas.tscn")

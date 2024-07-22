@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Cajado de Turonia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Estende a ponta de sua lança com ferro para provocar uma precisa estocada de 3🏹 à sua frente, causando 10💥."
+	imagem = preload("res://assets/sprites/tile_0084.png")
 	health = 90
 	mana_max = 90
 	mana = 0

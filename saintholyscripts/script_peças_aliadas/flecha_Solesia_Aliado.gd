@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Flecha de Solesia"
+	bonus_tipo = "💥"
+	habilidade_txt = "Incandesce sua pistola dobrando a velocidade dos disparos por 2⏱️."
+	imagem = preload("res://assets/sprites/tile_0085.png")
 	health = 70
 	mana_max = 100
 	mana = 0

@@ -1,14 +1,18 @@
 extends peça
 
 func _init():
+	nome = "Flecha de Turonia"
+	bonus_tipo = "💧"
+	habilidade_txt = "Carrega um poderoso tiro metálico com seu arco que atravessa todos os oponentes pelo caminho, causando 18💥."
+	imagem = preload("res://assets/sprites/tile_0088.png")
 	health = 80
-	mana_max = 70
+	mana_max = 90
 	mana = 0
 	range = 3
 	basic_attack_damage = 12
-	ability_damage = 20
-	mana_por_hit = 10
-	bonus = 0
+	ability_damage = 18
+	mana_por_hit = 15
+	bonus = 30
 	is_player_team = true
 	classe = "Flecha"
 
@@ -41,5 +45,5 @@ func habilidade():
 		instance.global_position -= diff
 
 func bonus_skill_effect():
-	instance.set_damage(ability_damage + bonus)
+	instance.set_damage(ability_damage)
 	mana = 30

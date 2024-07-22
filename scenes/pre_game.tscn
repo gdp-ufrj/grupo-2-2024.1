@@ -383,6 +383,7 @@ wait_time = 0.1
 [connection signal="button_down" from="Buttons/World4" to="." method="_on_world_4_button_down"]
 [connection signal="button_down" from="Buttons/World5" to="." method="_on_world_5_button_down"]
 [connection signal="button_down" from="Buttons/World6" to="." method="_on_world_6_button_down"]
+[connection signal="pressed" from="Buttons/TropasButton" to="." method="_on_tropas_button_pressed"]
 [connection signal="timeout" from="Buttons/TropasButton/TropasResizeTimer" to="." method="_on_tropas_resize_timer_timeout"]
 [connection signal="timeout" from="Buttons/TutorialButton/TutorialResizeTimer" to="." method="_on_tutorial_resize_timer_timeout"]
 [connection signal="timeout" from="Buttons/SettingsButton/SettingsResizeTimer" to="." method="_on_settings_resize_timer_timeout"]

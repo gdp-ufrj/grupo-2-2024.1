@@ -15,6 +15,10 @@ class_name peça
 
 var is_player_team : bool
 var movement_speed : float = 0.5
+var nome : String
+var imagem
+var bonus_tipo : String
+var habilidade_txt : String
 var range := 1
 var basic_attack_damage := 1
 var ability_damage := 5

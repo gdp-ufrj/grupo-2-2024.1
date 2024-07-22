@@ -1,6 +1,10 @@
 extends peça
 
 func _init():
+	nome = "Cajado de Verovia"
+	bonus_tipo = "💥💧"
+	habilidade_txt = "Concentra uma rajada de vento para empurrar o oponente até 3🏹 para trás, causando 16💥."
+	imagem = preload("res://assets/sprites/tile_0086.png")
 	health = 100
 	mana_max = 90
 	mana = 0

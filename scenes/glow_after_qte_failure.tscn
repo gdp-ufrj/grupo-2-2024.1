@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dtollm46yf1uw"]
+
+[node name="GlowAfterQTEFailure" type="CPUParticles2D"]
+modulate = Color(0.0941176, 0.0352941, 0.00784314, 1)
+z_index = 6
+scale = Vector2(-0.134924, -0.133046)
+emitting = false
+amount = 300
+lifetime = 0.06
+one_shot = true
+speed_scale = 0.6
+fixed_fps = 60
+emission_shape = 1
+emission_sphere_radius = 65.06
+gravity = Vector2(0, -980)

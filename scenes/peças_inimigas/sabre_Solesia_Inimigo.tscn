@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct7wtbuomb34h"]
+[gd_scene load_steps=9 format=3 uid="uid://ct7wtbuomb34h"]
 
 [ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/sabre_Solesia_Inimigo.gd" id="1_takdm"]
 [ext_resource type="Texture2D" uid="uid://dxqlx8jnssnah" path="res://assets/sprites/tile_0098.png" id="2_wq8gy"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_iwdr1"]
 [ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_1iri8"]
+[ext_resource type="PackedScene" uid="uid://dtollm46yf1uw" path="res://scenes/glow_after_qte_failure.tscn" id="5_pmkrg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_wq8gy")
@@ -82,6 +83,8 @@ gravity = Vector2(0, -980)
 [node name="GlowAfterQTESucess" parent="." instance=ExtResource("4_1iri8")]
 
 [node name="TimerBeforeQTE" type="Timer" parent="."]
+
+[node name="GlowAfterQTEFailure" parent="." instance=ExtResource("5_pmkrg")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]

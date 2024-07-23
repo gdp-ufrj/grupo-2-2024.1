@@ -15,7 +15,7 @@ class_name peça
 @onready var glow_before_qte = $GlowBeforeQTE
 @onready var glow_after_qte_sucess = $GlowAfterQTESucess
 @onready var timer_before_qte = $TimerBeforeQTE
-
+@onready var glow_after_qte_failure = $GlowAfterQTEFailure
 @export var glow_before_timer_started:= false
 @export var emitting_before:= false
 var broquel_first_skill:= true
@@ -115,7 +115,6 @@ func _ready():
 
 
 func _process(delta):
-	#print("CCOMEÇOU OU NÃO PORRA?:",Global.combat_started)
 	if Global.combat_started == false:
 		if is_player_team:
 			check_drag()
@@ -125,29 +124,14 @@ func _process(delta):
 			timer.stop()
 			atribuir_alvo()
 		if is_player_team:
-			#print(piece.name, " true")
 			if glow_before_timer_started == false:
-					#print(piece.name, mana)
-					#print(piece.name, mana_max)
 					if mana >= mana_max/2:
 						timer_before_qte.start()
-						#glow_before_qte.emitting = true
-						#print(piece.name + " Emiting glow antes")
 						glow_before_timer_started = true
 						if piece.name == "Broquel_Turonia_Aliado":
 							if broquel_first_skill:
 								broquel_first_skill = false
 								timer_before_qte.set_wait_time(3.5)
-					else:
-						pass
-						#print(piece.name," ",mana, " ", mana_max)
-			else:
-				pass
-					#print(piece.name, "Não entrou: mana=",mana,"mana_max:", mana_max)
-		else:
-			#print(piece.name + "is not player team")
-			#print("abacate")
-			pass
 		if is_moving:
 			return
 		if is_attacking:
@@ -216,7 +200,7 @@ func move():
 		global_position = original_position
 	
 	if path.is_empty():
-		#print(self.name, ": nao achou")
+		print(self.name, ": nao achou")
 		return
 	
 	original_position = Vector2(global_position)
@@ -288,7 +272,6 @@ func basic_attack():
 
 func _quick_time_event():
 	skill_click = true
-	#glow_before_qte.emitting = false
 	glow.emitting = true
 
 
@@ -318,7 +301,6 @@ func _on_timer_timeout():
 		if is_player_team:
 			skill_timer.start()
 			glow_before_qte.emitting = false
-			#glow_before_timer_started = false
 			_quick_time_event()
 		else:
 			ability()
@@ -354,14 +336,16 @@ func _on_skill_timer_timeout():
 		show_sucess_qte()
 		bonus_dmg = false
 	skill_timer.stop()
-	try_skill_click = false
-	
+	if try_skill_click:
+		try_skill_click = false
+		show_failure_qte()
 
 
 func _on_timer_after_skill_timeout():
 	if try_skill_click == true:
 		try_skill_click = false
 		print(piece.name, ": Perdão aplicado")
+		show_failure_qte()
 	glow_before_timer_started = false
 
 
@@ -473,6 +457,8 @@ func go_to_new_plataform():
 func show_sucess_qte():
 	glow_after_qte_sucess.emitting = true
 
+func show_failure_qte():
+	glow_after_qte_failure.emitting = true
+	
 func _on_timer_before_qte_timeout():
 	glow_before_qte.emitting = true
-	#print(piece.name + " Emiting glow antes")

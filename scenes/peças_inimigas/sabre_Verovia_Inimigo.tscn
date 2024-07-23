@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuopgedrhracd"]
+[gd_scene load_steps=9 format=3 uid="uid://cuopgedrhracd"]
 
 [ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/sabre_Verovia_Inimigo.gd" id="1_8im7a"]
 [ext_resource type="Texture2D" uid="uid://diq55wbya52an" path="res://assets/sprites/tile_0099.png" id="2_dlhcl"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_ogpep"]
 [ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_6ml3d"]
+[ext_resource type="PackedScene" uid="uid://dtollm46yf1uw" path="res://scenes/glow_after_qte_failure.tscn" id="5_uemfj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_dlhcl")
@@ -68,6 +69,8 @@ one_shot = true
 [node name="GlowAfterQTESucess" parent="." instance=ExtResource("4_6ml3d")]
 
 [node name="TimerBeforeQTE" type="Timer" parent="."]
+
+[node name="GlowAfterQTEFailure" parent="." instance=ExtResource("5_uemfj")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]

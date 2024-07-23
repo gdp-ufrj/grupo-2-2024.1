@@ -2,7 +2,8 @@ extends Button
 @onready var start_battle_warning = $"../StartBattleWarning"
 @onready var go_to_select_world_2 = $"../GoToSelectWorld2"
 @onready var inventory_bg = $"../Bench/InventoryBG"
-@onready var audio_player = $"../AudioStreamPlayer2D"
+@onready var musica = $"../Musica"
+@onready var efeitos = $"../Efeitos"
 
 var battle_music = preload("res://assets/musicas/Asteria_Batalha_MaisLento.mp3")
 
@@ -12,8 +13,9 @@ func _on_pressed():
 		inventory_bg.visible = false
 		self.visible = false
 		go_to_select_world_2.visible = false
-		audio_player.stream = battle_music
-		audio_player.play()
+		musica.stream = battle_music
+		musica.play()
+		efeitos.play()
 	if Global.pieces != 0:
 		start_battle_warning.visible = true
 		$WarningTimer.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://divv6dsfra0i8"]
+[gd_scene load_steps=17 format=3 uid="uid://divv6dsfra0i8"]
 
 [ext_resource type="Script" path="res://saintholyscripts/tropasManager.gd" id="1_rbjpp"]
 [ext_resource type="Texture2D" uid="uid://chp35nmif1c6o" path="res://assets/sprites/Telas-02.png" id="2_2bqju"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dsek3qlvmtnyp" path="res://assets/sprites/Telas-06.png" id="4_ftlfy"]
 [ext_resource type="Texture2D" uid="uid://d0pnulhesv680" path="res://assets/sprites/Telas-04.png" id="5_hsrmm"]
 [ext_resource type="Texture2D" uid="uid://bxxnppmx8vmv8" path="res://assets/sprites/Telas-08.png" id="6_354m7"]
-[ext_resource type="Texture2D" uid="uid://4pskthvst1tg" path="res://assets/sprites/botao_preto.png" id="7_23gqm"]
 [ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="7_dm6uc"]
+[ext_resource type="Texture2D" uid="uid://ws86fcyq2qwc" path="res://assets/sprites/botao_preto-export.png" id="7_po75j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efj1n"]
 atlas = ExtResource("5_hsrmm")
@@ -17,9 +17,30 @@ region = Rect2(1472, 288, 160, 160)
 atlas = ExtResource("5_hsrmm")
 region = Rect2(176, 288, 160, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p48tp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_umfh3"]
 atlas = ExtResource("6_354m7")
-region = Rect2(304, 96, 544, 160)
+region = Rect2(330, 110, 517, 141)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy5u0"]
+texture = SubResource("AtlasTexture_umfh3")
+region_rect = Rect2(-0.985142, -0.107399, 518.206, 140.702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2mjp"]
+atlas = ExtResource("6_354m7")
+region = Rect2(330, 110, 517, 141)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfy2p"]
+texture = SubResource("AtlasTexture_c2mjp")
+modulate_color = Color(1, 1, 1, 0.592157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1y6m"]
+texture = ExtResource("7_po75j")
+region_rect = Rect2(16, 10, 1150, 194)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilo15"]
+texture = ExtResource("7_po75j")
+region_rect = Rect2(16, 10, 1150, 194)
+modulate_color = Color(1, 1, 1, 0.592157)
 
 [node name="Tropas Iniciais" type="Control"]
 layout_mode = 3
@@ -185,17 +206,18 @@ offset_top = 935.0
 offset_right = 625.0
 offset_bottom = 1103.0
 scale = Vector2(0.4, 0.4)
-icon = SubResource("AtlasTexture_p48tp")
-flat = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_sy5u0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gfy2p")
 
 [node name="Escolher" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1408.0
 offset_top = 955.0
 offset_right = 2598.0
 offset_bottom = 1178.0
 scale = Vector2(0.3, 0.3)
-icon = ExtResource("7_23gqm")
-flat = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_n1y6m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ilo15")
 
 [node name="Label" type="Label" parent="Escolher"]
 layout_mode = 0

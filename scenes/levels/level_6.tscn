@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c3yh1s7y600ot"]
+[gd_scene load_steps=22 format=3 uid="uid://c3yh1s7y600ot"]
 
 [ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_cv203"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_v5tqx"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_q73lw"]
+[ext_resource type="PackedScene" path="res://scenes/game_master.tscn" id="3_q73lw"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_7a0fp"]
 [ext_resource type="Texture2D" uid="uid://bu0f0kq8a1s5p" path="res://assets/sprites/cenário só o tabuleiro teste 7 160x160 cada quadrado.png" id="5_d3cg3"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="10_yebg5"]
@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="14_pgaim"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="15_1kvy2"]
 [ext_resource type="PackedScene" uid="uid://cuopgedrhracd" path="res://scenes/peças_inimigas/sabre_Verovia_Inimigo.tscn" id="15_khcqi"]
-[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="16_aivhn"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="16_xsxxx"]
+[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="17_85y14"]
+[ext_resource type="AudioStream" uid="uid://y6godmxmet8a" path="res://assets/musicas/Stadium Crowd sfx.mp3" id="18_n38f4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_7a0fp")
@@ -322,8 +323,6 @@ position = Vector2(8, 2)
 shape = SubResource("RectangleShape2D_3mveu")
 
 [node name="InventoryBG" parent="Bench" instance=ExtResource("13_brdgl")]
-offset_top = -5.0
-offset_bottom = -5.0
 
 [node name="StartBattleWarning" type="TextEdit" parent="."]
 visible = false
@@ -345,43 +344,43 @@ text = "   Posicione todas as peças
 [node name="Drop" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-40, 72)
+position = Vector2(-40, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop2" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-24, 72)
+position = Vector2(-24, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop3" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(-8, 72)
+position = Vector2(-8, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop4" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(8, 72)
+position = Vector2(8, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop5" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(24, 72)
+position = Vector2(24, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop6" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(40, 72)
+position = Vector2(40, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="Drop7" parent="BenchPositions" instance=ExtResource("16_xsxxx")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
-position = Vector2(56, 72)
+position = Vector2(56, 80)
 scale = Vector2(0.3, 0.3)
 
 [node name="VictoryWarning" type="TextEdit" parent="."]
@@ -390,10 +389,10 @@ visible = false
 z_index = 100
 clip_contents = true
 layout_direction = 1
-offset_left = -36.0
-offset_top = -19.0
-offset_right = 496.0
-offset_bottom = 52.0
+offset_left = -29.0
+offset_top = -63.0
+offset_right = 503.0
+offset_bottom = 8.0
 scale = Vector2(0.141, 0.141)
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -507,10 +506,17 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_aivhn")
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("17_85y14")
 volume_db = -10.0
 autoplay = true
+bus = &"Musica"
+
+[node name="Efeitos" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("18_n38f4")
+volume_db = -15.0
 bus = &"Musica"
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]

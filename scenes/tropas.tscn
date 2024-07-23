@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwgkwgea7cjaa"]
+[gd_scene load_steps=14 format=3 uid="uid://bwgkwgea7cjaa"]
 
 [ext_resource type="Texture2D" uid="uid://chp35nmif1c6o" path="res://assets/sprites/Telas-02.png" id="1_38p78"]
 [ext_resource type="Script" path="res://saintholyscripts/tropasManager.gd" id="1_pfbhq"]
@@ -16,9 +16,21 @@ region = Rect2(1472, 288, 160, 160)
 atlas = ExtResource("5_433mh")
 region = Rect2(176, 288, 160, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wquk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma8xt"]
 atlas = ExtResource("7_fhnh1")
-region = Rect2(304, 96, 544, 160)
+region = Rect2(330, 110, 517, 141)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ov5kp"]
+texture = SubResource("AtlasTexture_ma8xt")
+region_rect = Rect2(-0.985142, -0.107399, 518.206, 140.702)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq53q"]
+atlas = ExtResource("7_fhnh1")
+region = Rect2(330, 110, 517, 141)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucbpe"]
+texture = SubResource("AtlasTexture_rq53q")
+modulate_color = Color(1, 1, 1, 0.592157)
 
 [node name="Tropas" type="Control"]
 layout_mode = 3
@@ -177,13 +189,14 @@ fit_content = true
 scroll_active = false
 
 [node name="Voltar" type="Button" parent="."]
+layout_mode = 0
 offset_left = 73.0
 offset_top = 935.0
 offset_right = 625.0
 offset_bottom = 1103.0
 scale = Vector2(0.4, 0.4)
-icon = SubResource("AtlasTexture_7wquk")
-flat = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_ov5kp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ucbpe")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_umgxv")

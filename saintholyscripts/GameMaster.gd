@@ -10,6 +10,12 @@ extends Node2D
 @onready var pecas_inimigas = $"../Peças Inimigas"
 @onready var button_peca1 = $"../Pickin/Button"
 @onready var button_peca2 = $"../Pickin/Button2"
+@onready var efeitos = $"../Efeitos"
+@onready var musica = $"../Musica"
+
+var efeito_vitoria = preload("res://assets/musicas/vitoria_sfx.mp3")
+var efeito_derrota = preload("res://assets/musicas/derrota_sfx.mp3")
+var efeito_torcida = preload("res://assets/musicas/Stadium Crowd sfx.mp3")
 
 var p_inim = []
 var p_paths = []
@@ -52,6 +58,10 @@ func show_pos_battle_button():
 	go_to_select_world.visible = true
 
 func show_victory():
+	efeitos.volume_db = -20
+	musica.stream = efeito_vitoria
+	musica.volume_db = 0
+	musica.play()
 	victory_warning.visible = true
 	if indice_botoes.size() == 0:
 		show_pos_battle_button()
@@ -65,6 +75,8 @@ func show_victory():
 		pickin.visible = true
 
 func show_defeat():
+	efeitos.stream = efeito_derrota
+	efeitos.play()
 	defeat_warning.visible = true
 	show_pos_battle_button()
 	restart_button.visible = true

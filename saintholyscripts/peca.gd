@@ -297,8 +297,6 @@ func _on_area_2d_area_entered(area):
 		queimar(area.damage, 3)
 
 func _on_timer_timeout():
-	timer_speed = 1 / attack_speed
-	
 	if mana == mana_max:
 		if is_player_team:
 			skill_timer.start()

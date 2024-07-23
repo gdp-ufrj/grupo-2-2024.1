@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="2_b2867"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_7qxva"]
 [ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_eq6to"]
-[ext_resource type="PackedScene" uid="uid://dtollm46yf1uw" path="res://scenes/glow_after_qte_failure.tscn" id="5_fl6i0"]
+[ext_resource type="PackedScene" path="res://scenes/glow_after_qte_failure.tscn" id="5_fl6i0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_b2867")
@@ -44,7 +44,6 @@ debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
-one_shot = true
 
 [node name="SkillTimerParticles" type="CPUParticles2D" parent="."]
 z_index = 6

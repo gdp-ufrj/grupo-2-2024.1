@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dupxgblmp522f"]
+[gd_scene load_steps=9 format=3 uid="uid://dupxgblmp522f"]
 
 [ext_resource type="Script" path="res://saintholyscripts/peca.gd" id="1_u5x6x"]
 [ext_resource type="Texture2D" uid="uid://helnbs1r1osm" path="res://assets/sprites/tile_0096.png" id="2_ruxph"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_47r7p"]
+[ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_8mahn"]
+[ext_resource type="PackedScene" uid="uid://dledoi26ddwnj" path="res://scenes/glow_before_qte.tscn" id="5_v8yqs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_ruxph")
@@ -64,6 +66,14 @@ one_shot = true
 wait_time = 0.7
 one_shot = true
 
+[node name="GlowAfterQTESucess" parent="." instance=ExtResource("4_8mahn")]
+
+[node name="GlowBeforeQTE" parent="." instance=ExtResource("5_v8yqs")]
+
+[node name="TimerBeforeQTE" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="area_entered" from="Colisor" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Colisor" to="." method="check_mouse_over"]
 [connection signal="mouse_exited" from="Colisor" to="." method="_on_area_2d_mouse_exited"]
@@ -74,3 +84,4 @@ one_shot = true
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SkillTimer" to="." method="_on_skill_timer_timeout"]
 [connection signal="timeout" from="TimerAfterSkill" to="." method="_on_timer_after_skill_timeout"]
+[connection signal="timeout" from="TimerBeforeQTE" to="." method="_on_timer_before_qte_timeout"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dledoi26ddwnj"]
+
+[node name="GlowBeforeQTE" type="CPUParticles2D"]
+modulate = Color(0.878431, 0, 0.247059, 1)
+z_index = 6
+scale = Vector2(-0.134924, -0.133046)
+emitting = false
+amount = 100
+lifetime = 0.06
+speed_scale = 0.6
+fixed_fps = 60
+emission_shape = 1
+emission_sphere_radius = 65.06
+gravity = Vector2(0, -980)

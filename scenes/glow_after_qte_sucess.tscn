@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bi45khinsf1kp"]
+
+[node name="GlowAfterQTESucess" type="CPUParticles2D"]
+modulate = Color(1, 0.843137, 0, 1)
+z_index = 6
+scale = Vector2(-0.134924, -0.133046)
+emitting = false
+amount = 300
+lifetime = 0.06
+one_shot = true
+speed_scale = 0.6
+fixed_fps = 60
+emission_shape = 1
+emission_sphere_radius = 65.06
+gravity = Vector2(0, -980)

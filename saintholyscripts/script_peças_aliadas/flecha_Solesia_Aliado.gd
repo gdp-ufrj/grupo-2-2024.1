@@ -37,6 +37,7 @@ func _on_timer_timeout():
 	if mana == mana_max:
 		if is_player_team:
 			skill_timer.start()
+			glow_before_qte.emitting = false
 			_quick_time_event()
 		else:
 			ability()

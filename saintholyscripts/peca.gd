@@ -12,6 +12,14 @@ class_name peça
 @onready var skill_timer = $SkillTimer
 @onready var timer_after_skill = $TimerAfterSkill
 @onready var piece = $"."
+@onready var glow_before_qte = $GlowBeforeQTE
+@onready var glow_after_qte_sucess = $GlowAfterQTESucess
+@onready var timer_before_qte = $TimerBeforeQTE
+
+@export var glow_before_timer_started:= false
+@export var emitting_before:= false
+var broquel_first_skill:= true
+
 
 var is_player_team : bool
 var movement_speed : float = 0.5
@@ -107,6 +115,7 @@ func _ready():
 
 
 func _process(delta):
+	#print("CCOMEÇOU OU NÃO PORRA?:",Global.combat_started)
 	if Global.combat_started == false:
 		if is_player_team:
 			check_drag()
@@ -115,14 +124,36 @@ func _process(delta):
 			is_attacking = false
 			timer.stop()
 			atribuir_alvo()
-		
+		if is_player_team:
+			#print(piece.name, " true")
+			if glow_before_timer_started == false:
+					#print(piece.name, mana)
+					#print(piece.name, mana_max)
+					if mana >= mana_max/2:
+						timer_before_qte.start()
+						#glow_before_qte.emitting = true
+						#print(piece.name + " Emiting glow antes")
+						glow_before_timer_started = true
+						if piece.name == "Broquel_Turonia_Aliado":
+							if broquel_first_skill:
+								broquel_first_skill = false
+								timer_before_qte.set_wait_time(3.5)
+					else:
+						pass
+						#print(piece.name," ",mana, " ", mana_max)
+			else:
+				pass
+					#print(piece.name, "Não entrou: mana=",mana,"mana_max:", mana_max)
+		else:
+			#print(piece.name + "is not player team")
+			#print("abacate")
+			pass
 		if is_moving:
 			return
-			
 		if is_attacking:
 			return
-			
 		move()
+
 
 
 func move():
@@ -185,7 +216,7 @@ func move():
 		global_position = original_position
 	
 	if path.is_empty():
-		print(self.name, ": nao achou")
+		#print(self.name, ": nao achou")
 		return
 	
 	original_position = Vector2(global_position)
@@ -257,6 +288,7 @@ func basic_attack():
 
 func _quick_time_event():
 	skill_click = true
+	#glow_before_qte.emitting = false
 	glow.emitting = true
 
 
@@ -285,6 +317,8 @@ func _on_timer_timeout():
 	if mana == mana_max:
 		if is_player_team:
 			skill_timer.start()
+			glow_before_qte.emitting = false
+			#glow_before_timer_started = false
 			_quick_time_event()
 		else:
 			ability()
@@ -313,17 +347,22 @@ func check_mouse_over(viewport, event, shape_idx):
 
 func _on_skill_timer_timeout():
 	skill_click = false
+	glow.emitting = false
 	ability()
+	#emitting_before = false
 	if bonus_dmg == true:
+		show_sucess_qte()
 		bonus_dmg = false
 	skill_timer.stop()
 	try_skill_click = false
+	
 
 
 func _on_timer_after_skill_timeout():
 	if try_skill_click == true:
 		try_skill_click = false
 		print(piece.name, ": Perdão aplicado")
+	glow_before_timer_started = false
 
 
 func habilidade():
@@ -381,15 +420,6 @@ func check_drag():
 						old_plataform.remove_from_group("occupied")
 					go_to_new_plataform()
 				else:
-					#if body_ref.is_in_group("bench"):
-						#if body_ref.is_in_group("occupied") && body_ref.first_time:
-							#if old_plataform==null:
-								#pass
-							#elif old_plataform.is_in_group("bench"):
-								#back_to_old_plataform()
-						#else:
-							##go_to_new_plataform()
-					#else:
 					back_to_old_plataform()
 					print("Ocupado amigo!")
 			else:
@@ -440,5 +470,9 @@ func go_to_new_plataform():
 	tween.tween_property(self,"position", body_ref.position,0.1).set_ease(Tween.EASE_OUT)
 	old_plataform = body_ref
 
+func show_sucess_qte():
+	glow_after_qte_sucess.emitting = true
 
-
+func _on_timer_before_qte_timeout():
+	glow_before_qte.emitting = true
+	#print(piece.name + " Emiting glow antes")

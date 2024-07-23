@@ -1,5 +1,6 @@
 extends peça
 
+
 func _init():
 	nome = "Sabre de Verovia"
 	bonus_tipo = "❤"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://csrffmvdg2skr"]
+[gd_scene load_steps=8 format=3 uid="uid://csrffmvdg2skr"]
 
 [ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/sabre_Turonia_Inimigo.gd" id="1_6guci"]
 [ext_resource type="Texture2D" uid="uid://daj2vy0qjrh1x" path="res://assets/sprites/tile_0097.png" id="2_krprw"]
 [ext_resource type="PackedScene" uid="uid://c4f6vd5arei61" path="res://scenes/hp_bar.tscn" id="3_28i8i"]
+[ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_tcfmm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_krprw")
@@ -63,6 +64,10 @@ one_shot = true
 [node name="TimerAfterSkill" type="Timer" parent="."]
 wait_time = 0.7
 one_shot = true
+
+[node name="GlowAfterQTESucess" parent="." instance=ExtResource("4_tcfmm")]
+
+[node name="TimerBeforeQTE" type="Timer" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]

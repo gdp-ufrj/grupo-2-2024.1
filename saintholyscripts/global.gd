@@ -24,13 +24,8 @@ var num_sabre_ini : int = 0
 var num_cajado_ini : int = 0
 
 func _ready():
+	#banco.append("res://scenes/peças_aliadas/cajado_Solesia_Aliado.tscn")
 	pass
-	#banco.append("res://scenes/peças_aliadas/cajado_Verovia_Aliado.tscn")
-	#banco.append("res://scenes/peças_aliadas/sabre_Verovia_Aliado.tscn")
-
-func _process(delta):
-	pass
-
 func check_scene():
 	current_scene = get_tree().current_scene.name
 	return current_scene

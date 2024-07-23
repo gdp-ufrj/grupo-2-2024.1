@@ -150,7 +150,6 @@ texture = ExtResource("4_36utt")
 11:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5eq22"]
-tile_size = Vector2i(16, 14)
 custom_data_layer_0/name = "andavel"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_lptho")
@@ -187,6 +186,7 @@ mouse_filter = 2
 z_index = 2
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
+position = Vector2(0, 4)
 
 [node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("6_5ohcm")]
 position = Vector2(8, -5)
@@ -212,7 +212,7 @@ wait_time = 3.0
 z_index = 1
 
 [node name="Line1" type="Node2D" parent="BattlePositions"]
-position = Vector2(0, -1)
+position = Vector2(0, 5)
 
 [node name="Drop" parent="BattlePositions/Line1" instance=ExtResource("9_byypl")]
 position = Vector2(-40, 40)
@@ -243,7 +243,7 @@ position = Vector2(56, 40)
 scale = Vector2(0.3, 0.3)
 
 [node name="Line2" type="Node2D" parent="BattlePositions"]
-position = Vector2(0, 1)
+position = Vector2(0, 5)
 
 [node name="Drop8" parent="BattlePositions/Line2" instance=ExtResource("9_byypl")]
 position = Vector2(-40, 24)
@@ -274,7 +274,7 @@ position = Vector2(56, 24)
 scale = Vector2(0.3, 0.3)
 
 [node name="Line3" type="Node2D" parent="BattlePositions"]
-position = Vector2(0, 3)
+position = Vector2(0, 5)
 
 [node name="Drop15" parent="BattlePositions/Line3" instance=ExtResource("9_byypl")]
 position = Vector2(-40, 8)

@@ -14,6 +14,8 @@ var someone_is_dragging:= false
 var game_ended := 0
 var arena_started := false
 
+var pause_on:= false
+
 var num_broquel_ali : int = 0
 var num_flecha_ali : int = 0
 var num_sabre_ali : int = 0

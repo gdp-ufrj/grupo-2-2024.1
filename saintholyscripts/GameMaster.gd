@@ -1,4 +1,5 @@
 extends Node2D
+@onready var level_1 = $".."
 
 @onready var go_to_select_world = $"../GoToSelectWorld"
 @onready var victory_warning = $"../VictoryWarning"
@@ -12,6 +13,9 @@ extends Node2D
 @onready var button_peca2 = $"../Pickin/Button2"
 @onready var efeitos = $"../Efeitos"
 @onready var musica = $"../Musica"
+
+var pause_menu = preload("res://scenes/pause.tscn")
+@onready var ui_parent = $"../UIParent"
 
 var efeito_vitoria = preload("res://assets/musicas/vitoria_sfx.mp3")
 var efeito_derrota = preload("res://assets/musicas/derrota_sfx.mp3")
@@ -44,6 +48,7 @@ func _process(delta):
 		show_victory()
 	if Global.game_ended == 2:
 		show_defeat()
+	
 
 func init_banco():
 	for i in range(Global.banco.size()):
@@ -145,3 +150,13 @@ func add_peca_banco(indice):
 	var path = p_paths[indice]
 	path = ((path).get_slice("_", 0) + "_aliadas/" + (path).get_slice("/", 4)).left(-12) + "Aliado.tscn"
 	Global.banco.append(path)
+
+func _input(event):
+	if Input.is_action_just_pressed("esc"):
+		if Global.pause_on == false:
+			var instance = pause_menu.instantiate()
+			level_1.add_child(instance)
+			Global.pause_on = true
+			get_tree().paused = true
+		if Global.pause_on:
+			pass

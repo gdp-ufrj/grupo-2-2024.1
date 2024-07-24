@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.13, 0.13)
 script = ExtResource("1_ybs5t")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -152,6 +152,7 @@ theme_override_fonts/font = ExtResource("2_08lll")
 theme_override_font_sizes/font_size = 45
 text = "Não"
 
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="WarningPopUp/YesBackMenu" to="." method="_on_yes_back_menu_pressed"]

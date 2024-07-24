@@ -15,7 +15,6 @@ extends Node2D
 @onready var musica = $"../Musica"
 
 var pause_menu = preload("res://scenes/pause.tscn")
-@onready var ui_parent = $"../UIParent"
 
 var efeito_vitoria = preload("res://assets/musicas/vitoria_sfx.mp3")
 var efeito_derrota = preload("res://assets/musicas/derrota_sfx.mp3")

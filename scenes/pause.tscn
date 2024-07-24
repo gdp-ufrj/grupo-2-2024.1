@@ -102,6 +102,7 @@ offset_bottom = 131.0
 [node name="GoToMenuWarningTxt" type="RichTextLabel" parent="WarningPopUp/Warning"]
 z_index = 99
 texture_filter = 4
+layout_mode = 0
 offset_left = 565.0
 offset_top = 452.0
 offset_right = 1259.0
@@ -129,6 +130,7 @@ texture = SubResource("ViewportTexture_1kdpx")
 
 [node name="YesBackMenu" type="Button" parent="WarningPopUp"]
 texture_filter = 4
+layout_mode = 0
 offset_left = 576.0
 offset_top = 598.0
 offset_right = 888.0
@@ -140,6 +142,7 @@ text = "Sim"
 
 [node name="NoBackMenu" type="Button" parent="WarningPopUp"]
 texture_filter = 4
+layout_mode = 0
 offset_left = 965.0
 offset_top = 598.0
 offset_right = 1277.0

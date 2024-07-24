@@ -79,11 +79,25 @@ func show_victory():
 		pickin.visible = true
 
 func show_defeat():
-	efeitos.stream = efeito_derrota
-	efeitos.play()
-	defeat_warning.visible = true
-	show_pos_battle_button()
-	restart_button.visible = true
+	efeitos.volume_db = -20
+	musica.stream = efeito_vitoria
+	musica.volume_db = 0
+	musica.play()
+	if get_tree().current_scene.name == "Level 1":
+		if indice_botoes.size() == 0:
+			show_pos_battle_button()
+			if current_scene.name != "Level 6":
+				next_level_button.visible = true
+		elif indice_botoes.size() == 1:
+			button_peca2.visible = false
+			button_peca1.position = Vector2(-32, -56)
+			pickin.visible = true
+		else:
+			pickin.visible = true
+	else:
+		defeat_warning.visible = true
+		show_pos_battle_button()
+		restart_button.visible = true
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()

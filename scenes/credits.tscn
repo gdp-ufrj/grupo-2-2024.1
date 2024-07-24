@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://qm08n3030ka7"]
+[gd_scene load_steps=8 format=3 uid="uid://qm08n3030ka7"]
 
 [ext_resource type="Script" path="res://saintholyscripts/credits.gd" id="1_ffj4b"]
 [ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="2_4kt63"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="3_ooob1"]
 [ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="4_mulkt"]
 [ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="5_5tmpp"]
+[ext_resource type="FontFile" uid="uid://bw6n6x87f3gk6" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf" id="5_vx5db"]
 [ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="6_e65do"]
 
 [node name="Control" type="Control"]
@@ -18,6 +19,7 @@ script = ExtResource("1_ffj4b")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.501961)
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +32,7 @@ texture = ExtResource("2_4kt63")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -48,6 +51,7 @@ texture = ExtResource("4_mulkt")
 expand_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+texture_filter = 2
 stream = ExtResource("6_e65do")
 volume_db = -10.0
 autoplay = true
@@ -55,33 +59,37 @@ bus = &"Musica"
 
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 390.0
 offset_right = 1475.0
 offset_bottom = 720.0
-theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_fonts/normal_font = ExtResource("5_vx5db")
 theme_override_font_sizes/normal_font_size = 46
 text = "credits(asteria.class( ))"
 
 [node name="Page1" type="Control" parent="."]
+texture_filter = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ProgTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 459.0
 offset_right = 1475.0
 offset_bottom = 789.0
-theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_fonts/normal_font = ExtResource("5_vx5db")
 theme_override_font_sizes/normal_font_size = 34
 text = "Programação"
 
 [node name="ProgText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 518.0
@@ -93,17 +101,19 @@ text = "João Victor Barreto | Rafael Lima"
 
 [node name="RoteiroTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 566.0
 offset_right = 1475.0
 offset_bottom = 896.0
-theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_fonts/normal_font = ExtResource("5_vx5db")
 theme_override_font_sizes/normal_font_size = 34
 text = "Roteiro"
 
 [node name="RoteiroText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 616.0
@@ -115,17 +125,19 @@ text = "Joana Iozzi"
 
 [node name="ArtTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 656.0
 offset_right = 1475.0
 offset_bottom = 986.0
-theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_fonts/normal_font = ExtResource("5_vx5db")
 theme_override_font_sizes/normal_font_size = 34
 text = "Arte"
 
 [node name="ArtText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 706.0
@@ -137,17 +149,19 @@ text = "Daniel da Silva | Fernanda Vieira | July Teixeira "
 
 [node name="GameDesignTitle" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 744.0
 offset_right = 1475.0
 offset_bottom = 1074.0
-theme_override_fonts/normal_font = ExtResource("5_5tmpp")
+theme_override_fonts/normal_font = ExtResource("5_vx5db")
 theme_override_font_sizes/normal_font_size = 34
 text = "Game Design"
 
 [node name="GameDesignText" type="RichTextLabel" parent="Page1"]
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 794.0
@@ -160,6 +174,7 @@ text = "Hugo Frota
 
 [node name="Page2" type="Control" parent="."]
 visible = false
+texture_filter = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -212,6 +227,7 @@ text = "Theo"
 process_mode = 3
 modulate = Color(0.906356, 0.939546, 0.923247, 1)
 top_level = true
+texture_filter = 2
 layout_mode = 0
 offset_left = 1394.0
 offset_top = 789.0
@@ -233,6 +249,7 @@ process_mode = 3
 visible = false
 modulate = Color(0.906356, 0.939546, 0.923247, 1)
 top_level = true
+texture_filter = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 872.0

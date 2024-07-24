@@ -19,3 +19,6 @@ func _ready():
 	
 func mudar_fundo(indice):
 	fundo.texture = fundos[indice - 1]
+	
+func fim():
+	get_tree().change_scene_to_file("res://scenes/pre_game.tscn")

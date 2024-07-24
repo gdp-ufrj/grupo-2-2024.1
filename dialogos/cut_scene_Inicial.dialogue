@@ -78,5 +78,6 @@ Nave: "Boa sorte Tripulante 2910."
 
 #do mudar_fundo(2)
 {{protagonista_nome}}: Vamos acabar com isso logo!
+do fim()
 	
 => END

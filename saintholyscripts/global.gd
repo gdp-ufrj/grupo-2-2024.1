@@ -4,6 +4,7 @@ var banco = []
 
 var Menu = preload("res://scenes/menu.tscn")
 
+var protagonista_nome : String
 var current_scene
 var combat_started:= false
 var is_dragging = false
@@ -13,7 +14,6 @@ var pieces:= 0
 var someone_is_dragging:= false
 var game_ended := 0
 var arena_started := false
-
 var pause_on:= false
 
 var num_broquel_ali : int = 0
@@ -89,3 +89,4 @@ func process_arena():
 
 func despause():
 	get_tree().paused = false
+	

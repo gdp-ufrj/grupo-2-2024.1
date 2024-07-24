@@ -1,0 +1,82 @@
+~ tela1
+
+Nave: "Sistema de pouso iniciado."
+Nave: "Trinta minutos para ancoragem."
+Nave: "Tripulante 2910 gostaria de acessar o protocolo da missão?"
+{{protagonista_nome}}: Sim!
+Nave: "Protocolo Iniciado."
+
+=> tela2
+
+~ tela2
+
+do mudar_fundo(2)
+Nave: "Essa é a Galáxia de X-10, Sistema de Asteria. Há 800 anos atrás, surgiu um Torneio de Ascenção, resultado de um tratado entre os planetas para evitar uma destruição mútua na disputa por recursos."
+Nave: "Foi definido que, de 100 em 100 anos, combatentes dos planetas se reuniriam em uma Arena para batalhar pela Soberania."
+
+=> tela3
+
+~ tela3
+
+#do mudar_fundo(2)
+Nave: "Estamos nos aproximando da arena no plante Verovia. Vitória da Soberania: Três vezes consecutivas."
+{{protagonista_nome}}: Vezes demais...
+Nave: "Casa."
+
+=> tela4
+
+~ tela4
+
+#do mudar_fundo(2)
+Nave: "Turônia. Vitória da Soberania: Zero."
+{{protagonista_nome}}: É eu sei. Cancelar protocolo.
+
+=> tela5
+
+~ tela5
+
+#do mudar_fundo(2)
+
+=> tela6
+
+~ tela6
+
+#do mudar_fundo(2)
+Nave: "Combatentes de Solésia, Videlas, Zômia, Misora, Nobilina e Credera enviaram seus comprimentos."
+{{protagonista_nome}}: Enviar mensagem de volta.
+
+=> tela7
+
+~ tela7
+
+#do mudar_fundo(2)
+{{protagonista_nome}}: Acham mesmo que esse sistema é justo? Lutar um contra os outros...
+{{protagonista_nome}}: Enquanto os mesmo sempre vencem no fim? Nós de Turônia temos uma proposta: juntem-se a nós para acabar de vez com essa farsa de Torneio!
+{{protagonista_nome}}: ...Ou encontrem o seu fim se submetendo a ele mais uma vez.
+
+=> tela8
+
+~ tela8
+
+#do mudar_fundo(2)
+Nave: "Mensagem enviada."
+{{protagonista_nome}}: Espero que funcione. É nossa maior chance, tarde demais para voltar atrás.
+
+=> tela9
+
+~ tela9
+
+#do mudar_fundo(2)
+Nave: "Pouso concluído."
+Nave: "Iniciando ancoragem."
+Nave: "Ancoragem concluída."
+Nave: "Boa sorte Tripulante 2910."
+
+=> tela10
+
+~ tela10
+
+#do mudar_fundo(2)
+{{protagonista_nome}}: Vamos acabar com isso logo!
+	
+=> END

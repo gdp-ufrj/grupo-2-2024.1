@@ -3,7 +3,7 @@ extends peça
 var path : String = "res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn"
 
 func _init():
-	nome = "Flecha de Turonia"
+	nome = "Flecha de Turônia"
 	bonus_tipo = "💧"
 	habilidade_txt = "Carrega um poderoso tiro metálico com seu arco que atravessa todos os oponentes pelo caminho, causando 18💥."
 	imagem = preload("res://assets/sprites/tile_0088.png")

@@ -1,5 +1,5 @@
 ~ start
 
-MAGO: {{current_scene}}
+Nave: {{current_scene}}
 
 => END

@@ -5,7 +5,7 @@ var habilidade_on : bool = false
 var bonux : bool = false
 
 func _init():
-	nome = "Flecha de Solesia"
+	nome = "Flecha de Solésia"
 	bonus_tipo = "💥"
 	habilidade_txt = "Incandesce sua pistola dobrando a velocidade dos disparos por 2⏱️."
 	imagem = preload("res://assets/sprites/tile_0085.png")

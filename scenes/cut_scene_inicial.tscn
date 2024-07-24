@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqbiqb6c516oy"]
+
+[ext_resource type="Script" path="res://saintholyscripts/cut_scene_inicial.gd" id="1_gegvi"]
+[ext_resource type="Texture2D" uid="uid://binewwmfivcee" path="res://assets/sprites/Telas_Prancheta 1.png" id="2_3wn15"]
+[ext_resource type="Texture2D" uid="uid://ymnqx08rf1uo" path="res://assets/sprites/4947376092893785341.jpg" id="3_8ry38"]
+[ext_resource type="Texture2D" uid="uid://bsr1sojna6kh5" path="res://assets/sprites/4947376092893785342.jpg" id="4_xa2m6"]
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="5_ia1ag"]
+
+[node name="Cut Scene Inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gegvi")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3wn15")
+expand_mode = 1
+
+[node name="4947376092893785341" type="Sprite2D" parent="."]
+position = Vector2(4136, -696)
+texture = ExtResource("3_8ry38")
+
+[node name="4947376092893785342" type="Sprite2D" parent="."]
+position = Vector2(4350, 149)
+texture = ExtResource("4_xa2m6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ia1ag")
+volume_db = -15.0
+autoplay = true
+bus = &"Musica"

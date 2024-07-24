@@ -1,7 +1,7 @@
 extends peça
 
 func _init():
-	nome = "Sabre de Solesia"
+	nome = "Sabre de Solésia"
 	bonus_tipo = "💥"
 	habilidade_txt = "Faz arder sua lâmina para causar queimaduras severas no oponente por 2⏱️, causando 16💥 por ⏱️."
 	imagem = preload("res://assets/sprites/tile_0098.png")

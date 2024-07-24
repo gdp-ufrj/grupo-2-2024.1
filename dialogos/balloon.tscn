@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogos/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://bqloi0w0mbwa3" path="res://assets/sprites/tile_0084.png" id="2_v4n01"]
 [ext_resource type="Texture2D" uid="uid://cf6wnxg2fuw1u" path="res://assets/sprites/Caixa_De_Texto_-_Artéria.png" id="2_vguxx"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
@@ -127,10 +126,10 @@ offset_right = 1834.0
 offset_bottom = 254.0
 theme_override_constants/separation = 30
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/TextureRect/HBoxContainer"]
+[node name="Icon" type="TextureRect" parent="Balloon/TextureRect/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(134, 0)
 layout_mode = 2
-texture = ExtResource("2_v4n01")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/TextureRect/HBoxContainer"]

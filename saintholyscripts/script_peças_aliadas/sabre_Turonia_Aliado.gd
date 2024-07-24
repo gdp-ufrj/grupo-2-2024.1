@@ -3,7 +3,7 @@ extends peça
 var path : String = "res://scenes/peças_aliadas/sabre_Turonia_Aliado.tscn"
 
 func _init():
-	nome = "Sabre de Turonia"
+	nome = "Sabre de Turônia"
 	bonus_tipo = "💥"
 	habilidade_txt = "Surpreende o flanco do oponente, indo para suas costas, golpeando-o repetidamente com seu pesado punhal, causando 25💥."
 	imagem = preload("res://assets/sprites/tile_0097.png")

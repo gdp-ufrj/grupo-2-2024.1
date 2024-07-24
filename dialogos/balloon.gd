@@ -8,6 +8,7 @@ extends CanvasLayer
 
 @onready var balloon: Control = %Balloon
 @onready var character_label : Label = %CharacterLabel
+@onready var icon = %Icon
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
@@ -43,6 +44,11 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
+		var icon_path : String = "res://assets/dialogo_icons/%s.png" % dialogue_line.character
+		if FileAccess.file_exists(icon_path):
+			icon.texture = load(icon_path)
+		else:
+			icon.texture = null
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line

@@ -76,6 +76,7 @@ func _on_voltar_pressed():
 
 
 func _on_escolher_pressed():
+	Global.protagonista_nome = tropas[indice].nome
 	var path = tropas[indice].path
 	Global.banco.append(path)
-	get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
+	get_tree().change_scene_to_file("res://scenes/cut_scene_inicial.tscn")

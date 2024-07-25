@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3yh1s7y600ot"]
+[gd_scene load_steps=23 format=3 uid="uid://c3yh1s7y600ot"]
 
 [ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_cv203"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_v5tqx"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="16_xsxxx"]
 [ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="17_85y14"]
 [ext_resource type="AudioStream" uid="uid://y6godmxmet8a" path="res://assets/musicas/Stadium Crowd sfx.mp3" id="18_n38f4"]
+[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="19_8sr15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_7a0fp")
@@ -510,7 +511,6 @@ expand_icon = true
 process_mode = 3
 stream = ExtResource("17_85y14")
 volume_db = -10.0
-autoplay = true
 bus = &"Musica"
 
 [node name="Efeitos" type="AudioStreamPlayer2D" parent="."]
@@ -518,6 +518,8 @@ process_mode = 3
 stream = ExtResource("18_n38f4")
 volume_db = -15.0
 bus = &"Musica"
+
+[node name="MusicBattle" parent="." instance=ExtResource("19_8sr15")]
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

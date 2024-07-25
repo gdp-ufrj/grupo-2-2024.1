@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhho4fwv80yf"]
+
+[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="1_xq6de"]
+
+[node name="MusicBattle" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_xq6de")
+volume_db = -10.0
+bus = &"Musica"

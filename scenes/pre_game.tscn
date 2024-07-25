@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ds2m4tgectjda" path="res://assets/sprites/Telas-12.png" id="9_rin3q"]
 [ext_resource type="Texture2D" uid="uid://cfqx5ikkactlc" path="res://assets/sprites/Telas-13.png" id="10_0hw6k"]
 [ext_resource type="Texture2D" uid="uid://ckcch2qh2qow1" path="res://assets/sprites/Telas-14.png" id="11_dlkov"]
-[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="12_s226n"]
 [ext_resource type="FontFile" uid="uid://bw6n6x87f3gk6" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf" id="16_au571"]
 [ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="17_7bix2"]
+[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="17_16bvg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gp1m"]
 texture = ExtResource("11_dlkov")
@@ -66,14 +66,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_sx714")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1601, 378)
-scale = Vector2(0.424525, 0.424525)
-stream = ExtResource("12_s226n")
-volume_db = -10.0
-autoplay = true
-bus = &"Musica"
 
 [node name="Buttons" type="Control" parent="."]
 z_index = 1
@@ -547,6 +539,9 @@ zzpapdwapdkokodkoakdokawodkaoakdowakdowaodkoawdkod"
 
 [node name="TorneioTextResizerTimer" type="Timer" parent="Panels&Texts/TorneioText"]
 wait_time = 0.05
+
+[node name="MusicBattle" parent="." instance=ExtResource("17_16bvg")]
+position = Vector2(960, 512)
 
 [connection signal="pressed" from="Buttons/GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Buttons/World1" to="." method="_on_world_1_button_down"]

@@ -4,6 +4,7 @@ extends Button
 @onready var inventory_bg = $"../Bench/InventoryBG"
 @onready var musica = $"../Musica"
 @onready var efeitos = $"../Efeitos"
+@onready var music_battle = $"../MusicBattle"
 
 var battle_music = preload("res://assets/musicas/Asteria_Batalha_MaisLento.mp3")
 
@@ -15,6 +16,7 @@ func _on_pressed():
 		go_to_select_world_2.visible = false
 		musica.stream = battle_music
 		musica.play()
+		music_battle.stop()
 		efeitos.play()
 	if Global.pieces != 0:
 		start_battle_warning.visible = true

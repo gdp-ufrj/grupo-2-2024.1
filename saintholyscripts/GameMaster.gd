@@ -13,6 +13,7 @@ extends Node2D
 @onready var button_peca2 = $"../Pickin/Button2"
 @onready var efeitos = $"../Efeitos"
 @onready var musica = $"../Musica"
+@onready var music_battle = $"../MusicBattle"
 
 var pause_menu = preload("res://scenes/pause.tscn")
 
@@ -28,7 +29,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	init_banco()
-	
+	music_battle.play(Global.music_progress)
 	Global.game_ended = 0
 	Global.despause()
 	Global.check_scene()
@@ -56,6 +57,7 @@ func init_banco():
 		pecas_aliadas.add_child(instance)
 
 func _on_go_to_select_world_pressed():
+	Global.music_progress = music_battle.get_playback_position()
 	get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
 
 func show_pos_battle_button():

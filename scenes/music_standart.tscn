@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7qkxdjr4wn3v"]
+
+[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="1_rki53"]
+
+[node name="MusicStandart" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rki53")
+volume_db = -9.0
+bus = &"Musica"

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dsek3qlvmtnyp" path="res://assets/sprites/Telas-06.png" id="4_ftlfy"]
 [ext_resource type="Texture2D" uid="uid://d0pnulhesv680" path="res://assets/sprites/Telas-04.png" id="5_hsrmm"]
 [ext_resource type="Texture2D" uid="uid://bxxnppmx8vmv8" path="res://assets/sprites/Telas-08.png" id="6_354m7"]
-[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="7_dm6uc"]
 [ext_resource type="Texture2D" uid="uid://ws86fcyq2qwc" path="res://assets/sprites/botao_preto-export.png" id="7_po75j"]
+[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="8_ser14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efj1n"]
 atlas = ExtResource("5_hsrmm")
@@ -230,11 +230,8 @@ text = "ESCOLHER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_dm6uc")
-volume_db = -10.0
-autoplay = true
-bus = &"Musica"
+[node name="MusicBattle" parent="." instance=ExtResource("8_ser14")]
+position = Vector2(1006, 503)
 
 [connection signal="pressed" from="Seta Direita" to="." method="_on_seta_direita_pressed"]
 [connection signal="pressed" from="Seta Esquerda" to="." method="_on_seta_esquerda_pressed"]

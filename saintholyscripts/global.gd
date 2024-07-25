@@ -1,7 +1,6 @@
 extends Node
 
 var banco = []
-
 var Menu = preload("res://scenes/menu.tscn")
 
 var protagonista_nome : String
@@ -17,6 +16,9 @@ var arena_started := false
 
 var muted:= false
 var pause_on:= false
+var music_progress = 0.0
+var troops_first_run:= true
+var pre_game_runned_before:= false
 
 var num_broquel_ali : int = 0
 var num_flecha_ali : int = 0

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://saintholyscripts/menu.gd" id="1_xakmv"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_ga7ai"]
 [ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="2_i5x4a"]
-[ext_resource type="AudioStream" uid="uid://co1qvbn1or0x2" path="res://assets/musicas/AUD-20240602-WA0016.mp3" id="4_4pxpd"]
+[ext_resource type="PackedScene" uid="uid://c7qkxdjr4wn3v" path="res://scenes/music_standart.tscn" id="4_8srgn"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -155,11 +155,8 @@ theme_override_fonts/font = ExtResource("2_ga7ai")
 theme_override_font_sizes/font_size = 92
 text = "Créditos"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_4pxpd")
-volume_db = -10.0
-autoplay = true
-bus = &"Musica"
+[node name="MusicStandart" parent="." instance=ExtResource("4_8srgn")]
+position = Vector2(-15, 0)
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

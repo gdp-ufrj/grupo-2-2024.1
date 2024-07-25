@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_ak88r"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_cujon"]
 [ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="12_o41ni"]
-[ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="13_1lmmr"]
+[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="13_ddtbr"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="13_sw7bw"]
 [ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="14_kgnsj"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="14_wr8n2"]
@@ -490,18 +490,19 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("13_1lmmr")
-volume_db = -10.0
-autoplay = true
-bus = &"Musica"
-
 [node name="Efeitos" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("15_qdvn7")
 volume_db = -15.0
+bus = &"Efeitos"
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("15_qdvn7")
+volume_db = -10.0
 bus = &"Musica"
+
+[node name="MusicBattle" parent="." instance=ExtResource("13_ddtbr")]
 
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]

@@ -57,6 +57,9 @@ extends Control
 @onready var stage_5 = $Buttons/Level_1_Stages/Stage_5
 @onready var stage_6 = $Buttons/Level_1_Stages/Stage_6
 
+@onready var music_battle = $MusicBattle
+
+
 
 var scale_start_panel = Vector2(0,0)
 var scale_start_button =Vector2(0,0)
@@ -84,6 +87,12 @@ var to_go_dot_level_1:=false
 var to_go_locked_level_2:= false
 var to_go_level_1:= false
 var load_complete:= false
+
+func _ready():
+	if Global.pre_game_runned_before:
+		music_battle.play(Global.music_progress)
+	else:
+		music_battle.play(0.0)
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
@@ -308,12 +317,14 @@ func _on_world_1_timer_timeout():
 
 
 func _on_tropas_button_pressed():
+	Global.music_progress = music_battle.get_playback_position()   
 	get_tree().change_scene_to_file("res://scenes/tropas.tscn")
 
 
 
 
 func _on_stage_1_pressed():
+	Global.music_progress = music_battle.get_playback_position()
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 
 func unlock_click():

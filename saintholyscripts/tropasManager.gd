@@ -11,6 +11,7 @@ extends Control
 @onready var dano_basic_texto = $"Status/Dano_Basic Texto"
 @onready var range_texto = $"Status/Range Texto"
 @onready var bonus_texto = $"Status/Bonus Texto"
+@onready var music_battle = $MusicBattle
 
 var T0 = preload("res://saintholyscripts/script_peças_aliadas/sabre_Turonia_Aliado.gd")
 var T1 = preload("res://saintholyscripts/script_peças_aliadas/broquel_Turonia_Aliado.gd")
@@ -36,7 +37,6 @@ var t9 = T9.new()
 
 var tropas = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9]
 var indice : int = 0
-
 @export var indice_max : int = 9
 
 func update_tropa():
@@ -54,6 +54,13 @@ func update_tropa():
 	habilidade_texto.text = tropas[indice].habilidade_txt
 	tropa_imagem.texture = tropas[indice].imagem
 
+
+func _ready():
+		if Global.troops_first_run:
+			music_battle.play(0.0)
+		else:
+			music_battle.play(Global.music_progress)
+
 func _on_seta_direita_pressed():
 	indice += 1
 	if indice == indice_max + 1:
@@ -70,6 +77,8 @@ func _on_seta_esquerda_pressed():
 func _on_voltar_pressed():
 	print(get_tree().current_scene.name)
 	if get_tree().current_scene.name == "Tropas":
+		Global.pre_game_runned_before = true
+		Global.music_progress = music_battle.get_playback_position()   
 		get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
@@ -79,4 +88,7 @@ func _on_escolher_pressed():
 	Global.protagonista_nome = tropas[indice].nome
 	var path = tropas[indice].path
 	Global.banco.append(path)
+	Global.troops_first_run = false
+	Global.music_progress = music_battle.get_playback_position()   
 	get_tree().change_scene_to_file("res://scenes/cut_scene_inicial.tscn")
+	

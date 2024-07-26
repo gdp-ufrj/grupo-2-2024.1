@@ -8,6 +8,8 @@
 
 [node name="Pause" type="Control"]
 process_mode = 3
+process_priority = 99
+process_physics_priority = 99
 top_level = true
 z_index = 5
 layout_mode = 3
@@ -35,41 +37,53 @@ grow_vertical = 2
 scale = Vector2(0.701373, 0.701373)
 texture = ExtResource("2_4kbkg")
 
-[node name="Settings" type="Button" parent="."]
+[node name="Reset" type="Button" parent="."]
 texture_filter = 4
 layout_mode = 0
-offset_left = -58.0
-offset_top = -103.0
-offset_right = 254.0
-offset_bottom = 13.0
+offset_left = -62.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = -28.0
 theme_override_colors/font_color = Color(0.717647, 0.807843, 0.764706, 1)
 theme_override_fonts/font = ExtResource("2_08lll")
 theme_override_font_sizes/font_size = 45
-text = "settings"
+text = "reiniciar"
 
 [node name="MainMenu" type="Button" parent="."]
 texture_filter = 4
 layout_mode = 0
 offset_left = -58.0
-offset_top = 36.0
+offset_top = -7.69232
 offset_right = 254.0
-offset_bottom = 138.0
+offset_bottom = 64.3077
 theme_override_colors/font_color = Color(0.717647, 0.807843, 0.764706, 1)
 theme_override_fonts/font = ExtResource("2_08lll")
 theme_override_font_sizes/font_size = 45
-text = "main menu"
+text = "menu"
+
+[node name="Settings" type="Button" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = -58.0
+offset_top = 92.3077
+offset_right = 254.0
+offset_bottom = 164.308
+theme_override_colors/font_color = Color(0.717647, 0.807843, 0.764706, 1)
+theme_override_fonts/font = ExtResource("2_08lll")
+theme_override_font_sizes/font_size = 45
+text = "ajustes"
 
 [node name="Back" type="Button" parent="."]
 texture_filter = 4
 layout_mode = 0
 offset_left = -58.0
-offset_top = 158.0
+offset_top = 192.308
 offset_right = 254.0
-offset_bottom = 260.0
+offset_bottom = 264.308
 theme_override_colors/font_color = Color(0.717647, 0.807843, 0.764706, 1)
 theme_override_fonts/font = ExtResource("2_08lll")
 theme_override_font_sizes/font_size = 45
-text = "back"
+text = "voltar"
 
 [node name="PauseText" type="RichTextLabel" parent="."]
 texture_filter = 4
@@ -152,8 +166,9 @@ theme_override_fonts/font = ExtResource("2_08lll")
 theme_override_font_sizes/font_size = 45
 text = "Não"
 
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="WarningPopUp/YesBackMenu" to="." method="_on_yes_back_menu_pressed"]
 [connection signal="pressed" from="WarningPopUp/NoBackMenu" to="." method="_on_no_back_menu_pressed"]

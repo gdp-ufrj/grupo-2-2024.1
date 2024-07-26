@@ -47,3 +47,10 @@ func _on_back_pressed():
 func _on_settings_pressed():
 	var instance = settings.instantiate()
 	pause.add_child(instance)
+
+
+func _on_reset_pressed():
+	Global.pause_on = false
+	get_tree().paused = false
+	Global.combat_started = false
+	get_tree().reload_current_scene()

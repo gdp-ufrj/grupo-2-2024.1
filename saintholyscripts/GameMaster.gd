@@ -34,7 +34,7 @@ func _ready():
 	Global.despause()
 	Global.check_scene()
 	Global.init_arena()
-	
+	get_tree().paused = false
 	current_scene = get_tree().current_scene
 	
 	p_inim = pecas_inimigas.get_children()
@@ -178,5 +178,3 @@ func _input(event):
 			level_1.add_child(instance)
 			Global.pause_on = true
 			get_tree().paused = true
-		if Global.pause_on:
-			pass

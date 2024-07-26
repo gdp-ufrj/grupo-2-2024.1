@@ -16,6 +16,7 @@ class_name peça
 @onready var glow_after_qte_sucess = $GlowAfterQTESucess
 @onready var timer_before_qte = $TimerBeforeQTE
 @onready var glow_after_qte_failure = $GlowAfterQTEFailure
+@onready var efeitos = $Efeitos
 @export var glow_before_timer_started:= false
 @export var emitting_before:= false
 var broquel_first_skill:= true
@@ -27,15 +28,15 @@ var nome : String
 var imagem
 var bonus_tipo : String
 var habilidade_txt : String
-var range := 1
-var basic_attack_damage := 1
-var ability_damage := 5
-var bonus := 10
-var attack_speed := 0.5
-var health := 5
-var mana := 0
-var mana_max := 25
-var mana_por_hit := 10
+var range : int
+var basic_attack_damage : int
+var ability_damage : int
+var bonus : int
+var attack_speed : float = 0.5
+var health : int
+var mana : int
+var mana_max : int
+var mana_por_hit : int
 var classe : String
 var mouse_over: bool = false
 var skill_click: bool = false
@@ -57,6 +58,8 @@ var old_plataform
 var desbugar: bool = false
 var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
+var efeito_hit = preload("res://assets/musicas/hitbasico2_sfx.mp3")
+var efeito_hab = preload("res://assets/musicas/hitmagia2_sfx.mp3")
 var astar_grid: AStarGrid2D
 var is_attacking: bool
 var is_moving: bool
@@ -77,16 +80,16 @@ func _ready():
 	
 	if is_player_team:
 		direçao = Vector2(0, -16)
-		health += 20 * Global.num_broquel_ali
-		basic_attack_damage += 2 * Global.num_flecha_ali
-		ability_damage += 4 * Global.num_cajado_ali
-		bonus += 3 * Global.num_sabre_ali
-	else:
-		direçao = Vector2(0, 16)
-		health += 20 * Global.num_broquel_ini
-		basic_attack_damage += 2 * Global.num_flecha_ini
-		ability_damage += 4 * Global.num_cajado_ini
-		bonus += 3 * Global.num_sabre_ini
+		if get_tree().current_scene.name == "Level 6":
+			health += 10 * Global.num_broquel_ali
+			basic_attack_damage += 2 * Global.num_flecha_ali
+			ability_damage += 4 * Global.num_cajado_ali
+			bonus += 3 * Global.num_sabre_ali
+		elif get_tree().current_scene.name == "Level 5":
+			health += 10 * max(Global.num_broquel_ali - 1, 0)
+			basic_attack_damage += 2 * max(Global.num_flecha_ali - 1, 0)
+			ability_damage += 4 * max(Global.num_cajado_ali - 1, 0)
+			bonus += 3 * max(Global.num_sabre_ali - 1, 0)
 	
 	hp_bar.init_health_and_mana(health, mana_max, mana, is_player_team)
 	
@@ -265,6 +268,8 @@ func basic_attack():
 	instance.set_damage(basic_attack_damage)
 	instance.set_is_player_team(is_player_team)
 	instance.set_timer(0.1)
+	efeitos.stream = efeito_hit
+	efeitos.play()
 	add_child(instance)
 	mana = min(mana_max, mana + mana_por_hit)
 	hp_bar._set_mana(mana)
@@ -282,9 +287,10 @@ func ability():
 	timer_after_skill.start()
 
 
-func take_damage(damage):
-	health -= damage
+func take_damage(_damage):
+	health -= _damage
 	hp_bar._set_heath(health)
+	print(self.name, ": vida -> ", health, " / dano -> ", _damage)
 		
 	if health <= 0:
 		queue_free()
@@ -363,7 +369,8 @@ func queimar(dano, tempo):
 
 func enemy_bonus_dmg_randomizer():
 	var randnumb = randi() % 100+1
-	if randnumb > 5:
+	print(self.name, ": ", randnumb)
+	if randnumb > 66:
 		return true
 	else:
 		return false

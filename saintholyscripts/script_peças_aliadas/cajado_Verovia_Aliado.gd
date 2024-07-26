@@ -3,16 +3,16 @@ extends peça
 func _init():
 	nome = "Cajado de Verovia"
 	bonus_tipo = "💥💧"
-	habilidade_txt = "Concentra uma rajada de vento para empurrar o oponente até 3🏹 para trás, causando 16💥."
+	habilidade_txt = "Concentra uma rajada de vento para empurrar o oponente até 3🏹 para trás, causando 15💥."
 	imagem = preload("res://assets/sprites/tile_0086.png")
 	health = 100
 	mana_max = 90
 	mana = 0
 	range = 2
-	basic_attack_damage = 10
-	ability_damage = 16
+	basic_attack_damage = 12
+	ability_damage = 15
 	mana_por_hit = 15
-	bonus = 4
+	bonus = 5
 	is_player_team = true
 	classe = "Cajado"
 
@@ -49,6 +49,8 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)
 	
 	for x in 3:
@@ -64,4 +66,5 @@ func habilidade():
 
 func bonus_skill_effect():
 	instance.set_damage(ability_damage + bonus)
-	mana = 15
+	mana = 30
+	hp_bar._set_mana(mana)

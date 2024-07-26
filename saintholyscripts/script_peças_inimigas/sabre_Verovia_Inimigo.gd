@@ -1,7 +1,7 @@
 extends peça
 
 func _init():
-	health = 120
+	health = 100
 	mana_max = 100
 	mana = 0
 	range = 1
@@ -22,6 +22,8 @@ func habilidade():
 	else:
 		cura = ability_damage
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	for p in peças:
-		if is_player_team == p.is_player_team:
+		if is_player_team == p.is_player_team and p != self:
 			p.take_damage(-cura)

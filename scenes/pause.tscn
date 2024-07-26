@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0vky1bkocb4c"]
 
-[ext_resource type="Script" path="res://scenes/pause.gd" id="1_ybs5t"]
+[ext_resource type="Script" path="res://saintholyscripts/pause.gd" id="1_ybs5t"]
 [ext_resource type="Texture2D" uid="uid://bc4egl0lcs1jh" path="res://assets/sprites/Menu_De_Pause_Only.png" id="2_4kbkg"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_08lll"]
 

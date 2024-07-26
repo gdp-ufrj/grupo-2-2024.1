@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdct2iw6py75y"]
 
-[ext_resource type="Script" path="res://scenes/settings.gd" id="1_d8pty"]
+[ext_resource type="Script" path="res://saintholyscripts/settings.gd" id="1_d8pty"]
 [ext_resource type="Texture2D" uid="uid://bdivfxouxxlh2" path="res://assets/sprites/Créditos_.png" id="2_4umws"]
 [ext_resource type="PackedScene" uid="uid://bvnecocw18asd" path="res://scenes/volume_slider.tscn" id="2_ncxop"]
 [ext_resource type="AudioStream" uid="uid://bkxxymewujusj" path="res://assets/musicas/Asteria_Batalha_PoquitoMaisLento.mp3" id="2_t4lkn"]

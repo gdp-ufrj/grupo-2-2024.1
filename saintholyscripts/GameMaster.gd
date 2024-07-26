@@ -58,7 +58,10 @@ func init_banco():
 
 func _on_go_to_select_world_pressed():
 	Global.music_progress = music_battle.get_playback_position()
-	get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
+	if current_scene.name == "Level 6" and Global.game_ended == 1:
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
 
 func show_pos_battle_button():
 	go_to_select_world.visible = true
@@ -70,6 +73,8 @@ func show_victory():
 	musica.play()
 	victory_warning.visible = true
 	if indice_botoes.size() == 0:
+		if current_scene.name == "Level 6":
+			go_to_select_world.text = "Voltar ao Menu"
 		show_pos_battle_button()
 		if current_scene.name != "Level 6":
 			next_level_button.visible = true

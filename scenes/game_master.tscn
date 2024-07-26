@@ -3,5 +3,4 @@
 [ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_h4nld"]
 
 [node name="GameMaster" type="Node2D"]
-process_mode = 3
 script = ExtResource("1_h4nld")

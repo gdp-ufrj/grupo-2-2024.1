@@ -1,14 +1,14 @@
 extends peça
 
 func _init():
-	health = 90
+	health = 100
 	mana_max = 90
 	mana = 0
 	range = 2
 	basic_attack_damage = 8
 	ability_damage = 10
 	mana_por_hit = 30
-	bonus = 8
+	bonus = 6
 	is_player_team = false
 	classe = "Cajado"
 
@@ -34,6 +34,8 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)
 	await get_tree().create_timer(0.001).timeout
 	instance.global_position -= diff

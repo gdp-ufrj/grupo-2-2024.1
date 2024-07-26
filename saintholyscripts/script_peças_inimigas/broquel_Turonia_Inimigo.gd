@@ -1,11 +1,11 @@
 extends peça
 
 func _init():
-	health = 120
+	health = 140
 	mana_max = 100
 	mana = 100
 	range = 1
-	basic_attack_damage = 6
+	basic_attack_damage = 8
 	ability_damage = 10
 	mana_por_hit = 20
 	bonus = 8
@@ -82,4 +82,6 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)

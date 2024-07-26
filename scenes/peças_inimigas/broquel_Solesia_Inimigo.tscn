@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4oywlmdw8thv"]
+[gd_scene load_steps=11 format=3 uid="uid://4oywlmdw8thv"]
 
 [ext_resource type="Script" path="res://saintholyscripts/script_peças_inimigas/broquel_Solesia_Inimigo.gd" id="1_w88uj"]
 [ext_resource type="Texture2D" uid="uid://helnbs1r1osm" path="res://assets/sprites/tile_0096.png" id="2_w7x3f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="4_1ao3f"]
 [ext_resource type="PackedScene" uid="uid://dledoi26ddwnj" path="res://scenes/glow_before_qte.tscn" id="4_wrh8v"]
 [ext_resource type="PackedScene" uid="uid://dtollm46yf1uw" path="res://scenes/glow_after_qte_failure.tscn" id="6_yfaqw"]
+[ext_resource type="AudioStream" uid="uid://cotfxmv858y5t" path="res://assets/musicas/hitbasico2_sfx.mp3" id="7_ed6vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_w7x3f")
@@ -76,6 +77,12 @@ scale = Vector2(0.134924, 0.133046)
 [node name="TimerBeforeQTE" type="Timer" parent="."]
 
 [node name="GlowAfterQTEFailure" parent="." instance=ExtResource("6_yfaqw")]
+
+[node name="Efeitos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ed6vw")
+volume_db = -18.0
+pitch_scale = 1.5
+bus = &"Efeitos"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="check_mouse_over"]

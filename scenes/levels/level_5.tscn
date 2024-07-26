@@ -513,7 +513,7 @@ bus = &"Musica"
 process_mode = 3
 stream = ExtResource("17_p42n4")
 volume_db = -15.0
-bus = &"Musica"
+bus = &"Efeitos"
 
 [node name="MusicBattle" parent="." instance=ExtResource("18_qioxj")]
 

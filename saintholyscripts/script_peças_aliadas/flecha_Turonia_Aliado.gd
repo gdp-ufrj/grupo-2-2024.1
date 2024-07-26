@@ -5,14 +5,14 @@ var path : String = "res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn"
 func _init():
 	nome = "Flecha de Turônia"
 	bonus_tipo = "💧"
-	habilidade_txt = "Carrega um poderoso tiro metálico com seu arco que atravessa todos os oponentes pelo caminho, causando 18💥."
+	habilidade_txt = "Carrega um poderoso tiro metálico com seu arco que atravessa todos os oponentes pelo caminho, causando 15💥."
 	imagem = preload("res://assets/sprites/tile_0088.png")
 	health = 80
 	mana_max = 90
 	mana = 0
 	range = 3
-	basic_attack_damage = 12
-	ability_damage = 18
+	basic_attack_damage = 10
+	ability_damage = 15
 	mana_por_hit = 15
 	bonus = 30
 	is_player_team = true
@@ -40,6 +40,8 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)
 	
 	for x in 10:
@@ -49,3 +51,4 @@ func habilidade():
 func bonus_skill_effect():
 	instance.set_damage(ability_damage)
 	mana = 30
+	hp_bar._set_mana(mana)

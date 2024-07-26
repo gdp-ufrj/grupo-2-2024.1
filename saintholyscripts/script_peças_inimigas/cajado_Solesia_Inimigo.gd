@@ -6,9 +6,9 @@ func _init():
 	mana = 0
 	range = 3
 	basic_attack_damage = 6
-	ability_damage = 10
+	ability_damage = 15
 	mana_por_hit = 50
-	bonus = 4
+	bonus = 5
 	is_player_team = false
 	classe = "Cajado"
 
@@ -50,4 +50,6 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)

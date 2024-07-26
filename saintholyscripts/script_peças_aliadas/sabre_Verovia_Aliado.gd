@@ -6,7 +6,7 @@ func _init():
 	bonus_tipo = "❤"
 	habilidade_txt = "Ergue sua espada e inspira seus aliados trazendo uma brisa revigorante, curando-os em 15❤."
 	imagem = preload("res://assets/sprites/tile_0099.png")
-	health = 120
+	health = 100
 	mana_max = 100
 	mana = 0
 	range = 1
@@ -27,6 +27,8 @@ func habilidade():
 	else:
 		cura = ability_damage
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	for p in peças:
-		if is_player_team == p.is_player_team:
+		if is_player_team == p.is_player_team and p != self:
 			p.take_damage(-cura)

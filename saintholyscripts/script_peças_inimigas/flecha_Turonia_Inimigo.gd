@@ -2,12 +2,12 @@ extends peça
 
 func _init():
 	health = 80
-	mana_max = 70
+	mana_max = 90
 	mana = 0
 	range = 3
-	basic_attack_damage = 12
-	ability_damage = 20
-	mana_por_hit = 10
+	basic_attack_damage = 10
+	ability_damage = 15
+	mana_por_hit = 15
 	bonus = 0
 	is_player_team = false
 	classe = "Flecha"
@@ -34,6 +34,8 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)
 	
 	for x in 10:
@@ -43,3 +45,4 @@ func habilidade():
 func bonus_skill_effect():
 	instance.set_damage(ability_damage + bonus)
 	mana = 30
+	hp_bar._set_mana(mana)

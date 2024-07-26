@@ -5,14 +5,14 @@ var path : String = "res://scenes/peças_aliadas/sabre_Turonia_Aliado.tscn"
 func _init():
 	nome = "Sabre de Turônia"
 	bonus_tipo = "💥"
-	habilidade_txt = "Surpreende o flanco do oponente, indo para suas costas, golpeando-o repetidamente com seu pesado punhal, causando 25💥."
+	habilidade_txt = "Surpreende o flanco do oponente, indo para suas costas, golpeando-o repetidamente com seu pesado punhal, causando 20💥."
 	imagem = preload("res://assets/sprites/tile_0097.png")
-	health = 100
+	health = 90
 	mana_max = 100
 	mana = 0
 	range = 1
-	basic_attack_damage = 8
-	ability_damage = 10
+	basic_attack_damage = 10
+	ability_damage = 20
 	mana_por_hit = 25
 	bonus = 10
 	is_player_team = true
@@ -60,5 +60,7 @@ func habilidade():
 		global_position = tile_position
 	
 	occupied_posions = []
-		
+	
+	efeitos.stream = efeito_hab
+	efeitos.play()	
 	add_child(instance)

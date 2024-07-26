@@ -3,16 +3,16 @@ extends peça
 func _init():
 	nome = "Cajado de Solésia"
 	bonus_tipo = "💥"
-	habilidade_txt = "Aquece seu cetro invocando um pilar de labaredas no oponente mais distante, causando 10💥."
+	habilidade_txt = "Aquece seu cetro invocando um pilar de labaredas no oponente mais distante, causando 15💥."
 	imagem = preload("res://assets/sprites/tile_0100.png")
 	health = 90
 	mana_max = 100
 	mana = 0
 	range = 3
 	basic_attack_damage = 6
-	ability_damage = 10
+	ability_damage = 15
 	mana_por_hit = 50
-	bonus = 4
+	bonus = 5
 	is_player_team = true
 	classe = "Cajado"
 
@@ -54,4 +54,6 @@ func habilidade():
 	else:
 		skill_effect()
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)

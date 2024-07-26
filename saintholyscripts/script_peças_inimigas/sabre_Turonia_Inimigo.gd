@@ -1,12 +1,12 @@
 extends peça
 
 func _init():
-	health = 100
+	health = 90
 	mana_max = 100
 	mana = 0
 	range = 1
-	basic_attack_damage = 8
-	ability_damage = 10
+	basic_attack_damage = 10
+	ability_damage = 20
 	mana_por_hit = 25
 	bonus = 10
 	is_player_team = false
@@ -54,5 +54,7 @@ func habilidade():
 		global_position = tile_position
 		
 	occupied_posions = []
-		
+	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	add_child(instance)

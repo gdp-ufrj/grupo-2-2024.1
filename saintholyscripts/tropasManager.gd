@@ -56,10 +56,12 @@ func update_tropa():
 
 
 func _ready():
-		if Global.troops_first_run:
-			music_battle.play(0.0)
-		else:
-			music_battle.play(Global.music_progress)
+	update_tropa()
+	
+	if Global.troops_first_run:
+		music_battle.play(0.0)
+	else:
+		music_battle.play(Global.music_progress)
 
 func _on_seta_direita_pressed():
 	indice += 1
@@ -85,6 +87,7 @@ func _on_voltar_pressed():
 
 
 func _on_escolher_pressed():
+	Global.jogo_iniciado = true
 	Global.protagonista_nome = tropas[indice].nome
 	var path = tropas[indice].path
 	Global.banco.append(path)

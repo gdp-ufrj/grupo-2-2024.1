@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clswipo8h1dkn"]
+[gd_scene load_steps=11 format=3 uid="uid://clswipo8h1dkn"]
 
 [ext_resource type="Script" path="res://saintholyscripts/script_peças_aliadas/cajado_Verovia_Aliado.gd" id="1_wmyyu"]
 [ext_resource type="Texture2D" uid="uid://bioaxa4e2i16w" path="res://assets/sprites/tile_0086.png" id="2_8khj0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dledoi26ddwnj" path="res://scenes/glow_before_qte.tscn" id="4_gcecn"]
 [ext_resource type="PackedScene" uid="uid://bi45khinsf1kp" path="res://scenes/glow_after_qte_sucess.tscn" id="5_6ll81"]
 [ext_resource type="PackedScene" uid="uid://dtollm46yf1uw" path="res://scenes/glow_after_qte_failure.tscn" id="6_exkl6"]
+[ext_resource type="AudioStream" uid="uid://cotfxmv858y5t" path="res://assets/musicas/hitbasico2_sfx.mp3" id="7_pv44l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sk80"]
 atlas = ExtResource("2_8khj0")
@@ -77,6 +78,12 @@ wait_time = 4.75
 one_shot = true
 
 [node name="GlowAfterQTEFailure" parent="." instance=ExtResource("6_exkl6")]
+
+[node name="Efeitos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pv44l")
+volume_db = -18.0
+pitch_scale = 1.5
+bus = &"Efeitos"
 
 [connection signal="area_entered" from="Colisor" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Colisor" to="." method="_on_area_2d_body_entered"]

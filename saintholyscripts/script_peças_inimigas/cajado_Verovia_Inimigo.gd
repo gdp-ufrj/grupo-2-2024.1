@@ -5,10 +5,10 @@ func _init():
 	mana_max = 90
 	mana = 75
 	range = 2
-	basic_attack_damage = 10
-	ability_damage = 16
+	basic_attack_damage = 12
+	ability_damage = 15
 	mana_por_hit = 15
-	bonus = 4
+	bonus = 5
 	is_player_team = false
 	classe = "Cajado"
 
@@ -47,6 +47,8 @@ func habilidade():
 	
 	add_child(instance)
 	
+	efeitos.stream = efeito_hab
+	efeitos.play()
 	for x in 3:
 		tile_position = peça_alvo.global_position - diff
 		for op in occupied_posions:
@@ -60,4 +62,5 @@ func habilidade():
 
 func bonus_skill_effect():
 	instance.set_damage(ability_damage + bonus)
-	mana = 15
+	mana = 30
+	hp_bar._set_mana(mana)

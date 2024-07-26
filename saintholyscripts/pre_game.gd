@@ -58,7 +58,8 @@ extends Control
 @onready var stage_6 = $Buttons/Level_1_Stages/Stage_6
 
 @onready var music_battle = $MusicBattle
-
+var settings = preload("res://scenes/settings_pre_game.tscn")
+@onready var pre_game = $"."
 
 
 var scale_start_panel = Vector2(0,0)
@@ -335,3 +336,10 @@ func unlock_click():
 		settings_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
 		go_back_button.visible = true
 		go_back_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+
+
+
+
+func _on_settings_button_pressed():
+	var instance = settings.instantiate()
+	pre_game.add_child(instance)

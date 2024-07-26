@@ -549,6 +549,7 @@ position = Vector2(960, 512)
 [connection signal="pressed" from="Buttons/TropasButton" to="." method="_on_tropas_button_pressed"]
 [connection signal="timeout" from="Buttons/TropasButton/TropasResizeTimer" to="." method="_on_tropas_resize_timer_timeout"]
 [connection signal="timeout" from="Buttons/TutorialButton/TutorialResizeTimer" to="." method="_on_tutorial_resize_timer_timeout"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="timeout" from="Buttons/SettingsButton/SettingsResizeTimer" to="." method="_on_settings_resize_timer_timeout"]
 [connection signal="pressed" from="Buttons/Level_1_Stages/Stage_1" to="." method="_on_stage_1_pressed"]
 [connection signal="timeout" from="Panels&Texts/TournamentPanel/ResizeTournamantTimer" to="." method="_on_resize_tournmant_timer_timeout"]

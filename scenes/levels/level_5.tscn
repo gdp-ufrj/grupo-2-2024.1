@@ -1,8 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://b27nt5f68vyo3"]
+[gd_scene load_steps=27 format=3 uid="uid://b27nt5f68vyo3"]
 
-[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_hqwj8"]
-[ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_avwjk"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_pd22c"]
+[ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_s5g7i"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_q8jbq"]
 [ext_resource type="Texture2D" uid="uid://bu0f0kq8a1s5p" path="res://assets/sprites/cenário só o tabuleiro teste 7 160x160 cada quadrado.png" id="5_1fwxq"]
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="10_qgwpb"]
@@ -171,10 +169,7 @@ sources/0 = SubResource("TileSetAtlasSource_lptho")
 size = Vector2(112, 18)
 
 [node name="Level 5" type="Node2D" groups=["cena_atual"]]
-script = ExtResource("1_hqwj8")
-dialogue_resource = ExtResource("2_avwjk")
-
-[node name="GameMaster" parent="." instance=ExtResource("3_pd22c")]
+script = ExtResource("1_s5g7i")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5eq22")
@@ -450,9 +445,9 @@ bus = &"Efeitos"
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
-[connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
-[connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="NextLevelButton" to="GameMaster" method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="GoToSelectWorld2" to="GameMaster" method="_on_go_to_select_world_pressed"]
-[connection signal="pressed" from="Pickin/Button" to="GameMaster" method="_on_button_pressed"]
-[connection signal="pressed" from="Pickin/Button2" to="GameMaster" method="_on_button_2_pressed"]
+[connection signal="pressed" from="GoToSelectWorld" to="." method="_on_go_to_select_world_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="GoToSelectWorld2" to="." method="_on_go_to_select_world_2_pressed"]
+[connection signal="pressed" from="Pickin/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pickin/Button2" to="." method="_on_button_2_pressed"]

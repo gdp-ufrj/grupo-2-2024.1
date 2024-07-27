@@ -1,8 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://cbna7pd05tg5y"]
+[gd_scene load_steps=23 format=3 uid="uid://cbna7pd05tg5y"]
 
-[ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_4ef0y"]
-[ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_or084"]
-[ext_resource type="PackedScene" uid="uid://b7a0n6u41b5ty" path="res://scenes/game_master.tscn" id="3_jplet"]
+[ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_sq1ht"]
 [ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
 [ext_resource type="Texture2D" uid="uid://bu0f0kq8a1s5p" path="res://assets/sprites/cenário só o tabuleiro teste 7 160x160 cada quadrado.png" id="5_ntuig"]
 [ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_8dfs8"]
@@ -167,10 +165,7 @@ sources/0 = SubResource("TileSetAtlasSource_lptho")
 size = Vector2(112, 18)
 
 [node name="Level 1" type="Node2D" groups=["cena_atual"]]
-script = ExtResource("1_4ef0y")
-dialogue_resource = ExtResource("2_or084")
-
-[node name="GameMaster" parent="." instance=ExtResource("3_jplet")]
+script = ExtResource("1_sq1ht")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5eq22")
@@ -433,9 +428,9 @@ bus = &"Musica"
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
 [connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
-[connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
-[connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="NextLevelButton" to="GameMaster" method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="GoToSelectWorld2" to="GameMaster" method="_on_go_to_select_world_pressed"]
-[connection signal="pressed" from="Pickin/Button" to="GameMaster" method="_on_button_pressed"]
-[connection signal="pressed" from="Pickin/Button2" to="GameMaster" method="_on_button_2_pressed"]
+[connection signal="pressed" from="GoToSelectWorld" to="." method="_on_go_to_select_world_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="GoToSelectWorld2" to="." method="_on_go_to_select_world_2_pressed"]
+[connection signal="pressed" from="Pickin/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pickin/Button2" to="." method="_on_button_2_pressed"]

@@ -4,14 +4,13 @@
 
 [node name="GoToSelectWorld" type="Button"]
 process_mode = 3
-visible = false
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
 z_index = 80
-offset_left = -52.0
-offset_top = 19.0
-offset_right = 1576.0
-offset_bottom = 164.0
+offset_left = -42.0
+offset_top = 17.0
+offset_right = 1019.0
+offset_bottom = 107.0
 scale = Vector2(0.0766745, 0.0766745)
 theme_override_fonts/font = ExtResource("1_aul64")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 65
 text = "Voltar para seleção de fase"

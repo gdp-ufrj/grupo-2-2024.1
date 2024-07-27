@@ -1,27 +1,27 @@
-[gd_scene load_steps=23 format=3 uid="uid://cbna7pd05tg5y"]
+[gd_scene load_steps=23 format=3 uid="uid://b7chbyo72yi05"]
 
-[ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_sq1ht"]
-[ext_resource type="Texture2D" uid="uid://xjvvp6isasuj" path="res://assets/sprites/cenário só o tabuleiro zoom.png" id="3_v3old"]
-[ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="4_om6bh"]
-[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="11_8dfs8"]
-[ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_ak88r"]
-[ext_resource type="PackedScene" uid="uid://d1ylm22ay2xhn" path="res://scenes/start_battle_warning.tscn" id="12_47u6a"]
-[ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_cujon"]
-[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="12_o41ni"]
-[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="13_ddtbr"]
-[ext_resource type="PackedScene" uid="uid://biemmrm1dhniu" path="res://scenes/victory_warning.tscn" id="13_ixjk2"]
-[ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="13_sw7bw"]
-[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="14_kgnsj"]
-[ext_resource type="PackedScene" uid="uid://0p63oh5vg7fj" path="res://scenes/defeat_warning.tscn" id="14_ufllc"]
-[ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="14_wr8n2"]
-[ext_resource type="PackedScene" uid="uid://bapoe4u8p3lb" path="res://scenes/go_to_select_world.tscn" id="15_ki1qw"]
-[ext_resource type="AudioStream" uid="uid://y6godmxmet8a" path="res://assets/musicas/Stadium Crowd sfx.mp3" id="15_qdvn7"]
-[ext_resource type="PackedScene" uid="uid://cvddpwje6beha" path="res://scenes/restart_button.tscn" id="16_0jepy"]
-[ext_resource type="PackedScene" uid="uid://ceh745hcd60bs" path="res://scenes/next_level_button.tscn" id="17_hciqr"]
-[ext_resource type="PackedScene" uid="uid://ceb5td52jc7gu" path="res://scenes/go_to_select_world_2.tscn" id="18_557tr"]
+[ext_resource type="Script" path="res://saintholyscripts/GameMaster.gd" id="1_y7bnf"]
+[ext_resource type="Texture2D" uid="uid://y172r6ujltgi" path="res://assets/sprites/tilemap_packed.png" id="2_olt18"]
+[ext_resource type="Texture2D" uid="uid://xjvvp6isasuj" path="res://assets/sprites/cenário só o tabuleiro zoom.png" id="3_spcc0"]
+[ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="4_c5c57"]
+[ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="5_ikhg7"]
+[ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="6_4vogc"]
+[ext_resource type="PackedScene" uid="uid://dgdv0kmr55l0p" path="res://scenes/inventory_bg.tscn" id="7_16gk6"]
+[ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="8_2moaj"]
+[ext_resource type="PackedScene" uid="uid://d1ylm22ay2xhn" path="res://scenes/start_battle_warning.tscn" id="9_c6koy"]
+[ext_resource type="PackedScene" uid="uid://biemmrm1dhniu" path="res://scenes/victory_warning.tscn" id="10_0g0a7"]
+[ext_resource type="PackedScene" uid="uid://0p63oh5vg7fj" path="res://scenes/defeat_warning.tscn" id="11_m67tt"]
+[ext_resource type="PackedScene" uid="uid://bapoe4u8p3lb" path="res://scenes/go_to_select_world.tscn" id="12_hv0fb"]
+[ext_resource type="PackedScene" uid="uid://cvddpwje6beha" path="res://scenes/restart_button.tscn" id="13_n37nk"]
+[ext_resource type="PackedScene" uid="uid://ceh745hcd60bs" path="res://scenes/next_level_button.tscn" id="14_1xcff"]
+[ext_resource type="PackedScene" uid="uid://ceb5td52jc7gu" path="res://scenes/go_to_select_world_2.tscn" id="15_qnjfs"]
+[ext_resource type="Texture2D" uid="uid://bbh5t63edm4ca" path="res://assets/sprites/tile_0087.png" id="16_c42im"]
+[ext_resource type="Texture2D" uid="uid://dqvvv1wsrsat3" path="res://assets/sprites/tile_0085.png" id="17_jskfp"]
+[ext_resource type="AudioStream" uid="uid://y6godmxmet8a" path="res://assets/musicas/Stadium Crowd sfx.mp3" id="18_e0ln6"]
+[ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="19_06yv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
-texture = ExtResource("4_om6bh")
+texture = ExtResource("2_olt18")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -165,7 +165,7 @@ sources/0 = SubResource("TileSetAtlasSource_lptho")
 size = Vector2(98, 23.9999)
 
 [node name="Level 1" type="Node2D" groups=["cena_atual"]]
-script = ExtResource("1_sq1ht")
+script = ExtResource("1_y7bnf")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5eq22")
@@ -180,17 +180,17 @@ offset_right = 1832.0
 offset_bottom = 1028.0
 scale = Vector2(0.0997843, 0.0997843)
 mouse_filter = 2
-texture = ExtResource("3_v3old")
+texture = ExtResource("3_spcc0")
 
 [node name="Peças Aliadas" type="Node2D" parent="."]
 z_index = 2
 
 [node name="Peças Inimigas" type="Node2D" parent="."]
 
-[node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("11_ak88r")]
+[node name="Sabre_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("4_c5c57")]
 position = Vector2(8, -8)
 
-[node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("12_cujon")]
+[node name="Flecha_Solesia_Inimigo" parent="Peças Inimigas" instance=ExtResource("5_ikhg7")]
 position = Vector2(-8, -24)
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -204,91 +204,91 @@ z_index = 1
 
 [node name="Line1" type="Node2D" parent="BattlePositions"]
 
-[node name="Drop" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(-40, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop2" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop2" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(-24, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop3" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop3" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(-8, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop4" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop4" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(8, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop5" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop5" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(24, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop6" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop6" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(40, 40)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop7" parent="BattlePositions/Line1" instance=ExtResource("14_wr8n2")]
+[node name="Drop7" parent="BattlePositions/Line1" instance=ExtResource("6_4vogc")]
 position = Vector2(56, 40)
 scale = Vector2(0.3, 0.3)
 
 [node name="Line2" type="Node2D" parent="BattlePositions"]
 
-[node name="Drop8" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop8" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(-40, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop9" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop9" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(-24, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop10" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop10" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(-8, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop11" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop11" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(8, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop12" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop12" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(24, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop13" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop13" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(40, 24)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop14" parent="BattlePositions/Line2" instance=ExtResource("14_wr8n2")]
+[node name="Drop14" parent="BattlePositions/Line2" instance=ExtResource("6_4vogc")]
 position = Vector2(56, 24)
 scale = Vector2(0.3, 0.3)
 
 [node name="Line3" type="Node2D" parent="BattlePositions"]
 
-[node name="Drop15" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop15" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(-40, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop16" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop16" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(-24, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop17" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop17" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(-8, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop18" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop18" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(8, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop19" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop19" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(24, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop20" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop20" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(40, 8)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop21" parent="BattlePositions/Line3" instance=ExtResource("14_wr8n2")]
+[node name="Drop21" parent="BattlePositions/Line3" instance=ExtResource("6_4vogc")]
 position = Vector2(56, 8)
 scale = Vector2(0.3, 0.3)
 
@@ -301,7 +301,7 @@ monitorable = false
 position = Vector2(3.99999, 5.00002)
 shape = SubResource("RectangleShape2D_3mveu")
 
-[node name="InventoryBG" parent="Bench" instance=ExtResource("14_kgnsj")]
+[node name="InventoryBG" parent="Bench" instance=ExtResource("7_16gk6")]
 offset_left = -16.0
 offset_top = 4.99997
 offset_right = -16.0
@@ -310,37 +310,37 @@ rotation = -1.57079
 
 [node name="BenchPositions" type="Node2D" parent="."]
 
-[node name="Drop" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
+[node name="Drop" parent="BenchPositions" instance=ExtResource("6_4vogc")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
 position = Vector2(-68, -26)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop2" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
+[node name="Drop2" parent="BenchPositions" instance=ExtResource("6_4vogc")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
 position = Vector2(-68, -10)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop3" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
+[node name="Drop3" parent="BenchPositions" instance=ExtResource("6_4vogc")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
 position = Vector2(-68, 6)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop4" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
+[node name="Drop4" parent="BenchPositions" instance=ExtResource("6_4vogc")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
 position = Vector2(-68, 22)
 scale = Vector2(0.3, 0.3)
 
-[node name="Drop5" parent="BenchPositions" instance=ExtResource("14_wr8n2")]
+[node name="Drop5" parent="BenchPositions" instance=ExtResource("6_4vogc")]
 modulate = Color(0.615686, 0.192157, 0.133333, 1)
 z_index = 1
 position = Vector2(-68, 38)
 scale = Vector2(0.3, 0.3)
 
-[node name="StartBattle" parent="." instance=ExtResource("13_sw7bw")]
+[node name="StartBattle" parent="." instance=ExtResource("8_2moaj")]
 texture_filter = 2
 offset_left = -16.0
 offset_top = -40.0
@@ -351,28 +351,28 @@ size_flags_vertical = 4
 [node name="WarningTimer" type="Timer" parent="StartBattle"]
 wait_time = 3.0
 
-[node name="StartBattleWarning" parent="." instance=ExtResource("12_47u6a")]
+[node name="StartBattleWarning" parent="." instance=ExtResource("9_c6koy")]
 texture_filter = 2
 offset_left = -30.0
 offset_top = -34.0
 offset_right = 693.0
 offset_bottom = 97.0
 
-[node name="VictoryWarning" parent="." instance=ExtResource("13_ixjk2")]
+[node name="VictoryWarning" parent="." instance=ExtResource("10_0g0a7")]
 texture_filter = 2
 offset_left = -30.0
 offset_top = -34.0
 offset_right = 650.0
 offset_bottom = 58.0
 
-[node name="DefeatWarning" parent="." instance=ExtResource("14_ufllc")]
+[node name="DefeatWarning" parent="." instance=ExtResource("11_m67tt")]
 texture_filter = 2
 offset_left = -32.0
 offset_top = -18.0
 offset_right = 691.0
 offset_bottom = 138.0
 
-[node name="GoToSelectWorld" parent="." instance=ExtResource("15_ki1qw")]
+[node name="GoToSelectWorld" parent="." instance=ExtResource("12_hv0fb")]
 visible = false
 texture_filter = 2
 offset_left = -34.0
@@ -380,19 +380,19 @@ offset_top = -1.0
 offset_right = 1088.0
 offset_bottom = 89.0
 
-[node name="RestartButton" parent="." instance=ExtResource("16_0jepy")]
+[node name="RestartButton" parent="." instance=ExtResource("13_n37nk")]
 visible = false
 texture_filter = 2
 offset_top = 6.0
 offset_bottom = 96.0
 
-[node name="NextLevelButton" parent="." instance=ExtResource("17_hciqr")]
+[node name="NextLevelButton" parent="." instance=ExtResource("14_1xcff")]
 visible = false
 texture_filter = 2
 offset_top = 14.0
 offset_bottom = 104.0
 
-[node name="GoToSelectWorld2" parent="." instance=ExtResource("18_557tr")]
+[node name="GoToSelectWorld2" parent="." instance=ExtResource("15_qnjfs")]
 texture_filter = 2
 offset_left = -30.0
 offset_top = -47.0
@@ -421,7 +421,7 @@ offset_bottom = 1064.0
 scale = Vector2(0.1, 0.1)
 theme_override_font_sizes/font_size = 80
 text = "Broquel de Turonia"
-icon = ExtResource("11_8dfs8")
+icon = ExtResource("16_c42im")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -437,24 +437,24 @@ offset_bottom = 1064.0
 scale = Vector2(0.1, 0.1)
 theme_override_font_sizes/font_size = 80
 text = "Flecha de Solesia"
-icon = ExtResource("12_o41ni")
+icon = ExtResource("17_jskfp")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="Efeitos" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
-stream = ExtResource("15_qdvn7")
+stream = ExtResource("18_e0ln6")
 volume_db = -15.0
 bus = &"Efeitos"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
-stream = ExtResource("15_qdvn7")
+stream = ExtResource("18_e0ln6")
 volume_db = -10.0
 bus = &"Musica"
 
-[node name="MusicBattle" parent="." instance=ExtResource("13_ddtbr")]
+[node name="MusicBattle" parent="." instance=ExtResource("19_06yv4")]
 
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]

@@ -6,11 +6,11 @@
 process_mode = 3
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
 z_index = 80
-offset_left = -52.0
-offset_top = -75.0
-offset_right = 1576.0
-offset_bottom = 70.0
+offset_left = -41.0
+offset_top = -70.0
+offset_right = 939.0
+offset_bottom = 15.0
 scale = Vector2(0.0766745, 0.0766745)
 theme_override_fonts/font = ExtResource("1_rxray")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 60
 text = "Voltar para seleção de fase"

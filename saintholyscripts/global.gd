@@ -30,8 +30,8 @@ var num_cajado_ali : int = 0
 func _ready():
 	#banco.append("res://scenes/peças_aliadas/sabre_Turonia_Aliado.tscn")
 	#banco.append("res://scenes/peças_aliadas/sabre_Verovia_Aliado.tscn")
-	#banco.append("res://scenes/peças_aliadas/sabre_Solesia_Aliado.tscn")
-	#banco.append("res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/sabre_Solesia_Aliado.tscn")
+	banco.append("res://scenes/peças_aliadas/broquel_Turonia_Aliado.tscn")
 	banco.append("res://scenes/peças_aliadas/flecha_Turonia_Aliado.tscn")
 	#banco.append("res://scenes/peças_aliadas/cajado_Turonia_Aliado.tscn")
 

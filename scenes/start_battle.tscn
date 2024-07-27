@@ -7,11 +7,11 @@
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
 offset_left = -20.0
 offset_top = -68.0
-offset_right = 681.0
-offset_bottom = 77.0
+offset_right = 528.0
+offset_bottom = 17.0
 scale = Vector2(0.0826123, 0.0826123)
 theme_override_fonts/font = ExtResource("1_o4vpm")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 60
 text = "Iniciar batalha"
 script = ExtResource("1_urad1")
 

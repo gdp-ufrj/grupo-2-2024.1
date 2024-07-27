@@ -4,14 +4,13 @@
 
 [node name="NextLevelButton" type="Button"]
 process_mode = 3
-visible = false
 modulate = Color(0.717647, 0.807843, 0.764706, 1)
 z_index = 100
-offset_left = -16.0
+offset_left = -11.0
 offset_top = 30.0
-offset_right = 712.0
-offset_bottom = 175.0
+offset_right = 483.0
+offset_bottom = 120.0
 scale = Vector2(0.077, 0.077)
 theme_override_fonts/font = ExtResource("1_yn4ip")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 65
 text = "Próxima fase"

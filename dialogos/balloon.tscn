@@ -78,6 +78,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
@@ -85,7 +86,7 @@ theme = SubResource("Theme_qq3yp")
 [node name="TextureRect" type="TextureRect" parent="Balloon"]
 layout_mode = 0
 offset_left = -16.0
-offset_top = 791.0
+offset_top = 764.0
 offset_right = 1925.0
 offset_bottom = 1082.0
 texture = SubResource("AtlasTexture_n3kob")
@@ -110,9 +111,9 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 114.0
-offset_top = 31.0
+offset_top = 35.0
 offset_right = 493.0
-offset_bottom = 73.0
+offset_bottom = 77.0
 mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 text = "Character"
@@ -123,7 +124,7 @@ layout_mode = 2
 offset_left = 82.0
 offset_top = 122.0
 offset_right = 1834.0
-offset_bottom = 254.0
+offset_bottom = 275.0
 theme_override_constants/separation = 30
 
 [node name="Icon" type="TextureRect" parent="Balloon/TextureRect/HBoxContainer"]
@@ -140,7 +141,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 35
 text = "Dialogue..."
 
 [node name="Panel" type="Panel" parent="Balloon"]

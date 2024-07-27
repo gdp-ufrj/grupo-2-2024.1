@@ -18,7 +18,7 @@ Nave: "Foi definido que, de 100 em 100 anos, combatentes dos planetas se reuniri
 
 ~ tela3
 
-#do mudar_fundo(2)
+do mudar_fundo(3)
 Nave: "Estamos nos aproximando da arena no plante Verovia. Vitória da Soberania: Três vezes consecutivas."
 {{protagonista_nome}}: Vezes demais...
 Nave: "Casa."
@@ -27,7 +27,7 @@ Nave: "Casa."
 
 ~ tela4
 
-#do mudar_fundo(2)
+do mudar_fundo(4)
 Nave: "Turônia. Vitória da Soberania: Zero."
 {{protagonista_nome}}: É eu sei. Cancelar protocolo.
 
@@ -35,13 +35,13 @@ Nave: "Turônia. Vitória da Soberania: Zero."
 
 ~ tela5
 
-#do mudar_fundo(2)
+do mudar_fundo(5)
 
 => tela6
 
 ~ tela6
 
-#do mudar_fundo(2)
+do mudar_fundo(6)
 Nave: "Combatentes de Solésia, Videlas, Zômia, Misora, Nobilina e Credera enviaram seus comprimentos."
 {{protagonista_nome}}: Enviar mensagem de volta.
 
@@ -49,16 +49,16 @@ Nave: "Combatentes de Solésia, Videlas, Zômia, Misora, Nobilina e Credera envi
 
 ~ tela7
 
-#do mudar_fundo(2)
+do mudar_fundo(7)
 {{protagonista_nome}}: Acham mesmo que esse sistema é justo? Lutar um contra os outros...
 {{protagonista_nome}}: Enquanto os mesmo sempre vencem no fim? Nós de Turônia temos uma proposta: juntem-se a nós para acabar de vez com essa farsa de Torneio!
-{{protagonista_nome}}: ...Ou encontrem o seu fim se submetendo a ele mais uma vez.
+{{protagonista_nome}}: ... Ou encontrem o seu fim se submetendo a ele mais uma vez.
 
 => tela8
 
 ~ tela8
 
-#do mudar_fundo(2)
+do mudar_fundo(8)
 Nave: "Mensagem enviada."
 {{protagonista_nome}}: Espero que funcione. É nossa maior chance, tarde demais para voltar atrás.
 
@@ -66,7 +66,7 @@ Nave: "Mensagem enviada."
 
 ~ tela9
 
-#do mudar_fundo(2)
+do mudar_fundo(9)
 Nave: "Pouso concluído."
 Nave: "Iniciando ancoragem."
 Nave: "Ancoragem concluída."
@@ -76,8 +76,8 @@ Nave: "Boa sorte Tripulante 2910."
 
 ~ tela10
 
-#do mudar_fundo(2)
+do mudar_fundo(10)
 {{protagonista_nome}}: Vamos acabar com isso logo!
 do fim()
-	
+
 => END

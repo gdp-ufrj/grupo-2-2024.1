@@ -1,5 +1,132 @@
-~ start
+~ fase_1_inicio
 
-Nave: {{current_scene}}
+Locutor: A rodada 1 começa agora!
+{{protagonista_nome}}: Hm... Parece que o planeta que iremos enfrentar nas primeiras rodadas é Solésia.
+{{protagonista_nome}}: Um baita desafio logo de cara, os combatentes são ferozes, recebem um treinamento intenso.
+{{protagonista_nome}}: Se conseguirmos convencer eles... Serão nossos aliados mais valiosos.
+
+=> END
+
+~ fase_1_final
+
+{{protagonista_nome}}: Não é possível, eu já perdi?
+Sabre de Solésia: "Vá para casa Turoniense, não tem mais nada para você aqui."
+{{protagonista_nome}}: Vocês não entendem, o meu planeta, nós estamos por um fio. Não aguentamos mais 100 anos.
+{{protagonista_nome}}: Ouviram meu chamado? Se juntariam a mim?
+Flecha de Solésia: "Ouvimos mas... Solésia também sofre cada vez mais." 
+Sabre de Solésia: "Compadeçemos com você. Podemos tentar, mas precisamos de mais aliados..."
+
+do vitoria_pos_dialogo()
+
+=> END
+
+~ fase_2_inicio
+
+Locutor: A rodada 2 começa agora!!
+
+=> END
+
+~ fase_2_final
+
+Broquel de Solésia: "Nós perdemos?! Para Turônia?!"
+{{protagonista_nome}}: Solesianos, trago uma proposta-
+Cajado de Solésia: "-A gente recebeu a sua "convocação". Enlouqueceu?"
+{{protagonista_nome}}: Não, só cansei de participar desse circo sem sentido. Vocês sabem que no fim eles vão vencer, e nós ficaremos com as migalhas.
+Cajado de Solésia: "... Sim, é verdade."
+Broquel de Solésia: "Você se provou para nós. Sua causa é justa, iremos nos juntar à vocês."
+
+do vitoria_pos_dialogo()
+
+=> END
+
+~ fase_3_inicio
+
+Locutor: A rodada 3 começa agora!!!
+
+=> END
+
+~ fase_3_final
+
+do escolher_solesiano()
+
+{{solesiano_nome}}: "Não.... Como poderei para casa depois de tal derrota?"
+{{protagonista_nome}}: Solesiano, não tenha medo. Nosso combate acaba por aqui, mas você ainda pode se juntar a uma causa maior.
+{{protagonista_nome}}: Lute junto comigo e busque de independência para o seu planeta.
+{{solesiano_nome}}: "Uma nova chance... Sim, pode contar comigo."
+
+do vitoria_pos_dialogo()
+
+=> END
+
+~ fase_4_inicio
+
+Locutor: A rodada 4 começa agora!!!!
+
+=> END
+
+~ fase_4_final
+
+do escolher_solesiano()
+
+{{solesiano_nome}}: "Escolhido de Turônia, somos os combatentes de elite de Solésia. Sua vitória nesse combate é merecida."
+{{solesiano_nome}}: "Ouvimos da sua missão e decidimos nos juntar a ela de bom grado. É a chance pela qual estávamos esperando."
+{{solesiano_nome}}: "Nossa força Astral é sua!"
+
+do vitoria_pos_dialogo()
+
+=> END
+
+~ fase_5_inicio
+
+Locutor: A rodada 5 começa agora!!!!!
+Cajado de Veróvia: "O que pensam que estão fazendo?! Vocês violam as diretrizes do combate!"
+{{protagonista_nome}}: Veroviano, não entendeu? Somos mais fortes juntos. Você finalmente encontrará justiça.
+
+=> END
+
+~ fase_5_final
+
+{{protagonista_nome}}: Finalmente, só falta a rodada final...
+{{protagonista_nome}}: Tenho certeza que com essa aliança ganharemos o torneio!
+
+do vitoria_pos_dialogo()
+
+=> END
+
+~ fase_6_inicio
+
+Locutor: A rodada FINAL começa agora!!!!!!!!!!
+Sabre de Veróvia: "Você ousa ir contra o tratado?! Sem a ordem do torneio, restará apenas o caos, Turoniense!" 
+{{protagonista_nome}}: Esse caos já existe, só não para vocês. Vocês se blindam dele enquanto o deixam para nós. Mas em breve o conhecerão...
+
+=> END
+
+~ fase_6_final
+
+Cajado de Veróvia: "Turoniense, vocês vão se arrepender disso... Lembre que o torneio começou por uma razão." 
+{{protagonista_nome}}: E isso significa que devemos viver sempre assombrados pelo passado?
+Sabre de Veróvia: "Guerra é sempre inevitável, por isso ela precisa de regras. Por isso o torneio."
+{{protagonista_nome}}: As regras só funcionam para o bem de vocês, verovianos.
+{{protagonista_nome}}: Vocês tiraram tudo o que nós tinhamos no meu planeta. Venceram e venceram e pegaram os recursos sem dó.
+Cajado de Veróvia: Apenas seguimos o que foi estipulado. Era o nosso direito.
+{{protagonista_nome}}: Não vê que para o resto de nós não está funcionando? Não, acha que tradições devem mudar com o tempo?
+{{protagonista_nome}}: Ou é endocrinado demais para ver isso? 
+{{protagonista_nome}}: Olho para você agora como um perdedor, como nós sempre fomos, e ofereço a compaixão que nunca nos foi estendida.
+{{protagonista_nome}}: Se juntaria a nós?
+
+=> END
+
+~ derrota
+
+{{protagonista_nome}}: Superestimamos nossas habilidades, agora só resta aceitar a derrota...
+{{protagonista_nome}}: Mas não é o fim, voltaremos mais fortes.
+
+do derrota_pos_dialogo()
+
+=> END
+
+~ vitoria
+
+{{protagonista_nome}}: Confronto finalizado com sucesso! Celebramos agora, mas sem esquecer que ainda há muito trabalho pela frente.
 
 => END

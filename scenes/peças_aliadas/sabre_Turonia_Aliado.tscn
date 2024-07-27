@@ -40,6 +40,7 @@ shape = SubResource("RectangleShape2D_dl35f")
 [node name="DragDropArea2D" type="Area2D" parent="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/DragDropArea2D"]
+scale = Vector2(1.496, 1.496)
 shape = SubResource("CircleShape2D_xtjks")
 debug_color = Color(0.631373, 0.14902, 1, 0.419608)
 

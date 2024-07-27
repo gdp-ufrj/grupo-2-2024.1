@@ -291,9 +291,12 @@ func take_damage(_damage):
 	health -= _damage
 	hp_bar._set_heath(health)
 	print(self.name, ": vida -> ", health, " / dano -> ", _damage)
-		
+	sprite.set_self_modulate(Color(255,0,0,255))
 	if health <= 0:
 		queue_free()
+	else:
+		await get_tree().create_timer(0.1).timeout
+		sprite.set_self_modulate(Color(1,1,1,1)) 
 
 
 func _on_area_2d_area_entered(area):

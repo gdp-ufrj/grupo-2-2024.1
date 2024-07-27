@@ -48,7 +48,7 @@ wait_time = 0.3
 
 [node name="SkillTimerParticles" type="CPUParticles2D" parent="."]
 z_index = 6
-scale = Vector2(-0.134924, -0.133046)
+scale = Vector2(-0.09, -0.09)
 emitting = false
 amount = 100
 lifetime = 0.06
@@ -72,7 +72,7 @@ one_shot = true
 [node name="GlowAfterQTESucess" parent="." instance=ExtResource("5_i5pns")]
 
 [node name="TimerBeforeQTE" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 4.5
 one_shot = true
 
 [node name="GlowAfterQTEFailure" parent="." instance=ExtResource("6_5px44")]

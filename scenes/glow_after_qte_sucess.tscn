@@ -3,9 +3,9 @@
 [node name="GlowAfterQTESucess" type="CPUParticles2D"]
 modulate = Color(1, 0.843137, 0, 1)
 z_index = 6
-scale = Vector2(-0.134924, -0.133046)
+scale = Vector2(-0.092, -0.1)
 emitting = false
-amount = 300
+amount = 150
 lifetime = 0.06
 one_shot = true
 speed_scale = 0.6

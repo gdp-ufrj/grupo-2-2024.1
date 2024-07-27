@@ -60,6 +60,7 @@ var bonus_dmg: bool = false
 var HIT_BOX = preload("res://scenes/hit_box.tscn")
 var efeito_hit = preload("res://assets/musicas/hitbasico2_sfx.mp3")
 var efeito_hab = preload("res://assets/musicas/hitmagia2_sfx.mp3")
+var efeito_drop = preload("res://assets/musicas/dropar2_sfx.mp3")
 var astar_grid: AStarGrid2D
 var is_attacking: bool
 var is_moving: bool
@@ -134,7 +135,7 @@ func _process(delta):
 						if piece.name == "Broquel_Turonia_Aliado":
 							if broquel_first_skill:
 								broquel_first_skill = false
-								timer_before_qte.set_wait_time(3.5)
+								timer_before_qte.set_wait_time(4.5)
 		if is_moving:
 			return
 		if is_attacking:
@@ -413,12 +414,18 @@ func check_drag():
 						old_plataform.add_to_group("free")
 						old_plataform.remove_from_group("occupied")
 					go_to_new_plataform()
+					efeitos.stream = efeito_drop
+					efeitos.play()
 				else:
 					back_to_old_plataform()
 					print("Ocupado amigo!")
+					efeitos.stream = efeito_drop
+					efeitos.play()
 			else:
 				print("Posição inválida")
 				back_to_old_plataform()
+				efeitos.stream = efeito_drop
+				efeitos.play()
 
 
 func _on_drag_drop_area_2d_body_entered(body:StaticBody2D):

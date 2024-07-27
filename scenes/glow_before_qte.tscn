@@ -3,7 +3,7 @@
 [node name="GlowBeforeQTE" type="CPUParticles2D"]
 modulate = Color(0.878431, 0, 0.247059, 1)
 z_index = 6
-scale = Vector2(-0.134924, -0.133046)
+scale = Vector2(-0.08, -0.079)
 emitting = false
 amount = 100
 lifetime = 0.06

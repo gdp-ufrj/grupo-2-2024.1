@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvddpwje6beha"]
+
+[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="1_wp0tw"]
+
+[node name="RestartButton" type="Button"]
+process_mode = 3
+visible = false
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+z_index = 100
+offset_left = -8.0
+offset_top = 30.0
+offset_right = 540.0
+offset_bottom = 175.0
+scale = Vector2(0.077, 0.077)
+theme_override_fonts/font = ExtResource("1_wp0tw")
+theme_override_font_sizes/font_size = 100
+text = "Recomeçar"

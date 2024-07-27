@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceh745hcd60bs"]
+
+[ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="1_yn4ip"]
+
+[node name="NextLevelButton" type="Button"]
+process_mode = 3
+visible = false
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+z_index = 100
+offset_left = -16.0
+offset_top = 30.0
+offset_right = 712.0
+offset_bottom = 175.0
+scale = Vector2(0.077, 0.077)
+theme_override_fonts/font = ExtResource("1_yn4ip")
+theme_override_font_sizes/font_size = 100
+text = "Próxima fase"

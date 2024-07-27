@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://0p63oh5vg7fj"]
+
+[ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="1_biet6"]
+
+[node name="DefeatWarning" type="TextEdit"]
+process_mode = 3
+visible = false
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+z_index = 100
+clip_contents = true
+layout_direction = 1
+offset_left = -40.0
+offset_top = -4.0
+offset_right = 683.0
+offset_bottom = 152.0
+scale = Vector2(0.141, 0.141)
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_biet6")
+theme_override_font_sizes/font_size = 40
+text = "Poxa...você perdeu :(. Gostaria de tentar novamente?"
+wrap_mode = 1

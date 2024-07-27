@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://58fvpn7mvge6"]
+[gd_scene load_steps=27 format=3 uid="uid://58fvpn7mvge6"]
 
 [ext_resource type="Script" path="res://saintholyscripts/DialogManager.gd" id="1_6k0mn"]
 [ext_resource type="Resource" uid="uid://cptso1r0yeon2" path="res://dialogos/inicio_fase.dialogue" id="2_s6tmo"]
@@ -11,11 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://ct7wtbuomb34h" path="res://scenes/peças_inimigas/sabre_Solesia_Inimigo.tscn" id="11_e0h31"]
 [ext_resource type="PackedScene" uid="uid://bpe7dpty27cxq" path="res://scenes/peças_inimigas/flecha_Solesia_Inimigo.tscn" id="12_3cyja"]
 [ext_resource type="PackedScene" uid="uid://4oywlmdw8thv" path="res://scenes/peças_inimigas/broquel_Solesia_Inimigo.tscn" id="12_jbiic"]
+[ext_resource type="PackedScene" uid="uid://d1ylm22ay2xhn" path="res://scenes/start_battle_warning.tscn" id="12_q2t5i"]
 [ext_resource type="PackedScene" uid="uid://dtf5ehpmq3aq7" path="res://scenes/start_battle.tscn" id="13_jeti6"]
+[ext_resource type="PackedScene" uid="uid://biemmrm1dhniu" path="res://scenes/victory_warning.tscn" id="13_qentj"]
+[ext_resource type="PackedScene" uid="uid://0p63oh5vg7fj" path="res://scenes/defeat_warning.tscn" id="14_2bpjn"]
 [ext_resource type="PackedScene" uid="uid://c1ji6n1lrfu2p" path="res://scenes/drop.tscn" id="14_g3yg3"]
 [ext_resource type="AudioStream" uid="uid://bn67ekexcmlcc" path="res://assets/musicas/Asteria demo 1 - 14_07_2024 19.56.mp3" id="14_leb78"]
 [ext_resource type="AudioStream" uid="uid://y6godmxmet8a" path="res://assets/musicas/Stadium Crowd sfx.mp3" id="15_t8a4g"]
+[ext_resource type="PackedScene" uid="uid://bapoe4u8p3lb" path="res://scenes/go_to_select_world.tscn" id="15_uiau8"]
 [ext_resource type="PackedScene" uid="uid://dfhho4fwv80yf" path="res://scenes/music_battle.tscn" id="16_3oert"]
+[ext_resource type="PackedScene" uid="uid://cvddpwje6beha" path="res://scenes/restart_button.tscn" id="16_24vv6"]
+[ext_resource type="PackedScene" uid="uid://ceh745hcd60bs" path="res://scenes/next_level_button.tscn" id="17_p15cs"]
+[ext_resource type="PackedScene" uid="uid://ceb5td52jc7gu" path="res://scenes/go_to_select_world_2.tscn" id="18_dmocy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lptho"]
 texture = ExtResource("4_1vndi")
@@ -200,16 +207,6 @@ position = Vector2(-8, -8)
 position = Vector2(8, 2)
 zoom = Vector2(6, 6)
 
-[node name="StartBattle" parent="." instance=ExtResource("13_jeti6")]
-offset_left = -18.0
-offset_top = -65.0
-offset_right = 683.0
-offset_bottom = 80.0
-size_flags_vertical = 4
-
-[node name="WarningTimer" type="Timer" parent="StartBattle"]
-wait_time = 3.0
-
 [node name="BattlePositions" type="Node2D" parent="."]
 z_index = 1
 
@@ -313,21 +310,6 @@ shape = SubResource("RectangleShape2D_3mveu")
 
 [node name="InventoryBG" parent="Bench" instance=ExtResource("10_tgese")]
 
-[node name="StartBattleWarning" type="TextEdit" parent="."]
-visible = false
-clip_contents = true
-layout_direction = 1
-offset_left = -25.0
-offset_top = -49.0
-offset_right = 541.0
-offset_bottom = 127.0
-scale = Vector2(0.14106, 0.14106)
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "   Posicione todas as peças 
-  antes de iniciar a batalha!"
-
 [node name="BenchPositions" type="Node2D" parent="."]
 
 [node name="Drop" parent="BenchPositions" instance=ExtResource("14_g3yg3")]
@@ -372,85 +354,37 @@ z_index = 1
 position = Vector2(56, 80)
 scale = Vector2(0.3, 0.3)
 
-[node name="VictoryWarning" type="TextEdit" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
-clip_contents = true
-layout_direction = 1
-offset_left = -29.0
-offset_top = -63.0
-offset_right = 503.0
-offset_bottom = 8.0
-scale = Vector2(0.141, 0.141)
-size_flags_horizontal = 10
+[node name="StartBattle" parent="." instance=ExtResource("13_jeti6")]
+offset_left = -31.0
+offset_top = -64.0
+offset_right = 877.0
+offset_bottom = 81.0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Parabéns!!!! Você venceu! :)"
 
-[node name="DefeatWarning" type="TextEdit" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
-clip_contents = true
-layout_direction = 1
-offset_left = -41.0
-offset_top = -7.0
-offset_right = 626.0
-offset_bottom = 156.0
-scale = Vector2(0.141, 0.141)
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Poxa...você perdeu :(. Gostaria de tentar novamente?"
-wrap_mode = 1
+[node name="WarningTimer" type="Timer" parent="StartBattle"]
+wait_time = 3.0
 
-[node name="GoToSelectWorld" type="Button" parent="."]
-process_mode = 3
-visible = false
-z_index = 80
-offset_left = -40.0
-offset_top = 19.0
-offset_right = 1267.0
-offset_bottom = 164.0
-scale = Vector2(0.0766745, 0.0766745)
-theme_override_font_sizes/font_size = 100
-text = "Voltar para seleção de fase"
+[node name="StartBattleWarning" parent="." instance=ExtResource("12_q2t5i")]
+offset_top = -51.0
+offset_bottom = 98.0
 
-[node name="RestartButton" type="Button" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
+[node name="VictoryWarning" parent="." instance=ExtResource("13_qentj")]
+offset_top = -64.0
+offset_bottom = 28.0
+
+[node name="DefeatWarning" parent="." instance=ExtResource("14_2bpjn")]
+
+[node name="GoToSelectWorld" parent="." instance=ExtResource("15_uiau8")]
+
+[node name="RestartButton" parent="." instance=ExtResource("16_24vv6")]
 offset_left = -14.0
-offset_top = 30.0
-offset_right = 532.0
-offset_bottom = 175.0
-scale = Vector2(0.077, 0.077)
-theme_override_font_sizes/font_size = 100
-text = "Recomeçar"
+offset_right = 534.0
 
-[node name="NextLevelButton" type="Button" parent="."]
-process_mode = 3
-visible = false
-z_index = 100
-offset_left = -14.0
-offset_top = 30.0
-offset_right = 641.0
-offset_bottom = 175.0
-scale = Vector2(0.077, 0.077)
-theme_override_font_sizes/font_size = 100
-text = "Próxima Fase"
+[node name="NextLevelButton" parent="." instance=ExtResource("17_p15cs")]
+offset_left = -18.0
+offset_right = 710.0
 
-[node name="GoToSelectWorld2" type="Button" parent="."]
-process_mode = 3
-z_index = 80
-offset_left = -36.0
-offset_top = -75.0
-offset_right = 1271.0
-offset_bottom = 70.0
-scale = Vector2(0.0766745, 0.0766745)
-theme_override_font_sizes/font_size = 100
-text = "Voltar para seleção de fase"
+[node name="GoToSelectWorld2" parent="." instance=ExtResource("18_dmocy")]
 
 [node name="Pickin" type="Control" parent="."]
 process_mode = 3
@@ -509,9 +443,9 @@ bus = &"Efeitos"
 
 [node name="MusicBattle" parent="." instance=ExtResource("16_3oert")]
 
-[connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="area_entered" from="Bench" to="StartBattle" method="_on_bench_area_entered"]
 [connection signal="area_exited" from="Bench" to="StartBattle" method="_on_bench_area_exited"]
+[connection signal="timeout" from="StartBattle/WarningTimer" to="StartBattle" method="_on_warning_timer_timeout"]
 [connection signal="pressed" from="GoToSelectWorld" to="GameMaster" method="_on_go_to_select_world_pressed"]
 [connection signal="pressed" from="RestartButton" to="GameMaster" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="GameMaster" method="_on_next_level_button_pressed"]

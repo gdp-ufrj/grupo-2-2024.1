@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ylm22ay2xhn"]
+
+[ext_resource type="FontFile" uid="uid://bqauqttxysl4t" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="1_3k02x"]
+
+[node name="StartBattleWarning" type="TextEdit"]
+visible = false
+modulate = Color(0.717647, 0.807843, 0.764706, 1)
+z_index = 4
+clip_contents = true
+layout_direction = 1
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 683.0
+offset_bottom = 101.0
+scale = Vector2(0.14106, 0.14106)
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_3k02x")
+theme_override_font_sizes/font_size = 40
+text = "   Posicione todas as peças 
+  antes de iniciar a batalha!"

@@ -72,6 +72,7 @@ var timer_speed
 var occupied_posions
 var direçao
 var original_position
+var bonus_dmg_has_happened := false
 
 func _ready():
 	
@@ -345,6 +346,7 @@ func _on_skill_timer_timeout():
 	if bonus_dmg == true:
 		show_sucess_qte()
 		bonus_dmg = false
+		bonus_dmg_has_happened = true
 	skill_timer.stop()
 	if try_skill_click:
 		try_skill_click = false
@@ -355,7 +357,8 @@ func _on_timer_after_skill_timeout():
 	if try_skill_click == true:
 		try_skill_click = false
 		print(piece.name, ": Perdão aplicado")
-		show_failure_qte()
+		if bonus_dmg_has_happened == false:
+			show_failure_qte()
 	glow_before_timer_started = false
 
 

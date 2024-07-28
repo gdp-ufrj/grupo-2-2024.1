@@ -85,6 +85,7 @@ func _on_go_to_select_world_pressed():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	Global.music_progress = music_battle.get_playback_position()
+	Global.resetar_jogo()
 	if current_scene.name == "Level 6" and Global.game_ended == 1:
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	else:

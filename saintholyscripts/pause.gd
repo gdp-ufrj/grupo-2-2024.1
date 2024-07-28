@@ -33,6 +33,7 @@ func _on_yes_back_menu_pressed():
 	get_tree().paused = false
 	Global.pause_on = false
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	Global.resetar_jogo()
 
 func _on_no_back_menu_pressed():
 	hide_warning()

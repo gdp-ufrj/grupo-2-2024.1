@@ -95,7 +95,7 @@ func show_victory():
 	musica.stream = efeito_vitoria
 	musica.volume_db = 0
 	musica.play()
-	victory_warning.visible = true
+	#victory_warning.visible = true
 	var dialogo: Node = BALLOON.instantiate()
 	add_child(dialogo)
 	if get_tree().current_scene.name == "Level 2":
@@ -215,7 +215,7 @@ func vitoria_pos_dialogo():
 		pickin.visible = true
 
 func derrota_pos_dialogo():
-	defeat_warning.visible = true
+	#defeat_warning.visible = true
 	show_pos_battle_button()
 	restart_button.visible = true
 	

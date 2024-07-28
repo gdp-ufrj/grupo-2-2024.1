@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8nf4xl8wirrh"
-path="res://.godot/imported/Locutor.png-ca873de94b9aa041766525cd7e81488b.ctex"
+path="res://.godot/imported/locutor.png-07948e63f8e59882a04cd9eceefc7cab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialogo_icons/Locutor.png"
-dest_files=["res://.godot/imported/Locutor.png-ca873de94b9aa041766525cd7e81488b.ctex"]
+source_file="res://assets/dialogo_icons/locutor.png"
+dest_files=["res://.godot/imported/locutor.png-07948e63f8e59882a04cd9eceefc7cab.ctex"]
 
 [params]
 

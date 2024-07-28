@@ -231,9 +231,6 @@ func disable_tropas():
 	pecas_inimigas.set_process_mode(4)
 
 
-func _on_go_to_select_world_2_pressed():
-	pass # Replace with function body.
-
 
 func _on_transition_timer_timeout():
 	TransitionScreen.transition()

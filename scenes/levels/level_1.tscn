@@ -460,7 +460,6 @@ bus = &"Musica"
 [node name="MusicBattle" parent="." instance=ExtResource("13_ddtbr")]
 
 [node name="TournmanetFarPerspective" type="TextureRect" parent="."]
-visible = false
 z_index = 999
 offset_left = -88.0
 offset_top = -52.0
@@ -484,3 +483,4 @@ autostart = true
 [connection signal="pressed" from="GoToSelectWorld2" to="." method="_on_go_to_select_world_pressed"]
 [connection signal="pressed" from="Pickin/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pickin/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

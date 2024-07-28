@@ -114,6 +114,8 @@ Cajado de Veróvia: Apenas seguimos o que foi estipulado. Era o nosso direito.
 {{protagonista_nome}}: Olho para você agora como um perdedor, como nós sempre fomos, e ofereço a compaixão que nunca nos foi estendida.
 {{protagonista_nome}}: Se juntaria a nós?
 
+do vitoria_pos_dialogo()
+
 => END
 
 ~ derrota

@@ -17,6 +17,7 @@ const BALLOON = preload("res://dialogos/balloon.tscn")
 @onready var efeitos = $"Efeitos"
 @onready var musica = $"Musica"
 @onready var music_battle = $"MusicBattle"
+@onready var tournmanet_far_perspective = $TournmanetFarPerspective
 
 var pause_menu = preload("res://scenes/pause.tscn")
 
@@ -81,6 +82,8 @@ func init_banco():
 		pecas_aliadas.add_child(instance)
 
 func _on_go_to_select_world_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	Global.music_progress = music_battle.get_playback_position()
 	if current_scene.name == "Level 6" and Global.game_ended == 1:
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
@@ -132,6 +135,8 @@ func _on_next_level_button_pressed():
 	var next_level_number = curr_scene_path.to_int() + 1
 	
 	var next_level_path = "res://scenes/levels/level_" + str(next_level_number) + ".tscn"
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file(next_level_path)
 
 
@@ -204,6 +209,7 @@ func vitoria_pos_dialogo():
 	if indice_botoes.size() == 0:
 		if current_scene.name == "Level 6":
 			go_to_select_world.text = "Voltar ao Menu"
+			go_to_select_world.visible = true
 		show_pos_battle_button()
 		if current_scene.name != "Level 6":
 			next_level_button.visible = true
@@ -226,3 +232,10 @@ func disable_tropas():
 
 func _on_go_to_select_world_2_pressed():
 	pass # Replace with function body.
+
+
+func _on_transition_timer_timeout():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	tournmanet_far_perspective.visible = false
+	

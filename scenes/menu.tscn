@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv5eucc2wsryf"]
 
 [ext_resource type="Script" path="res://saintholyscripts/menu.gd" id="1_xakmv"]
+[ext_resource type="Texture2D" uid="uid://crx4y48lhoqmg" path="res://assets/sprites/Ateria menu placeholder (1).png" id="2_40m5f"]
 [ext_resource type="FontFile" uid="uid://dxbupxvjecbd4" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf" id="2_ga7ai"]
-[ext_resource type="Texture2D" uid="uid://bku2n0hejop8" path="res://assets/sprites/fundo.png" id="2_i5x4a"]
 [ext_resource type="PackedScene" uid="uid://c7qkxdjr4wn3v" path="res://scenes/music_standart.tscn" id="4_8srgn"]
 
 [node name="Menu" type="Control"]
@@ -25,7 +25,7 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = 953.0
 offset_bottom = 532.0
-texture = ExtResource("2_i5x4a")
+texture = ExtResource("2_40m5f")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
@@ -37,6 +37,7 @@ offset_right = 953.0
 offset_bottom = 536.0
 
 [node name="Title" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,7 +97,7 @@ offset_bottom = -25.0
 mouse_filter = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_ga7ai")
-theme_override_font_sizes/font_size = 92
+theme_override_font_sizes/font_size = 94
 action_mode = 0
 text = "Jogar"
 clip_text = true

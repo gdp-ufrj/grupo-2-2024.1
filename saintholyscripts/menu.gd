@@ -5,6 +5,8 @@ func _ready():
 	music_standart.play(Global.music_progress)
 	
 func _on_start_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_music_standart_music_progress()
 	if Global.jogo_iniciado:
 		get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
@@ -15,6 +17,8 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_creditos_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_music_standart_music_progress()
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 

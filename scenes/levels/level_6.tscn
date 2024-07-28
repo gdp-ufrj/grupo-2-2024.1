@@ -478,6 +478,6 @@ bus = &"Musica"
 [connection signal="pressed" from="GoToSelectWorld" to="." method="_on_go_to_select_world_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="GoToSelectWorld2" to="." method="_on_go_to_select_world_2_pressed"]
+[connection signal="pressed" from="GoToSelectWorld2" to="." method="_on_go_to_select_world_pressed"]
 [connection signal="pressed" from="Pickin/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pickin/Button2" to="." method="_on_button_2_pressed"]

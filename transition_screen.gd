@@ -18,6 +18,6 @@ func on_animation_finished(anim_name):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _transition():
+func transition():
 	color_rect.visible = true
 	animation_player.play("fade_to_black")

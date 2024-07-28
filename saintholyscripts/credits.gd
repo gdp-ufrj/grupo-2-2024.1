@@ -28,6 +28,8 @@ func _on_next_button_pressed():
 		back_button.visible = true
 		credits_read = true
 	elif page == 2:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		get_music_standart_music_progress()
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
@@ -36,6 +38,8 @@ func _on_back_button_pressed():
 	if page == 2:
 		show_page1()
 	elif page == 1:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		get_music_standart_music_progress()
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 

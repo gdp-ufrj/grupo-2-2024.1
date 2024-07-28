@@ -96,6 +96,8 @@ func _ready():
 		music_battle.play(0.0)
 
 func _on_button_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_world_1_button_down():
@@ -318,6 +320,8 @@ func _on_world_1_timer_timeout():
 
 
 func _on_tropas_button_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	Global.music_progress = music_battle.get_playback_position()   
 	get_tree().change_scene_to_file("res://scenes/tropas.tscn")
 
@@ -325,6 +329,8 @@ func _on_tropas_button_pressed():
 
 
 func _on_stage_1_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	Global.music_progress = music_battle.get_playback_position()
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 

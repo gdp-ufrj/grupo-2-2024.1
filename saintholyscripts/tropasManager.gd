@@ -80,9 +80,13 @@ func _on_voltar_pressed():
 	print(get_tree().current_scene.name)
 	if get_tree().current_scene.name == "Tropas":
 		Global.pre_game_runned_before = true
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		Global.music_progress = music_battle.get_playback_position()   
 		get_tree().change_scene_to_file("res://scenes/pre_game.tscn")
 	else:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 
@@ -92,6 +96,8 @@ func _on_escolher_pressed():
 	var path = tropas[indice].path
 	Global.banco.append(path)
 	Global.troops_first_run = false
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	Global.music_progress = music_battle.get_playback_position()   
 	get_tree().change_scene_to_file("res://scenes/cut_scene_inicial.tscn")
 	

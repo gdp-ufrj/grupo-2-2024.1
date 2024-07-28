@@ -543,11 +543,50 @@ wait_time = 0.05
 [node name="MusicBattle" parent="." instance=ExtResource("17_16bvg")]
 position = Vector2(960, 512)
 
+[node name="TutorialText" type="RichTextLabel" parent="."]
+visible = false
+z_index = 50
+layout_mode = 0
+offset_left = 296.0
+offset_top = 224.0
+offset_right = 3912.0
+offset_bottom = 1936.0
+scale = Vector2(0.372943, 0.372943)
+theme_override_fonts/normal_font = ExtResource("2_tpl7n")
+theme_override_font_sizes/normal_font_size = 120
+text = "Tutorial:
+
+Coloque as peças em campo para iniciar a batalha.
+
+Quando partículas vermelhas saírem de uma peça, isso significa que ela está prestes a soltar uma habilidade. Preste atenção e clique apenas uma vez na peça quando as partículas ficarem brancas para bonificar a habilidade. Caso você acerte sairá partículas douradas, caso erre, sairá partículas cinzas."
+
+[node name="ColorRect" type="ColorRect" parent="TutorialText"]
+z_index = 10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="TutorialClose" type="Button" parent="TutorialText"]
+layout_mode = 0
+offset_left = 3367.8
+offset_top = -42.902
+offset_right = 3555.8
+offset_bottom = 343.098
+theme_override_fonts/font = ExtResource("16_au571")
+theme_override_font_sizes/font_size = 300
+text = "X"
+
 [connection signal="pressed" from="Buttons/GoBackButton" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Buttons/World1" to="." method="_on_world_1_button_down"]
 [connection signal="timeout" from="Buttons/World1/World1Timer" to="." method="_on_world_1_timer_timeout"]
 [connection signal="pressed" from="Buttons/TropasButton" to="." method="_on_tropas_button_pressed"]
 [connection signal="timeout" from="Buttons/TropasButton/TropasResizeTimer" to="." method="_on_tropas_resize_timer_timeout"]
+[connection signal="pressed" from="Buttons/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="timeout" from="Buttons/TutorialButton/TutorialResizeTimer" to="." method="_on_tutorial_resize_timer_timeout"]
 [connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="timeout" from="Buttons/SettingsButton/SettingsResizeTimer" to="." method="_on_settings_resize_timer_timeout"]
@@ -564,3 +603,4 @@ position = Vector2(960, 512)
 [connection signal="timeout" from="Panels&Texts/LockedLevel2/LockedLevel2ResizeTimer" to="." method="_on_locked_level_2_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/TorneioTitle/TorneioTitleResizeTimer" to="." method="_on_torneio_title_resize_timer_timeout"]
 [connection signal="timeout" from="Panels&Texts/TorneioText/TorneioTextResizerTimer" to="." method="_on_torneio_text_resizer_timer_timeout"]
+[connection signal="pressed" from="TutorialText/TutorialClose" to="." method="_on_tutorial_close_pressed"]

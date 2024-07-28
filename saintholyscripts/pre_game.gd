@@ -56,6 +56,7 @@ extends Control
 @onready var stage_4 = $Buttons/Level_1_Stages/Stage_4
 @onready var stage_5 = $Buttons/Level_1_Stages/Stage_5
 @onready var stage_6 = $Buttons/Level_1_Stages/Stage_6
+@onready var tutorial_text = $TutorialText
 
 @onready var music_battle = $MusicBattle
 var settings = preload("res://scenes/settings_pre_game.tscn")
@@ -349,3 +350,12 @@ func unlock_click():
 func _on_settings_button_pressed():
 	var instance = settings.instantiate()
 	pre_game.add_child(instance)
+
+
+func _on_tutorial_button_pressed():
+	tutorial_text.visible = true
+
+
+
+func _on_tutorial_close_pressed():
+	tutorial_text.visible = false
